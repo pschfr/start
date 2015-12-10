@@ -1,0 +1,888 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"c",
+				"center"
+			],
+			[
+				"sta",
+				"stackoverflow"
+			],
+			[
+				"ext",
+				"extrafabulouscomics	(index.html)"
+			],
+			[
+				"key",
+				"keydown	.keydown()"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"gift_cards_",
+				"gift_cards_unconfirmed"
+			],
+			[
+				"gc",
+				"gc_gift_cards"
+			],
+			[
+				"billing",
+				"billing_details_id	(form-handler.php)"
+			],
+			[
+				"gc_",
+				"gc_billing_details	(form-handler.php)"
+			],
+			[
+				"current",
+				"current_user_can	(o2dca.php)"
+			],
+			[
+				"conf",
+				"confirmed"
+			],
+			[
+				"C",
+				"CSV"
+			],
+			[
+				"response",
+				"responseTextFNOR"
+			],
+			[
+				"input",
+				"input#amount	(gift-card-page.js)"
+			],
+			[
+				"outp",
+				"outputStoredInputValue"
+			],
+			[
+				"fieldset",
+				"fieldset#amounts	(gift-card-page.js)"
+			],
+			[
+				"o2",
+				"o2dca	(o2dca.php)"
+			],
+			[
+				"sel",
+				"select"
+			],
+			[
+				"transact",
+				"transaction_data"
+			],
+			[
+				"authoriz",
+				"authorizeTransaction	(CardConnectRestClient.php)"
+			],
+			[
+				"Card",
+				"CardConnectRestClient	(CardConnectRestClient.php)"
+			],
+			[
+				"purc",
+				"purchased_timestamp"
+			],
+			[
+				"me",
+				"message_for_gift"
+			],
+			[
+				"Seti",
+				"Seti_UI"
+			],
+			[
+				"ha_",
+				"ha_icons	(ColorHighlighter.sublime-settings)"
+			],
+			[
+				"o2dca",
+				"o2dca-templates"
+			],
+			[
+				"Con",
+				"Confirmation"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"cred",
+				"creditCardTypeFromNumber"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"cr",
+				"creditCardTypeFromNumber"
+			],
+			[
+				"load",
+				"load_gift_card_styles"
+			],
+			[
+				"ag",
+				"agent_name"
+			],
+			[
+				"agetn",
+				"agent_query"
+			],
+			[
+				"sele",
+				"selected"
+			],
+			[
+				"gift",
+				"gift_card_key"
+			],
+			[
+				"gi",
+				"gift_card_key"
+			],
+			[
+				"bill",
+				"billing_details_id"
+			],
+			[
+				"g",
+				"gift_card_key"
+			],
+			[
+				"bi",
+				"billing_details_id"
+			],
+			[
+				"insert",
+				"insert_id"
+			],
+			[
+				"rec",
+				"recipient"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"_a",
+				"_agents_email"
+			],
+			[
+				"marin",
+				"margin-bottom"
+			],
+			[
+				"font-s",
+				"font-size"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 7113,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 3177,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "script.js",
+			"settings":
+			{
+				"buffer_size": 7711,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"trimmer",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"Package Control: IN",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"c",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"col",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"Package Control: nis",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 472.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Paul/Dropbox/Work/Start"
+	],
+	"file_history":
+	[
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca/gc-admin-page.php",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca-templates/confirm_gift_card.php",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca/o2dca.php",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca-templates/gift-card-page.php",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca/form-handler.php",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca/js/gift-card-page.js",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca/css/gift-card-page.css",
+		"/C/Users/Paul/AppData/Local/Temp/scp26070/testing4.o2dca.com/wp-config.php",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca/agents-post-type.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp27494/var/www/travelleaders-tzell/tzell-agent-profile-www/public_html/wp-content/themes/enfold/o2dca/o2dca.php",
+		"/C/Users/Paul/AppData/Local/Temp/gift_cards_confirmed-3.csv",
+		"/C/Users/Paul/AppData/Local/Temp/gift_cards_confirmed-1.csv",
+		"/C/Users/Paul/AppData/Local/Temp/gift_cards_confirmed.csv",
+		"/C/Users/Paul/AppData/Local/Temp/scp26996/var/www/travelleaders-tzell/tzell-agent-profile-www/public_html/wp-content/themes/enfold/o2dca/theme-options.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp34340/var/www/travelleaders-tzell/tzell-agent-profile-www/public_html/wp-content/themes/enfold/o2dca/o2dca.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp50157/var/www/travelleaders-tzell/tzell-agent-profile-www/public_html/wp-content/themes/enfold/o2dca/theme-options.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp00674/var/www/travelleaders-tzell/tzell-www/public_html/wp-content/themes/enfold/o2dca/gc-admin-page.php",
+		"/C/Users/Paul/Downloads/Page_Source_GUI/Page_Source_GUI.au3",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca/CardConnectRestClient.php",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/.htaccess",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/installer-log.txt",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/Sound/Sound.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/Color Highlighter/ColorHighlighter.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/User/GutterColor.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/Gutter Color/GutterColor.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/User/bh_core.sublime-settings",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Paul/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-config.php",
+		"/C/Users/Paul/Downloads/basic-email-template/stylesheets/email.css",
+		"/C/Users/Paul/Downloads/basic-email-template/basic.html",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/functions.php",
+		"/O/! Client Work !/Tzell/Project_2_gift_cards/Source/public_html/wp-content/themes/enfold/o2dca/CPT.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca/js/gift-card-page.js",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca/css/gift-card-page.css",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca-templates/gift-card-page.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca/o2dca.php",
+		"/O/! Client Work !/Tzell/public_html/.htaccess",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca/agents-post-type.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca/form-handler.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca-templates/confirm_gift_card.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca-templates/test.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp57277/var/www/travelleaders-tzell/tzell-www/public_html/.htaccess",
+		"/O/! Client Work !/Tzell/public_html/wp-config.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp21668/var/www/travelleaders-group/worldwide-hotels-site-www/public_html/wp-content/themes/tlg_hotel_program/o2dca/add-lodges-public.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp58912/var/www/travelleaders-tzell/tzell-www/public_html/wp-config.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/functions.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca/CPT.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp06215/var/www/travelleaders-group/worldwide-hotels-site-www/public_html/wp-content/themes/tlg_hotel_program/o2dca-templates/lodging-landing.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp06610/var/www/travelleaders-group/worldwide-hotels-site-www/public_html/wp-content/themes/tlg_hotel_program/o2dca-templates/lodging.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/o2dca/books-post-type.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp36293/var/www/travelleaders-tzell/tzell-www/public_html/wp-content/themes/enfold/header.php",
+		"/C/Users/Paul/Dropbox/Work/Kyle/mailer.php",
+		"/C/Users/Paul/Dropbox/Work/Kyle/js/javascript.js",
+		"/C/Users/Paul/Dropbox/Work/Kyle/index.php",
+		"/C/Users/Paul/Dropbox/Work/Start/style.css",
+		"/C/Users/Paul/Dropbox/Work/Start/index.html",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/header.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/index.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/uploads/dynamic_avia/index.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/uploads/dynamic_avia/enfold.css",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/css/dynamic-css.php",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/css/print.css",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/css/grid.css",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/style.css",
+		"/O/! Client Work !/Tzell/public_html/wp-content/themes/enfold/page.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp21836/var/www/travelleaders-tzell/tzell-www/public_html/wp-config-sample.php",
+		"/C/Users/Paul/AppData/Local/Temp/scp21570/var/www/travelleaders-tzell/tzell-www/public_html/wp-config.php"
+	],
+	"find":
+	{
+		"height": 70.0
+	},
+	"find_in_files":
+	{
+		"height": 92.0,
+		"where_history":
+		[
+			"<open files>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"color:",
+			"fff",
+			"7",
+			"https://google.com/",
+			"form#gift-card fieldset#amounts button",
+			"slideToggle()",
+			");\n",
+			"$agent",
+			"$email",
+			"$CCstate",
+			"$CCzip",
+			"$CCcity",
+			"$CCaddress",
+			"ccv",
+			"$CCexp",
+			"$CCcvv",
+			"$CCCvv",
+			"$CCnum",
+			"$CCname",
+			"$CCemail",
+			"$message",
+			"$amount",
+			"$type",
+			"$agent",
+			"$name",
+			"$email",
+			"$test ",
+			"get_agent_csv",
+			"_page",
+			"}\n",
+			"type",
+			"accttype",
+			"$_POST['CCccv']",
+			"purchased_timestamp",
+			"purchase_timestamp",
+			"purchased_timestamp",
+			"label",
+			"name",
+			"gutter",
+			"scroll",
+			"package",
+			"$email",
+			"agent_email",
+			"</p><p style=\"text-transform:uppercase;\">",
+			"CCemail",
+			"$_POST['CCname']",
+			";\n",
+			"CCdate",
+			"margin-left",
+			"fieldset",
+			"CCtype",
+			"fieldset#CCStatezip",
+			"CCzip",
+			"CCcity",
+			" !important",
+			"rgb(225, 225, 225)",
+			"$billing_details_id",
+			"_POST['whom']",
+			"_POST['agent']",
+			"gallery",
+			"$books"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"https://www.google.com/",
+			"slideToggle('fast')",
+			"$gc_data['CCstate']",
+			"$gc_data['CCzip']",
+			"$gc_data['CCcity']",
+			"$gc_data['CCaddress']",
+			"$gc_data['CCexp']",
+			"$gc_data['CCnum']",
+			"$gc_data['CCname']",
+			"$gc_data['CCemail']",
+			"$gc_data['message']",
+			"$gc_data['amount']",
+			"$gc_data['type']",
+			"$gc_data['name']",
+			"$gc_data['agent']",
+			"$gc_data['name']",
+			"$gc_data['email']",
+			"$gc_data['name']",
+			"$gc_data['email']",
+			"$gccs ",
+			"<br>",
+			"",
+			"#E1E1E1",
+			"$GLOBALS['billing_details_id']",
+			"agent",
+			"$agents"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								507,
+								507
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Seti.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								414,
+								414
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Seti.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2706,
+								2706
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker-OceanicNext.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 26.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Start Page.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"installer-log.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"O:\\! Client Work !\\Mainjoy_Unlimited\\nest_run_1\\Source\\Nest Run.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 241.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

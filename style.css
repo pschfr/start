@@ -1,0 +1,76 @@
+@charset "utf-8";
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+body {
+	-webkit-transition: all 1s .25s;
+	        transition: all 1s .25s;
+	text-transform: lowercase;
+	font-family: 'Office Code Pro', monospace;
+	font-size: 16px;
+	color: #aaa;
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+	position: fixed;
+	right: 0;
+	left: 0;
+}
+ul {
+    background-color: rgba(0, 0, 0, .5);
+	margin: 35vh auto;
+	list-style: none;
+	max-width: 600px;
+	display: block;
+	width: 75%;
+	padding: 0;
+}
+ul.subMenu {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+a {
+	-webkit-transition: all .25s;
+			transition: all .25s;
+	text-decoration: none;
+	display: block;
+	outline: none;
+	padding: 10px;
+	color: #fff;
+}
+a:after {
+    -webkit-transform: translateX(-20px);
+    		transform: translateX(-20px);
+	-webkit-transition: all .25s;
+			transition: all .25s;
+	content: "→";
+	opacity: 0;
+}
+a:hover:after, a.active:after {
+    -webkit-transform: translateX(0);
+    		transform: translateX(0);
+	-webkit-transition: all .25s;
+			transition: all .25s;
+	padding-left: 6px;
+	opacity: 1;
+}
+p {
+	padding: 10px;
+	margin: 0;
+}
+span { color: #aaa; }
+.left { float: left; }
+.clear { clear: both; }
+.right { float: right; }
+.center { text-align: center; }
+div.right, div.left { width: 50%; }
+ul > li:hover > a#parent1, a.tab1, a.tab1:hover, a#parent1:hover, a#parent1.active { background-color: #336666; }
+ul > li:hover > a#parent2, a.tab2, a.tab2:hover, a#parent2:hover, a#parent2.active { background-color: #663333; }
+ul > li:hover > a#parent3, a.tab3, a.tab3:hover, a#parent3:hover, a#parent3.active { background-color: #336633; }
+ul > li:hover > a#parent4, a.tab4, a.tab4:hover, a#parent4:hover, a#parent4.active { background-color: #663366; }
+ul > li:hover > a#parent5, a.tab5, a.tab5:hover, a#parent5:hover, a#parent5.active { background-color: #84AED0; }
+ul > li:hover > a#parent6, a.tab6, a.tab6:hover, a#parent6:hover, a#parent6.active { background-color: #666633; }
+a#parent1:after, a#parent2:after, a#parent3:after, a#parent4:after, a#parent5:after, a#parent6:after { content: "↓"; }
+ul > li:hover > a#parent1, ul > li:hover > a#parent2, ul > li:hover > a#parent3, ul > li:hover > a#parent4, ul > li:hover > a#parent5, ul > li:hover > a#parent6, a:hover, a.active { opacity: 1; }
