@@ -10,7 +10,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
 		<style type="text/css">
-			body { background: url(/trippy/<?php echo $selectedBg; ?>) center 100%; }
+			body { background: url(/start/trippy/<?php echo $selectedBg; ?>) center 100%; }
 		</style>
 	</head>
 	<body>

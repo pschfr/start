@@ -101,7 +101,7 @@ Mousetrap.bind('space', function(e){
 	randNum = Math.floor((Math.random()*11));
 	$('.quote').html("<p>&ldquo;" + quotes[randNum] + "&rdquo;</p>" + "<cite><p><small>" + quoted[randNum] + "</small></p></cite>");
 	randNum2 = Math.floor((Math.random()*22)+1);
-	$('body').css('background-image', 'url(/trippy/bg' + randNum2 + '.png)');
+	$('body').css('background-image', 'url(/start/trippy/bg' + randNum2 + '.png)');
 	if("geolocation" in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude+','+position.coords.longitude);
