@@ -1,7 +1,7 @@
 var quotes = [ "If you are depressed you are living in the past. If you are anxious you are living in the future. If you are at peace you are living in the present.", "Madness, as you know, is a lot like gravity, all it takes is a little push.", "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently.", "Life has many ways of testing a person's will, either by having nothing happen at all or by having everything happen all at once.", "There is no excellent beauty that hath not some strangeness in its proportions.", "Children are fantastic little creatures, because next to drunk people, they are the only truly honest people on earth.", "I begin with an idea, and then it becomes something else.", "Be who you are and say what you feel because those who mind don't matter and those who matter don't mind.", "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get people interested in you.", "An essential aspect of creativity is not being afraid to fail.", "Antisocial behavior is a trait of intelligence in a world of conformists." ];
 var quoted = [ "Lao Tzu", "Joker", "Friedrich Nietzsche", "Paulo Coelho", "Sir Francis Bacon", "Mads Nipper", "Pablo Picasso", "Dr. Seuss", "Dale Carnegie", "Edwin Land", "Nikola Tesla" ];
 var links  = [ 'https://facebook.com/', 'https://messenger.com/', 'https://instagram.com/', 'https://tumblr.com/', 'https://twitter.com/', 'https://mail.google.com/','https://youtube.com/','https://soundcloud.com/','https://music.google.com/','https://play.spotify.com/','https://reddit.com/','https://reddit.com/r/trees/','https://reddit.com/r/see/','https://reddit.com/r/blackpeopletwitter/','https://reddit.com/r/showerthoughts/','https://reddit.com/r/unixporn/','https://reddit.com/r/startpages/','https://imgur.com/','https://gfycat.com/','https://pastebin.com/','https://stackoverflow.com/','https://developer.mozilla.com/', 'https://github.com/', 'https://askubuntu.com/', 'https://www.google.com/fonts/', 'https://unsplash.com/', 'http://en.wikipedia.org/', 'http://wolframalpha.com/', 'https://niice.co/', 'https://www.google.com/images/', 'http://life.o2dca.com/', 'http://admin.o2dca.com/', 'https://www.toggl.com/app/timer', 'http://bugs.o2dca.com/', 'https://mail.google.com/mail/u/1/#inbox', 'http://xkcd.com/', 'http://explosm.net/', 'http://potshotcomic.com/', 'http://powernapcomic.com/', 'http://extrafabulouscomics.com/', 'http://thedoghousediaries.com/', 'http://questionablecontent.net/', 'http://smbc-comics.com/', 'http://theoatmeal.com/comics/' ];
-var randNum = Math.floor((Math.random()*11)), randNum2 = Math.floor((Math.random()*22)+1);
+var randNum = Math.floor((Math.random()*11));
 
 function getWeather(location) {
 	$.simpleWeather({
@@ -100,8 +100,10 @@ Mousetrap.bind('space', function(e){
 	$('li a').removeClass('active');
 	randNum = Math.floor((Math.random()*11));
 	$('.quote').html("<p>&ldquo;" + quotes[randNum] + "&rdquo;</p>" + "<cite><p><small>" + quoted[randNum] + "</small></p></cite>");
-	randNum2 = Math.floor((Math.random()*22)+1);
-	$('body').css('background-image', 'url(/start/trippy/bg' + randNum2 + '.png)');
+	$('div.wrapper').attr('class',
+    	function(i, c){
+    		return c.replace(/(^|\s)bg\S+/g, '');
+	}).addClass('bg' + (randNum + 1));
 	if("geolocation" in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude+','+position.coords.longitude);

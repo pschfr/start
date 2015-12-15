@@ -1,21 +1,13 @@
-<?php
-	$bg = array('bg1.png', 'bg2.png', 'bg3.png', 'bg4.png', 'bg5.png', 'bg6.png', 'bg7.png', 'bg8.png', 'bg9.png', 'bg10.png', 'bg11.png', 'bg12.png', 'bg13.png', 'bg14.png', 'bg15.png', 'bg16.png', 'bg17.png', 'bg18.png', 'bg19.png', 'bg20.png', 'bg21.png', 'bg22.png');
-	$i = rand(0, count($bg)-1);
-  	$selectedBg = "$bg[$i]";
-?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<title>New Tab</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
-		<style type="text/css">
-			body { background: url(/start/trippy/<?php echo $selectedBg; ?>) center 100%; }
-		</style>
 	</head>
 	<body>
 		<canvas style="z-index: 9" id="snow"></canvas>
-		<div class="wrapper">
+		<div class="wrapper bg<?php echo rand(1, 11) ?>">
 			<ul>
 				<p class="center">Howdy! In <span class="location">Hell</span>, the weather is <span class="current">null</span>, the temperature is <span class="temp">--</span>&deg;, and the wind is <span class="wind">0mph N</span>.</p>
 				<div class="left">
