@@ -103,7 +103,7 @@ Mousetrap.bind('space', function(e){
 	$('div.wrapper').attr('class',
     	function(i, c){
     		return c.replace(/(^|\s)bg\S+/g, '');
-	}).addClass('bg' + (randNum + 1));
+		}).addClass('bg' + (randNum + 1));
 	if("geolocation" in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude+','+position.coords.longitude);
