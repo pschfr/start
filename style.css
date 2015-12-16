@@ -5,19 +5,14 @@ body {
 	-webkit-transition: all 1s .25s;
 	        transition: all 1s .25s;
 	text-transform: lowercase;
+	-webkit-animation: fadeIn 1s .5s 1 both;
+	-moz-animation:    fadeIn 1s .5s 1 both;
+	animation:         fadeIn 1s .5s 1 both;
 	font-family: 'Office Code Pro', monospace;
 	font-size: 16px;
 	color: #aaa;
     padding: 0;
     margin: 0;
-}
-.wrapper {
-	-webkit-animation: fadeIn 1s .5s 1 both;
-	-moz-animation:    fadeIn 1s .5s 1 both;
-	animation:         fadeIn 1s .5s 1 both;
-	position: fixed;
-	right: 0;
-	left: 0;
 }
 ul {
     background-color: rgba(0, 0, 0, .5);
