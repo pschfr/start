@@ -100,7 +100,7 @@ Mousetrap.bind('space', function(e){
 	$('li a').removeClass('active');
 	randNum = Math.floor((Math.random()*11));
 	$('.quote').html("<p>&ldquo;" + quotes[randNum] + "&rdquo;</p>" + "<cite><p><small>" + quoted[randNum] + "</small></p></cite>");
-	$('div.wrapper').attr('class',
+	$('body').attr('class',
     	function(i, c){
     		return c.replace(/(^|\s)bg\S+/g, '');
 		}).addClass('bg' + (randNum + 1));
