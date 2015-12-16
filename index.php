@@ -6,7 +6,6 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<canvas style="z-index: 9" id="snow"></canvas>
 		<div class="wrapper bg<?php echo rand(1, 11) ?>">
 			<ul>
 				<p class="center">Howdy! In <span class="location">Hell</span>, the weather is <span class="current">null</span>, the temperature is <span class="temp">--</span>&deg;, and the wind is <span class="wind">0mph N</span>.</p>
