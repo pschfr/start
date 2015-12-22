@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body class="bg<?php echo rand(1, 11) ?>">
+	<body class="bg<?php echo rand(1, 15) ?>">
 		<ul>
 			<p class="center">Howdy! In <span class="location"></span>, the weather is <span class="current"></span>, the temperature is <span class="temp"></span>&deg;, and the wind is <span class="wind"></span>.</p>
 			<div class="left">
