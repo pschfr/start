@@ -3,17 +3,16 @@ html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
 	font-family: 'Office Code Pro', monospace;
-	-webkit-transition: all 1s .25s;
-	        transition: all 1s .25s;
 	text-transform: lowercase;
+	overflow: hidden;
 	font-size: 16px;
-	color: #aaa;
     padding: 0;
+	color: #aaa;
     margin: 0;
 }
 ul {
     background-color: rgba(0, 0, 0, .5);
-	margin: 35vh auto;
+	margin: 35.5vh auto;
 	list-style: none;
 	max-width: 600px;
 	display: block;
