@@ -16,7 +16,7 @@ function getWeather(location) {
 	});
 }
 
-Mousetrap.bind('esc', function(e) {
+Mousetrap.bind(['esc', 'space'], function(e) {
 	$('.subMenu').slideUp('fast');
 	$('li a').removeClass('active');
 	return false;
@@ -95,22 +95,6 @@ Mousetrap.bind('c', function(e) {
 	Mousetrap.bind('o', function(e) { window.location.href = links[43]; });
 	return false;
 });
-Mousetrap.bind('space', function(e){
-	$('.subMenu').slideUp('fast');
-	$('li a').removeClass('active');
-	randNum = Math.floor((Math.random()*15));
-	$('.quote').html("<p>&ldquo;" + quotes[randNum] + "&rdquo;</p>" + "<cite><p><small>" + quoted[randNum] + "</small></p></cite>");
-	$('body').attr('class',
-    	function(i, c){
-    		return c.replace(/(^|\s)bg\S+/g, '');
-		}).addClass('bg' + (randNum + 1));
-	if("geolocation" in navigator) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-	    	getWeather(position.coords.latitude+','+position.coords.longitude);
-	  	});
-	} else { getWeather("Pittsburgh, PA"); }
-	return false;
-});
 
 $(function() {
 	$('.quote').html("<p>&ldquo;" + quotes[randNum] + "&rdquo;</p>" + "<cite><p><small>" + quoted[randNum] + "</small></p></cite>");
@@ -124,4 +108,18 @@ $(function() {
 		$("ul",this).slideToggle('fast');
 		$("a.parent", this).toggleClass('active');
 	});
+
+	setInterval(function(){
+		randNum = Math.floor((Math.random()*15));
+		$('.quote').html("<p>&ldquo;" + quotes[randNum] + "&rdquo;</p>" + "<cite><p><small>" + quoted[randNum] + "</small></p></cite>");
+		$('body').attr('class',
+    		function(i, c){
+    			return c.replace(/(^|\s)bg\S+/g, '');
+			}).addClass('bg' + (randNum + 1));
+		if("geolocation" in navigator) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+	    		getWeather(position.coords.latitude+','+position.coords.longitude);
+	  		});
+		} else { getWeather("Pittsburgh, PA"); }
+	}, 30000);
 });
