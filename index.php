@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>New Tab</title>
+		<title>pschfr's new tab</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
 	</head>
