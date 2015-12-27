@@ -121,5 +121,5 @@ $(function() {
 		$("ul",this).slideToggle('fast');
 		$("a.parent", this).toggleClass('active');
 	});
-	setInterval(function(){ refreshStuffs(); }, 5000);
+	setInterval(function(){ refreshStuffs(); }, 30000);
 });
