@@ -3,6 +3,9 @@ html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
 	font-family: 'Office Code Pro', monospace;
+	-webkit-animation: fadeIn 1s .5s 1 both;
+	-moz-animation:    fadeIn 1s .5s 1 both;
+	animation:         fadeIn 1s .5s 1 both;
 	text-transform: lowercase;
 	overflow: hidden;
 	font-size: 16px;
@@ -113,3 +116,15 @@ ul > li:hover > a#parent5, a.tab5, a.tab5:hover, a#parent5:hover, a#parent5.acti
 ul > li:hover > a#parent6, a.tab6, a.tab6:hover, a#parent6:hover, a#parent6.active { background-color: #666633; }
 a#parent1:after, a#parent2:after, a#parent3:after, a#parent4:after, a#parent5:after, a#parent6:after { content: "↓"; }
 ul > li:hover > a#parent1, ul > li:hover > a#parent2, ul > li:hover > a#parent3, ul > li:hover > a#parent4, ul > li:hover > a#parent5, ul > li:hover > a#parent6, a:hover, a.active { opacity: 1; }
+@-webkit-keyframes fadeIn {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes fadeIn {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
