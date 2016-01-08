@@ -7,7 +7,7 @@
 	</head>
 	<body class="bg<?php echo rand(1, 15) ?>">
 		<ul>
-			<p class="center">Howdy! In <span class="location"></span>, the weather is <span class="current"></span>, the temperature is <span class="temp"></span>&deg;, and the wind is <span class="wind"></span>.</p>
+			<p class="center"><span class="greeting"></span>! In <span class="location"></span>, the weather is <span class="current"></span>,<br>the temperature is <span class="temp"></span>&deg;, and the wind is <span class="wind"></span>.</p>
 			<div class="left">
 				<li><a id="parent1" class="parent" href="javascript:void(0)">Social Media<span class="right">s</span></a>
 					<ul class="subMenu">
