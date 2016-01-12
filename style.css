@@ -4,8 +4,8 @@ html { box-sizing: border-box; }
 body {
 	font-family: 'Office Code Pro', monospace;
 	-webkit-animation: fadeIn 1s .5s 1 both;
-	-moz-animation:    fadeIn 1s .5s 1 both;
-	animation:         fadeIn 1s .5s 1 both;
+	   -moz-animation: fadeIn 1s .5s 1 both;
+	        animation: fadeIn 1s .5s 1 both;
 	text-transform: lowercase;
 	overflow: hidden;
 	font-size: 16px;
@@ -13,7 +13,7 @@ body {
 	color: #aaa;
     margin: 0;
 }
-ul {
+ul.box {
     background-color: rgba(0, 0, 0, .5);
 	margin: 36vh auto;
 	list-style: none;
@@ -30,6 +30,7 @@ ul.subMenu {
 }
 a {
 	-webkit-transition: all .25s;
+	   -moz-transition: all .25s;
 			transition: all .25s;
 	text-decoration: none;
 	display: block;
@@ -39,16 +40,20 @@ a {
 }
 a:after {
     -webkit-transform: translateX(-20px);
+	   -moz-transform: translateX(-20px);
     		transform: translateX(-20px);
 	-webkit-transition: all .25s;
+	   -moz-transition: all .25s;
 			transition: all .25s;
 	content: "→";
 	opacity: 0;
 }
 a:hover:after, a.active:after {
     -webkit-transform: translateX(0);
+	   -moz-transform: translateX(0);
     		transform: translateX(0);
 	-webkit-transition: all .25s;
+	   -moz-transition: all .25s;
 			transition: all .25s;
 	padding-left: 6px;
 	opacity: 1;

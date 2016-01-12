@@ -23,6 +23,7 @@ function refreshStuffs() {
     	function(i, c){
     		return c.replace(/(^|\s)bg\S+/g, '');
 		}).addClass('bg' + (Math.floor((Math.random()*15)) + 1));
+	//TODO: Improve geolocation detection
 	if("geolocation" in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude+','+position.coords.longitude);
