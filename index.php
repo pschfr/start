@@ -3,6 +3,7 @@
 	<head>
 		<title>pschfr's new tab</title>
 		<meta charset="utf-8">
+		<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Source+Code+Pro'>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body class="bg<?php echo rand(1, 15) ?>">

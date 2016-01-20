@@ -2,7 +2,7 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
-	font-family: 'Office Code Pro', monospace;
+	font-family: 'Source Code Pro', monospace;
 	-webkit-animation: fadeIn 1s .5s 1 both;
 	   -moz-animation: fadeIn 1s .5s 1 both;
 	        animation: fadeIn 1s .5s 1 both;
