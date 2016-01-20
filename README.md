@@ -1,4 +1,4 @@
-# Start
+# Start [http://pschfr.net/start/](http://pschfr.net/start/)
 Personal new tab page. WIP.
 
 The background gradient randomizes on page load, as does the quote. Weather is geolocated, otherwise defaults to Pittsburgh.
