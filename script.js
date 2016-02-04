@@ -115,6 +115,12 @@ Mousetrap.bind('space', function(e){
 	refreshStuffs();
 	return false;
 });
+Mousetrap.bind('up up down down left right left right b a enter', function() {
+	$('body').attr('class',
+    	function(i, c){
+    		return c.replace(/(^|\s)bg\S+/g, '');
+		}).addClass('rnbw');
+});
 
 $(function() {
 	refreshStuffs();
