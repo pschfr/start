@@ -119,6 +119,7 @@ body.rnbw{ background: -webkit-gradient(linear,  left top,  left bottom,
         					rgba(255, 0, 255, 1) 80%,
         					rgba(255, 0, 0, 1) 100%);
 		 font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard', fantasy;
+		 font-size: 115%;
 }
 ul > li:hover > a#parent1, a.tab1, a.tab1:hover, a#parent1:hover, a#parent1.active { background-color: #336666; }
 ul > li:hover > a#parent2, a.tab2, a.tab2:hover, a#parent2:hover, a#parent2.active { background-color: #663333; }
