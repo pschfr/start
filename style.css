@@ -74,36 +74,36 @@ span    { color: #aaa; }
 div.right, div.left { width: 50%; }
 
 /* TODO: Radial gradients, maybe trianglify? */
-body.bg1 { background: -webkit-radial-gradient(#2F2727, #1a82f7);
-		   background:    -moz-radial-gradient(#2F2727, #1a82f7); }
-body.bg2 { background: -webkit-radial-gradient(#282175, #8ea77b);
-		   background: 	  -moz-radial-gradient(#282175, #8ea77b); }
-body.bg3 { background: -webkit-radial-gradient(#1F1C2C, #928DAB);
-		   background: 	  -moz-radial-gradient(#1F1C2C, #928DAB); }
-body.bg4 { background: -webkit-radial-gradient(#ec7972, #7879c7);
- 		   background: 	  -moz-radial-gradient(#ec7972, #7879c7); }
-body.bg5 { background: -webkit-radial-gradient(#c71d37, #1d63e6);
-		   background: 	  -moz-radial-gradient(#c71d37, #1d63e6); }
-body.bg6 { background: -webkit-radial-gradient(#2bdcfe, #a807b1);
-		   background: 	  -moz-radial-gradient(#2bdcfe, #a807b1); }
-body.bg7 { background: -webkit-radial-gradient(#6111bc, #7c90ad);
-		   background: 	  -moz-radial-gradient(#6111bc, #7c90ad); }
-body.bg8 { background: -webkit-radial-gradient(#348F50, #56B4D3);
-		   background: 	  -moz-radial-gradient(#348F50, #56B4D3); }
-body.bg9 { background: -webkit-radial-gradient(#7db1c2, #315d90);
-		   background: 	  -moz-radial-gradient(#7db1c2, #315d90); }
-body.bg10{ background: -webkit-radial-gradient(#cf353b, #29a39a);
-		   background: 	  -moz-radial-gradient(#cf353b, #29a39a); }
-body.bg11{ background: -webkit-radial-gradient(#6b64be, #e0c87d);
-		   background: 	  -moz-radial-gradient(#6b64be, #e0c87d); }
-body.bg12{ background: -webkit-radial-gradient(#3d72b4, #525252);
-		   background: 	  -moz-radial-gradient(#3d72b4, #525252); }
-body.bg13{ background: -webkit-radial-gradient(#517fa4, #243949);
-		   background: 	  -moz-radial-gradient(#517fa4, #243949); }
-body.bg14{ background: -webkit-radial-gradient(#FFA17F, #00223E);
-		   background: 	  -moz-radial-gradient(#FFA17F, #00223E); }
-body.bg15{ background: -webkit-radial-gradient(#360033, #0b8793);
-		   background: 	  -moz-radial-gradient(#360033, #0b8793); }
+body.bg1 { background: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+		   background:    -moz-linear-gradient(top, #2F2727, #1a82f7); }
+body.bg2 { background: -webkit-linear-gradient(top, #282175, #8ea77b);
+		   background: 	  -moz-linear-gradient(top, #282175, #8ea77b); }
+body.bg3 { background: -webkit-linear-gradient(top, #1F1C2C, #928DAB);
+		   background: 	  -moz-linear-gradient(top, #1F1C2C, #928DAB); }
+body.bg4 { background: -webkit-linear-gradient(top, #ec7972, #7879c7);
+ 		   background: 	  -moz-linear-gradient(top, #ec7972, #7879c7); }
+body.bg5 { background: -webkit-linear-gradient(top, #c71d37, #1d63e6);
+		   background: 	  -moz-linear-gradient(top, #c71d37, #1d63e6); }
+body.bg6 { background: -webkit-linear-gradient(top, #2bdcfe, #a807b1);
+		   background: 	  -moz-linear-gradient(top, #2bdcfe, #a807b1); }
+body.bg7 { background: -webkit-linear-gradient(top, #6111bc, #7c90ad);
+		   background: 	  -moz-linear-gradient(top, #6111bc, #7c90ad); }
+body.bg8 { background: -webkit-linear-gradient(top, #348F50, #56B4D3);
+		   background: 	  -moz-linear-gradient(top, #348F50, #56B4D3); }
+body.bg9 { background: -webkit-linear-gradient(top, #7db1c2, #315d90);
+		   background: 	  -moz-linear-gradient(top, #7db1c2, #315d90); }
+body.bg10{ background: -webkit-linear-gradient(top, #cf353b, #29a39a);
+		   background: 	  -moz-linear-gradient(top, #cf353b, #29a39a); }
+body.bg11{ background: -webkit-linear-gradient(top, #6b64be, #e0c87d);
+		   background: 	  -moz-linear-gradient(top, #6b64be, #e0c87d); }
+body.bg12{ background: -webkit-linear-gradient(top, #3d72b4, #525252);
+		   background: 	  -moz-linear-gradient(top, #3d72b4, #525252); }
+body.bg13{ background: -webkit-linear-gradient(top, #517fa4, #243949);
+		   background: 	  -moz-linear-gradient(top, #517fa4, #243949); }
+body.bg14{ background: -webkit-linear-gradient(top, #FFA17F, #00223E);
+		   background: 	  -moz-linear-gradient(top, #FFA17F, #00223E); }
+body.bg15{ background: -webkit-linear-gradient(top, #360033, #0b8793);
+		   background: 	  -moz-linear-gradient(top, #360033, #0b8793); }
 body.rnbw{ background: -webkit-gradient(linear,  left top,  left bottom,
         					color-stop(0%, rgba(255, 0, 0, 1)),
         					color-stop(15%, rgba(255, 255, 0, 1)),
