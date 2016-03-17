@@ -134,6 +134,10 @@ ul > li:hover > a#parent6, a.tab6, a.tab6:hover, a#parent6:hover, a#parent6.acti
 a#parent1:after, a#parent2:after, a#parent3:after, a#parent4:after, a#parent5:after, a#parent6:after { content: "↓"; }
 ul > li:hover > a#parent1, ul > li:hover > a#parent2, ul > li:hover > a#parent3, ul > li:hover > a#parent4, ul > li:hover > a#parent5, ul > li:hover > a#parent6, a:hover, a.active { opacity: 1; }
 
+@media (max-width: 768px) {
+	ul.box { width: 70%; }
+}
+
 @-webkit-keyframes fadeIn {
 	  0% { opacity: 0; }
 	100% { opacity: 1; }
