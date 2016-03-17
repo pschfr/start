@@ -1,11 +1,15 @@
 // Loads in the Inconsolata font from Google
-WebFont.load( { google: { families: [ 'Inconsolata' ] } } );
+WebFont.load( {
+	google: { families: [ 'Inconsolata' ] },
+	active: function (){ console.log('Inconsolata loaded'); }
+} );
 
 // Gets weather for requested location, appends to page
 function getWeather(location) {
 	$.simpleWeather({
 		location: location,
 		success: function(weather) {
+			console.log(weather);
 			$('.location').html(weather.city + ', ' + weather.region);
 			$('.current').html(weather.currently);
 			$('.temp').html(weather.temp);
@@ -31,6 +35,7 @@ function refreshStuffs() {
     	function(i, c){
     		return c.replace(/(^|\s)bg\S+/g, '');
 		}).addClass('bg' + (Math.floor((Math.random()*15)) + 1));
+	console.log('refreshed, woo!');
 
 	// Geolocates the user, otherwise defaulting to Pittsburgh
 	// TODO: I'm not too sure the fallback works? The geolocation definitely does
@@ -46,6 +51,7 @@ Mousetrap.bind('esc', function(e) {
 	$('body').removeClass('rnbw').addClass('bg' + (Math.floor((Math.random()*15)) + 1));
 	$('.subMenu').slideUp('fast');
 	$('li a').removeClass('active');
+	console.log('you escaped!');
 	return false;
 });
 
