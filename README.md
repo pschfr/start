@@ -11,4 +11,4 @@ I recommend using [Replace New Tab Page for Chrome](https://chrome.google.com/we
 
 Browse similar style pages on [/r/startpages](https://reddit.com/r/startpages).
 
- - [@pschfr](http://twitter.com/pschfr)
+[@pschfr](http://twitter.com/pschfr)
