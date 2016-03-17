@@ -1,8 +1,7 @@
-var quotes = [ "If you are depressed you are living in the past. If you are anxious you are living in the future. If you are at peace you are living in the present.", "Madness, as you know, is a lot like gravity, all it takes is a little push.", "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently.", "Life has many ways of testing a person's will, either by having nothing happen at all or by having everything happen all at once.", "There is no excellent beauty that hath not some strangeness in its proportions.", "Children are fantastic little creatures, because next to drunk people, they are the only truly honest people on earth.", "I begin with an idea, and then it becomes something else.", "Be who you are and say what you feel because those who mind don't matter and those who matter don't mind.", "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get people interested in you.", "An essential aspect of creativity is not being afraid to fail.", "Antisocial behavior is a trait of intelligence in a world of conformists.", "What you do today can improve all your tomorrows.", "A creative man is motivated by the desire to achieve, not by the desire to beat others.", "Don't watch the clock; do what it does. Keep going.", "If you can dream it, you can do it.", "You can't build a reputation on what you're going to do." ];
-var quoted = [ "Lao Tzu", "Joker", "Friedrich Nietzsche", "Paulo Coelho", "Sir Francis Bacon", "Mads Nipper", "Pablo Picasso", "Dr. Seuss", "Dale Carnegie", "Edwin Land", "Nikola Tesla", "Ralph Marston", "Ayn Rand", "Sam Levenson", "Walt Disney", "Henry Ford" ];
-var links  = [ 'https://facebook.com/', 'https://messenger.com/', 'https://instagram.com/', 'https://tumblr.com/', 'https://twitter.com/', 'https://mail.google.com/','https://youtube.com/','https://soundcloud.com/','https://music.google.com/','https://play.spotify.com/','https://reddit.com/','https://reddit.com/r/trees/','https://reddit.com/r/see/','https://reddit.com/r/blackpeopletwitter/','https://reddit.com/r/showerthoughts/','https://reddit.com/r/unixporn/','https://reddit.com/r/startpages/','https://imgur.com/','https://gfycat.com/','https://pastebin.com/','https://stackoverflow.com/','https://developer.mozilla.com/', 'https://github.com/', 'https://www.google.com/fonts/', 'https://unsplash.com/', 'http://en.wikipedia.org/', 'http://wolframalpha.com/', 'https://niice.co/', 'https://www.google.com/images/', 'http://caniuse.com/', 'http://life.o2dca.com/', 'http://admin.o2dca.com/', 'https://www.toggl.com/app/timer', 'http://bugs.o2dca.com/', 'https://mail.google.com/mail/u/1/#inbox', 'http://xkcd.com/', 'http://explosm.net/', 'http://potshotcomic.com/', 'http://powernapcomic.com/', 'http://extrafabulouscomics.com/', 'http://thedoghousediaries.com/', 'http://questionablecontent.net/', 'http://smbc-comics.com/', 'http://theoatmeal.com/comics/' ];
-var greets = [ 'Hello', 'Howdy', 'Yo', 'Sup', 'Wazzup', 'Salutations', 'Hey', 'Hi', 'Greetings', 'Aloha', 'Namaste', 'Hiya', 'Yello', 'Holla', 'Peace' ];
+// Loads in the Inconsolata font from Google
+WebFont.load( { google: { families: [ 'Inconsolata' ] } } );
 
+// Gets weather for requested location, appends to page
 function getWeather(location) {
 	$.simpleWeather({
 		location: location,
@@ -15,7 +14,16 @@ function getWeather(location) {
 		error: function(error) { console.log(error); }
 	});
 }
+
+// TODO: Rewrite to pull from JSON file, that way I don't have to dupicate links in the HTML
+var quotes = [ "If you are depressed you are living in the past. If you are anxious you are living in the future. If you are at peace you are living in the present.", "Madness, as you know, is a lot like gravity, all it takes is a little push.", "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently.", "Life has many ways of testing a person's will, either by having nothing happen at all or by having everything happen all at once.", "There is no excellent beauty that hath not some strangeness in its proportions.", "Children are fantastic little creatures, because next to drunk people, they are the only truly honest people on earth.", "I begin with an idea, and then it becomes something else.", "Be who you are and say what you feel because those who mind don't matter and those who matter don't mind.", "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get people interested in you.", "An essential aspect of creativity is not being afraid to fail.", "Antisocial behavior is a trait of intelligence in a world of conformists.", "What you do today can improve all your tomorrows.", "A creative man is motivated by the desire to achieve, not by the desire to beat others.", "Don't watch the clock; do what it does. Keep going.", "If you can dream it, you can do it.", "You can't build a reputation on what you're going to do." ];
+var quoted = [ "Lao Tzu", "Joker", "Friedrich Nietzsche", "Paulo Coelho", "Sir Francis Bacon", "Mads Nipper", "Pablo Picasso", "Dr. Seuss", "Dale Carnegie", "Edwin Land", "Nikola Tesla", "Ralph Marston", "Ayn Rand", "Sam Levenson", "Walt Disney", "Henry Ford" ];
+var links  = [ 'https://facebook.com/', 'https://messenger.com/', 'https://instagram.com/', 'https://tumblr.com/', 'https://twitter.com/', 'https://mail.google.com/','https://youtube.com/','https://soundcloud.com/','https://music.google.com/','https://play.spotify.com/','https://reddit.com/','https://reddit.com/r/trees/','https://reddit.com/r/see/','https://reddit.com/r/blackpeopletwitter/','https://reddit.com/r/showerthoughts/','https://reddit.com/r/unixporn/','https://reddit.com/r/startpages/','https://imgur.com/','https://gfycat.com/','https://pastebin.com/','https://stackoverflow.com/','https://developer.mozilla.com/', 'https://github.com/', 'https://www.google.com/fonts/', 'https://unsplash.com/', 'http://en.wikipedia.org/', 'http://wolframalpha.com/', 'https://niice.co/', 'https://www.google.com/images/', 'http://caniuse.com/', 'http://life.o2dca.com/', 'http://admin.o2dca.com/', 'https://www.toggl.com/app/timer', 'http://bugs.o2dca.com/', 'https://mail.google.com/mail/u/1/#inbox', 'http://xkcd.com/', 'http://explosm.net/', 'http://potshotcomic.com/', 'http://powernapcomic.com/', 'http://extrafabulouscomics.com/', 'http://thedoghousediaries.com/', 'http://questionablecontent.net/', 'http://smbc-comics.com/', 'http://theoatmeal.com/comics/' ];
+var greets = [ 'Hello', 'Howdy', 'Yo', 'Sup', 'Wazzup', 'Salutations', 'Hey', 'Hi', 'Greetings', 'Aloha', 'Namaste', 'Hiya', 'Yello', 'Holla', 'Peace' ];
+
+// Master refresh function
 function refreshStuffs() {
+	// Picks random number, appends random greeting, quote, and background
 	var randNum = Math.floor((Math.random()*15));
 	$('.greeting').html(greets[Math.floor((Math.random()*15))]);
 	$('.quote').html("<p>&ldquo;" + quotes[randNum] + "&rdquo;</p>" + "<cite><p><small>" + quoted[randNum] + "</small></p></cite>");
@@ -23,6 +31,9 @@ function refreshStuffs() {
     	function(i, c){
     		return c.replace(/(^|\s)bg\S+/g, '');
 		}).addClass('bg' + (Math.floor((Math.random()*15)) + 1));
+
+	// Geolocates the user, otherwise defaulting to Pittsburgh
+	// TODO: I'm not too sure the fallback works? The geolocation definitely does
 	if("geolocation" in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude+','+position.coords.longitude);
@@ -30,12 +41,16 @@ function refreshStuffs() {
 	} else { getWeather("Pittsburgh, PA"); }
 }
 
+// Esc to close all tabs, leave secret mode
 Mousetrap.bind('esc', function(e) {
 	$('body').removeClass('rnbw').addClass('bg' + (Math.floor((Math.random()*15)) + 1));
 	$('.subMenu').slideUp('fast');
 	$('li a').removeClass('active');
 	return false;
 });
+
+// Rest of the my bookmarks, perhaps I should rewrite how all this works
+// TODO: Shift modifier to open in new background tab w/o closing cell
 Mousetrap.bind('s', function(e) {
 	$('a#parent1').next().slideToggle('fast');
 	$('a#parent1').toggleClass('active');
@@ -110,12 +125,16 @@ Mousetrap.bind('c', function(e) {
 	Mousetrap.bind('o', function(e) { window.location.href = links[43]; });
 	return false;
 });
+
+// Refreshes everything, and closes all cells
 Mousetrap.bind('space', function(e){
 	$('.subMenu').slideUp('fast');
 	$('li a').removeClass('active');
 	refreshStuffs();
 	return false;
 });
+
+// SECRET PARTY MODE!!1! :D
 Mousetrap.bind('up up down down left right left right b a enter', function() {
 	$('body').attr('class',
     	function(i, c){
@@ -123,6 +142,7 @@ Mousetrap.bind('up up down down left right left right b a enter', function() {
 		}).addClass('rnbw');
 });
 
+// Does everything on page load, sets it to auto-refresh every 30s
 $(function() {
 	refreshStuffs();
 	$("ul.subMenu").hide();

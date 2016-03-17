@@ -1,9 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>pschfr's new tab</title>
 		<meta charset="utf-8">
-		<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Source+Code+Pro'>
+		<title>paul's new tab</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body class="bg<?php echo rand(1, 15) ?>">
@@ -81,7 +80,8 @@
 			<div class="clear"></div>
 			<p class="center quote"></p>
 		</ul>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.22/webfontloader.js" ></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
 		<script src="script.js"></script>

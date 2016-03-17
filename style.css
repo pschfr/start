@@ -1,11 +1,18 @@
 @charset "utf-8";
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
+
+.wf-loading p, .wf-loading a { opacity: 0; }
+.wf-active p, .wf-active a {
+	-webkit-transition: opacity .67s ease-in-out .33s;
+	-moz-transition: 	opacity .67s ease-in-out .33s;
+	transition: 		opacity .67s ease-in-out .33s;
+	visibility: visible;
+	opacity: 1;
+}
+
 body {
-	font-family: 'Source Code Pro', monospace;
-	-webkit-animation: fadeIn 1s .5s 1 both;
-	   -moz-animation: fadeIn 1s .5s 1 both;
-	        animation: fadeIn 1s .5s 1 both;
+	font-family: 'Inconsolata', monospace;
 	text-transform: lowercase;
 	overflow: hidden;
 	font-size: 16px;
@@ -72,6 +79,7 @@ span { color: #aaa; }
 .center { text-align: center; }
 div.right, div.left { width: 50%; }
 
+/* TODO: Radial gradients, maybe trianglify? */
 body.bg1 { background: -webkit-linear-gradient(top, #2F2727, #1a82f7);
 		   background:    -moz-linear-gradient(top, #2F2727, #1a82f7); }
 body.bg2 { background: -webkit-linear-gradient(top, #282175, #8ea77b);
@@ -121,6 +129,7 @@ body.rnbw{ background: -webkit-gradient(linear,  left top,  left bottom,
 		 font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard', fantasy;
 		 font-size: 115%;
 }
+
 ul > li:hover > a#parent1, a.tab1, a.tab1:hover, a#parent1:hover, a#parent1.active { background-color: #336666; }
 ul > li:hover > a#parent2, a.tab2, a.tab2:hover, a#parent2:hover, a#parent2.active { background-color: #663333; }
 ul > li:hover > a#parent3, a.tab3, a.tab3:hover, a#parent3:hover, a#parent3.active { background-color: #336633; }
@@ -130,23 +139,11 @@ ul > li:hover > a#parent6, a.tab6, a.tab6:hover, a#parent6:hover, a#parent6.acti
 a#parent1:after, a#parent2:after, a#parent3:after, a#parent4:after, a#parent5:after, a#parent6:after { content: "↓"; }
 ul > li:hover > a#parent1, ul > li:hover > a#parent2, ul > li:hover > a#parent3, ul > li:hover > a#parent4, ul > li:hover > a#parent5, ul > li:hover > a#parent6, a:hover, a.active { opacity: 1; }
 
+/* TODO: Rewrite this, it's barely responsive at all but it works, perhaps use Flexbox? */
 @media (max-width: 768px) {
 	ul.box {
 		margin: 25vh auto;
 		max-width: 100%;
 		width: 95%;
 	}
-}
-
-@-webkit-keyframes fadeIn {
-	0%   { opacity: 0; }
-	100% { opacity: 1; }
-}
-@-moz-keyframes fadeIn {
-	0%   { opacity: 0; }
-	100% { opacity: 1; }
-}
-@keyframes fadeIn {
-	0%   { opacity: 0; }
-	100% { opacity: 1; }
 }
