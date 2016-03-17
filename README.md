@@ -1,5 +1,5 @@
 # Start [http://pschfr.github.io/Start/](http://pschfr.github.io/Start/)
-Personal new tab page. WIP.
+Personal new tab page with bookmarks, weather, quote, and gradient background.
 
 ![http://pschfr.github.io/Start/](screenshot.png)
 
