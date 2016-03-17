@@ -7,8 +7,11 @@ body {
 	        animation: fadeIn .5s ease-in .5s 1 both;
 	font-family: 'Inconsolata', monospace;
 	text-transform: lowercase;
+	justify-content: center;
+	align-items: center;
 	overflow: hidden;
 	font-size: 18px;
+	display: flex;
 	height: 100vh;
 	color: #aaa;
 	opacity: 0;
@@ -17,11 +20,9 @@ body {
 }
 ul.box {
     background-color: rgba(0, 0, 0, .5);
-	justify-content: center;
-	align-items: center;
 	list-style: none;
 	max-width: 600px;
-	display: flex;
+	display: block;
 	width: 75%;
 	padding: 0;
 }
