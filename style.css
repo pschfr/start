@@ -17,10 +17,11 @@ body {
 }
 ul.box {
     background-color: rgba(0, 0, 0, .5);
-	margin: 36vh auto;
+	justify-content: center;
+	align-items: center;
 	list-style: none;
 	max-width: 600px;
-	display: block;
+	display: flex;
 	width: 75%;
 	padding: 0;
 }
