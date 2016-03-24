@@ -8,14 +8,8 @@ WebFont.load( {
 function getWeather(location) {
 	$.simpleWeather({
 		location: location,
-		success: function(weather) {
-			console.log(weather);
-			$('.location').html(weather.city + ', ' + weather.region);
-			$('.current').html(weather.currently);
-			$('.temp').html(weather.temp);
-			$('.wind').html(weather.wind.speed + weather.units.speed + ' ' + weather.wind.direction);
-		},
-		error: function(error) { console.log(error); }
+		success: function(weather) { $('.weather').html('In ' + weather.city + ', ' + weather.region + ', the weather is ' + weather.currently + ', the temperature is ' + weather.temp + '&deg;, and the wind is ' + weather.wind.speed + weather.units.speed + ' ' + weather.wind.direction); },
+		error: function(error) { $('.weather').html(error); }
 	});
 }
 
@@ -43,7 +37,7 @@ function refreshStuffs() {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude+','+position.coords.longitude);
 	  	});
-	} else { getWeather("Pittsburgh, PA"); }
+	} else { getWeather(2473224); }
 }
 
 // Esc to close all tabs, leave secret mode
