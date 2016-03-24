@@ -8,7 +8,7 @@ WebFont.load( {
 function getWeather(location) {
 	$.simpleWeather({
 		location: location,
-		success:  function(weather) { $('.weather').html('In ' + weather.city + ', ' + weather.region + ', the weather is ' + weather.currently + ', the temperature is ' + weather.temp + '&deg;, and the wind is ' + weather.wind.speed + weather.units.speed + ' ' + weather.wind.direction); },
+		success:  function(weather) { $('.weather').html('In ' + weather.city + ', ' + weather.region + ', the weather is ' + weather.currently + ',<br>the temperature is ' + weather.temp + '&deg;, and the wind is ' + weather.wind.speed + weather.units.speed + ' ' + weather.wind.direction); },
 		error:    function(error)   { $('.weather').html(error); }
 	});
 }
