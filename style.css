@@ -3,8 +3,7 @@ html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
 	-webkit-animation: fadeIn .5s ease-in .5s 1 both;
-	   -moz-animation: fadeIn .5s ease-in .5s 1 both;
-	        animation: fadeIn .5s ease-in .5s 1 both;
+	animation:         fadeIn .5s ease-in .5s 1 both;
 	font-family: 'Inconsolata', monospace;
 	text-transform: lowercase;
 	justify-content: center;
@@ -35,8 +34,7 @@ ul.subMenu {
 }
 a {
 	-webkit-transition: all .25s;
-	   -moz-transition: all .25s;
-			transition: all .25s;
+	transition:         all .25s;
 	text-decoration: none;
 	display: block;
 	outline: none;
@@ -45,21 +43,17 @@ a {
 }
 a:after {
     -webkit-transform: translateX(-20px);
-	   -moz-transform: translateX(-20px);
-    		transform: translateX(-20px);
+    transform:         translateX(-20px);
 	-webkit-transition: all .25s;
-	   -moz-transition: all .25s;
-			transition: all .25s;
+	transition:         all .25s;
 	content: "→";
 	opacity: 0;
 }
 a:hover:after, a.active:after {
     -webkit-transform: translateX(0);
-	   -moz-transform: translateX(0);
-    		transform: translateX(0);
+	transform:         translateX(0);
 	-webkit-transition: all .25s;
-	   -moz-transition: all .25s;
-			transition: all .25s;
+	transition:         all .25s;
 	padding-left: 6px;
 	opacity: 1;
 }
@@ -75,52 +69,38 @@ span    { color: #aaa; }
 .center { text-align: center; }
 div.right, div.left { width: 50%; }
 
-body.bg1 { background: -webkit-linear-gradient(top, #2F2727, #1a82f7);
-		   background:    -moz-linear-gradient(top, #2F2727, #1a82f7); }
-body.bg2 { background: -webkit-linear-gradient(top, #282175, #8ea77b);
-		   background: 	  -moz-linear-gradient(top, #282175, #8ea77b); }
-body.bg3 { background: -webkit-linear-gradient(top, #1F1C2C, #928DAB);
-		   background: 	  -moz-linear-gradient(top, #1F1C2C, #928DAB); }
-body.bg4 { background: -webkit-linear-gradient(top, #ec7972, #7879c7);
- 		   background: 	  -moz-linear-gradient(top, #ec7972, #7879c7); }
-body.bg5 { background: -webkit-linear-gradient(top, #c71d37, #1d63e6);
-		   background: 	  -moz-linear-gradient(top, #c71d37, #1d63e6); }
-body.bg6 { background: -webkit-linear-gradient(top, #2bdcfe, #a807b1);
-		   background: 	  -moz-linear-gradient(top, #2bdcfe, #a807b1); }
-body.bg7 { background: -webkit-linear-gradient(top, #6111bc, #7c90ad);
-		   background: 	  -moz-linear-gradient(top, #6111bc, #7c90ad); }
-body.bg8 { background: -webkit-linear-gradient(top, #348F50, #56B4D3);
-		   background: 	  -moz-linear-gradient(top, #348F50, #56B4D3); }
-body.bg9 { background: -webkit-linear-gradient(top, #7db1c2, #315d90);
-		   background: 	  -moz-linear-gradient(top, #7db1c2, #315d90); }
-body.bg10{ background: -webkit-linear-gradient(top, #cf353b, #29a39a);
-		   background: 	  -moz-linear-gradient(top, #cf353b, #29a39a); }
-body.bg11{ background: -webkit-linear-gradient(top, #6b64be, #e0c87d);
-		   background: 	  -moz-linear-gradient(top, #6b64be, #e0c87d); }
-body.bg12{ background: -webkit-linear-gradient(top, #3d72b4, #525252);
-		   background: 	  -moz-linear-gradient(top, #3d72b4, #525252); }
-body.bg13{ background: -webkit-linear-gradient(top, #517fa4, #243949);
-		   background: 	  -moz-linear-gradient(top, #517fa4, #243949); }
-body.bg14{ background: -webkit-linear-gradient(top, #FFA17F, #00223E);
-		   background: 	  -moz-linear-gradient(top, #FFA17F, #00223E); }
-body.bg15{ background: -webkit-linear-gradient(top, #360033, #0b8793);
-		   background: 	  -moz-linear-gradient(top, #360033, #0b8793); }
+body.bg1 { background: linear-gradient(top, #2F2727, #1a82f7); }
+body.bg2 { background: linear-gradient(top, #282175, #8ea77b); }
+body.bg3 { background: linear-gradient(top, #1F1C2C, #928DAB); }
+body.bg4 { background: linear-gradient(top, #ec7972, #7879c7); }
+body.bg5 { background: linear-gradient(top, #c71d37, #1d63e6); }
+body.bg6 { background: linear-gradient(top, #2bdcfe, #a807b1); }
+body.bg7 { background: linear-gradient(top, #6111bc, #7c90ad); }
+body.bg8 { background: linear-gradient(top, #348F50, #56B4D3); }
+body.bg9 { background: linear-gradient(top, #7db1c2, #315d90); }
+body.bg10{ background: linear-gradient(top, #cf353b, #29a39a); }
+body.bg11{ background: linear-gradient(top, #6b64be, #e0c87d); }
+body.bg12{ background: linear-gradient(top, #3d72b4, #525252); }
+body.bg13{ background: linear-gradient(top, #517fa4, #243949); }
+body.bg14{ background: linear-gradient(top, #FFA17F, #00223E); }
+body.bg15{ background: linear-gradient(top, #360033, #0b8793); }
+
 body.rnbw{ background: -webkit-gradient(linear,  left top,  left bottom,
-        					color-stop(0%, rgba(255, 0, 0, 1)),
-        					color-stop(15%, rgba(255, 255, 0, 1)),
-        					color-stop(30%, rgba(0, 255, 0, 1)),
-        					color-stop(50%, rgba(0, 255, 255, 1)),
-        					color-stop(65%, rgba(0, 0, 255, 1)),
-        					color-stop(80%, rgba(255, 0, 255, 1)),
-        					color-stop(100%, rgba(255, 0, 0, 1)));
+        				color-stop(0%, rgba(255, 0, 0, 1)),
+        				color-stop(15%, rgba(255, 255, 0, 1)),
+        				color-stop(30%, rgba(0, 255, 0, 1)),
+        				color-stop(50%, rgba(0, 255, 255, 1)),
+        				color-stop(65%, rgba(0, 0, 255, 1)),
+        				color-stop(80%, rgba(255, 0, 255, 1)),
+        				color-stop(100%, rgba(255, 0, 0, 1)));
 		   background: -moz-linear-gradient( top ,
-        					rgba(255, 0, 0, 1) 0%,
-        					rgba(255, 255, 0, 1) 15%,
-        					rgba(0, 255, 0, 1) 30%,
-        					rgba(0, 255, 255, 1) 50%,
-        					rgba(0, 0, 255, 1) 65%,
-        					rgba(255, 0, 255, 1) 80%,
-        					rgba(255, 0, 0, 1) 100%);
+        				rgba(255, 0, 0, 1) 0%,
+        				rgba(255, 255, 0, 1) 15%,
+        				rgba(0, 255, 0, 1) 30%,
+        				rgba(0, 255, 255, 1) 50%,
+        				rgba(0, 0, 255, 1) 65%,
+        				rgba(255, 0, 255, 1) 80%,
+        				rgba(255, 0, 0, 1) 100%);
 		 font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard', fantasy;
 		 font-size: 115%;
 }
@@ -134,9 +114,7 @@ ul > li:hover > a#parent6, a.tab6, a.tab6:hover, a#parent6:hover, a#parent6.acti
 a#parent1:after, a#parent2:after, a#parent3:after, a#parent4:after, a#parent5:after, a#parent6:after { content: "↓"; }
 ul > li:hover > a#parent1, ul > li:hover > a#parent2, ul > li:hover > a#parent3, ul > li:hover > a#parent4, ul > li:hover > a#parent5, ul > li:hover > a#parent6, a:hover, a.active { opacity: 1; }
 
-@media (max-width: 768px) {
-	ul.box { width: 70%; }
-}
+@media (max-width: 768px) { ul.box { width: 70%; } }
 
 @-webkit-keyframes fadeIn {
 	  0% { opacity: 0; }

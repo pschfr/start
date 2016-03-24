@@ -8,8 +8,8 @@ WebFont.load( {
 function getWeather(location) {
 	$.simpleWeather({
 		location: location,
-		success: function(weather) { $('.weather').html('In ' + weather.city + ', ' + weather.region + ', the weather is ' + weather.currently + ', the temperature is ' + weather.temp + '&deg;, and the wind is ' + weather.wind.speed + weather.units.speed + ' ' + weather.wind.direction); },
-		error: function(error) { $('.weather').html(error); }
+		success:  function(weather) { $('.weather').html('In ' + weather.city + ', ' + weather.region + ', the weather is ' + weather.currently + ', the temperature is ' + weather.temp + '&deg;, and the wind is ' + weather.wind.speed + weather.units.speed + ' ' + weather.wind.direction); },
+		error:    function(error)   { $('.weather').html(error); }
 	});
 }
 
@@ -43,7 +43,7 @@ function refreshStuffs() {
 // Esc to close all tabs, leave secret mode
 Mousetrap.bind('esc', function(e) {
 	$('body').removeClass('rnbw').addClass('bg' + (Math.floor((Math.random()*15)) + 1));
-	$('.subMenu').slideUp('fast');
+	$('.subMenu').slideUp(150);
 	$('li a').removeClass('active');
 	console.log('you escaped!');
 	return false;
@@ -52,7 +52,7 @@ Mousetrap.bind('esc', function(e) {
 // Rest of the my bookmarks, perhaps I should rewrite how all this works
 // TODO: Shift modifier to open in new background tab w/o closing cell
 Mousetrap.bind('s', function(e) {
-	$('a#parent1').next().slideToggle('fast');
+	$('a#parent1').next().slideToggle(150);
 	$('a#parent1').toggleClass('active');
 	Mousetrap.bind('f', function(e) { window.location.href = links[0]; });
 	Mousetrap.bind('m', function(e) { window.location.href = links[1]; });
@@ -63,7 +63,7 @@ Mousetrap.bind('s', function(e) {
 	return false;
 });
 Mousetrap.bind('m', function(e) {
-	$('a#parent2').next().slideToggle('fast');
+	$('a#parent2').next().slideToggle(150);
 	$('a#parent2').toggleClass('active');
 	Mousetrap.bind('y', function(e) { window.location.href = links[6]; });
 	Mousetrap.bind('c', function(e) { window.location.href = links[7]; });
@@ -72,7 +72,7 @@ Mousetrap.bind('m', function(e) {
 	return false;
 });
 Mousetrap.bind('r', function(e) {
-	$('a#parent3').next().slideToggle('fast');
+	$('a#parent3').next().slideToggle(150);
 	$('a#parent3').toggleClass('active');
 	Mousetrap.bind('f', function(e) { window.location.href = links[10]; });
 	Mousetrap.bind('t', function(e) { window.location.href = links[11]; });
@@ -87,7 +87,7 @@ Mousetrap.bind('r', function(e) {
 	return false;
 });
 Mousetrap.bind('?', function(e) {
-	$('a#parent4').next().slideToggle('fast');
+	$('a#parent4').next().slideToggle(150);
 	$('a#parent4').toggleClass('active');
 	Mousetrap.bind('s', function(e) { window.location.href = links[20]; });
 	Mousetrap.bind('m', function(e) { window.location.href = links[21]; });
@@ -102,7 +102,7 @@ Mousetrap.bind('?', function(e) {
 	return false;
 });
 Mousetrap.bind('o', function(e) {
-	$('a#parent5').next().slideToggle('fast');
+	$('a#parent5').next().slideToggle(150);
 	$('a#parent5').toggleClass('active');
 	Mousetrap.bind('l', function(e) { window.location.href = links[30]; });
 	Mousetrap.bind('a', function(e) { window.location.href = links[31]; });
@@ -112,7 +112,7 @@ Mousetrap.bind('o', function(e) {
 	return false;
 });
 Mousetrap.bind('c', function(e) {
-	$('a#parent6').next().slideToggle('fast');
+	$('a#parent6').next().slideToggle(150);
 	$('a#parent6').toggleClass('active');
 	Mousetrap.bind('x', function(e) { window.location.href = links[35]; });
 	Mousetrap.bind('&', function(e) { window.location.href = links[36]; });
@@ -128,7 +128,7 @@ Mousetrap.bind('c', function(e) {
 
 // Refreshes everything, and closes all cells
 Mousetrap.bind('space', function(e){
-	$('.subMenu').slideUp('fast');
+	$('.subMenu').slideUp(150);
 	$('li a').removeClass('active');
 	refreshStuffs();
 	return false;
@@ -147,7 +147,7 @@ $(function() {
 	refreshStuffs();
 	$("ul.subMenu").hide();
 	$("li:has(ul)").click(function(){
-		$("ul",this).slideToggle('fast');
+		$("ul",this).slideToggle(150);
 		$("a.parent", this).toggleClass('active');
 	});
 	setInterval(function(){ refreshStuffs(); }, 30000);
