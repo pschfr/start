@@ -1,9 +1,3 @@
-// Loads in the Inconsolata font from Google
-WebFont.load( {
-	google: { families: [ 'Inconsolata' ] },
-	active: function (){ console.log('Inconsolata loaded'); }
-} );
-
 // Gets weather for requested location, appends to page
 function getWeather(location) {
 	$.simpleWeather({
