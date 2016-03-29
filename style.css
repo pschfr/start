@@ -4,9 +4,9 @@ html { box-sizing: border-box; }
 body {
 	-webkit-animation: fadeIn .25s ease-in .75s 1 both;
 	animation:         fadeIn .25s ease-in .75s 1 both;
+	font-family: 'Inconsolata', monospace;
 	text-transform: lowercase;
 	justify-content: center;
-	font-family: monospace;
 	align-items: center;
 	overflow: hidden;
 	font-size: 16px;
