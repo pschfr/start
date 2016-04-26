@@ -2,8 +2,8 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
-	-webkit-animation: fadeIn .25s ease-in .75s 1 both;
-	animation:         fadeIn .25s ease-in .75s 1 both;
+	-webkit-animation: fadeIn .005s ease-in .025s 1 both;
+	animation:         fadeIn .005s ease-in .025s 1 both;
 	text-transform: lowercase;
 	justify-content: center;
 	font-family: monospace;
@@ -99,26 +99,8 @@ body.bg14{ background: -webkit-linear-gradient(top, #FFA17F, #00223E);
 		   background: 	  -moz-linear-gradient(top, #FFA17F, #00223E); }
 body.bg15{ background: -webkit-linear-gradient(top, #360033, #0b8793);
 		   background: 	  -moz-linear-gradient(top, #360033, #0b8793); }
-body.rnbw{ background: -webkit-gradient(linear,  left top,  left bottom,
-        					color-stop(0%, rgba(255, 0, 0, 1)),
-        					color-stop(15%, rgba(255, 255, 0, 1)),
-        					color-stop(30%, rgba(0, 255, 0, 1)),
-        					color-stop(50%, rgba(0, 255, 255, 1)),
-        					color-stop(65%, rgba(0, 0, 255, 1)),
-        					color-stop(80%, rgba(255, 0, 255, 1)),
-        					color-stop(100%, rgba(255, 0, 0, 1)));
-		   background: -moz-linear-gradient( top ,
-        					rgba(255, 0, 0, 1) 0%,
-        					rgba(255, 255, 0, 1) 15%,
-        					rgba(0, 255, 0, 1) 30%,
-        					rgba(0, 255, 255, 1) 50%,
-        					rgba(0, 0, 255, 1) 65%,
-        					rgba(255, 0, 255, 1) 80%,
-        					rgba(255, 0, 0, 1) 100%);
-		 font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard', fantasy;
-		 font-size: 115%;
-}
 
+		   
 ul > li:hover > a#parent1, a.tab1, a.tab1:hover, a#parent1:hover, a#parent1.active { background-color: #336666; }
 ul > li:hover > a#parent2, a.tab2, a.tab2:hover, a#parent2:hover, a#parent2.active { background-color: #663333; }
 ul > li:hover > a#parent3, a.tab3, a.tab3:hover, a#parent3:hover, a#parent3.active { background-color: #336633; }
