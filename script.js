@@ -16,15 +16,15 @@ function getWeather(location) {
 function refreshStuffs() {
 	var randNum = Math.floor((Math.random() * TOTAL_PRESETS));
 	$('.greeting').html(greets[randNum]);
-	$('.quote').html("<p>&ldquo;" + quotes[randNum] + "&rdquo;</p>" + "<cite><p><small>" + quoted[randNum] + "</small></p></cite>");
+	$('.quote').html('<p>&ldquo;' + quotes[randNum] + '&rdquo;</p>' + '<cite><p><small>' + quoted[randNum] + '</small></p></cite>');
 	$('body').attr('class', function(i, c) {
 		return c.replace(/(^|\s)bg\S+/g, '');
 	}).addClass('bg' + (randNum + 1));
 
 	// Geolocates the user, otherwise defaulting to Pittsburgh (2473224)
-	if("geolocation" in navigator) {
+	if('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
-	    	getWeather(position.coords.latitude+','+position.coords.longitude);
+	    	getWeather(position.coords.latitude + ',' + position.coords.longitude);
 	  	});
 	} else { getWeather(2473224); }
 }
@@ -77,10 +77,10 @@ Mousetrap.bind('up up down down left right left right b a enter', function() {
 
 // Does everything on page load, sets it to auto-refresh every 30s
 $(function() {
-	$("ul.subMenu").hide();
-	$("li:has(ul)").click(function(){
-		$("ul",this).slideToggle(150);
-		$("a.parent", this).toggleClass('active');
+	$('.subMenu').hide();
+	$('li:has(ul)').click(function(){
+		$('ul',this).slideToggle(150);
+		$('a.parent', this).toggleClass('active');
 	});
 	refreshStuffs();
 	bindMousetraps();
