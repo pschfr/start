@@ -38,7 +38,7 @@ function refreshStuffs() {
 function bindMousetraps() {
 	$.each($('.parent'), function(i, val) {
 		Mousetrap.bind($(val).children('span').text(), function(e) {
-			$('a#' + $(val).attr('id')).toggleClass('active').next().slideToggle(150);
+			$('a#' + $(val).attr('id')).toggleClass('active').next().slideToggle(250);
 
 			$.each($(val).parent().find('.tab span'), function(i, val) {
 				Mousetrap.bind($(val).text(), function(e) {
@@ -47,7 +47,7 @@ function bindMousetraps() {
 			});
 
 			Mousetrap.bind($(val).children('span').text(), function(e) {
-				$('.subMenu').slideUp(150);
+				$('.subMenu').slideUp(250);
 				$('li a').removeClass('active');
 			});
 		});
@@ -59,7 +59,7 @@ function bindMousetraps() {
 		$('body').removeClass('rnbw').attr('class', function(i, c) {
 			return c.replace(/(^|\s)bg\S+/g, '');
 		}).addClass('bg' + (randNum + 1));
-		$('.subMenu').slideUp(150);
+		$('.subMenu').slideUp(250);
 		$('li a').removeClass('active');
 		Mousetrap.reset();
 		bindMousetraps();
@@ -69,7 +69,7 @@ function bindMousetraps() {
 
 	// Refreshes everything, and closes all cells
 	Mousetrap.bind('space', function(e){
-		$('.subMenu').slideUp(150);
+		$('.subMenu').slideUp(250);
 		$('li a').removeClass('active');
 		refreshStuffs();
 		console.log('manually refreshed!');
@@ -89,7 +89,7 @@ function bindMousetraps() {
 $(function() {
 	$('.subMenu').hide();
 	$('li:has(ul)').click(function(){
-		$('ul',this).slideToggle(150);
+		$('ul', this).slideToggle(250);
 		$('a.parent', this).toggleClass('active');
 	});
 	refreshStuffs();

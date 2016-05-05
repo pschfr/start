@@ -3,9 +3,13 @@ Personal new tab page with bookmarks, weather, quote, and gradient background.
 
 ![http://pschfr.github.io/Start/](screenshot.png)
 
-The background gradient randomizes on page load, as does the quote. Weather is geolocated, otherwise defaults to Pittsburgh.
+The background gradient randomizes on page load, as does the quote.
 
-It also has keyboard navigation! Press the spacebar to change background, quote, greeting, and refresh weather. Each category is openable by keyboard and click, press escape to close all.
+Weather comes from [monkeecreate/jquery.simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather).
+
+It also has keyboard navigation thanks to [ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)!
+
+Press the spacebar to change background, quote, greeting, and refresh weather. Each category is openable by keyboard and click, press escape to close all.
 
 (Try the Konami code!!)
 
