@@ -53,17 +53,16 @@ function bindMousetraps() {
 		});
 	});
 
-	// Esc to close all tabs, leave secret mode
+	// Esc to close all tabs
 	Mousetrap.bind('esc', function(e) {
 		var randNum = Math.floor((Math.random() * TOTAL_PRESETS));
-		$('body').removeClass('rnbw').attr('class', function(i, c) {
+		$('body').attr('class', function(i, c) {
 			return c.replace(/(^|\s)bg\S+/g, '');
 		}).addClass('bg' + (randNum + 1));
 		$('.subMenu').slideUp(200);
 		$('li a').removeClass('active');
 		Mousetrap.reset();
 		bindMousetraps();
-		console.log('you escaped!');
 		return false;
 	});
 
@@ -72,16 +71,7 @@ function bindMousetraps() {
 		$('.subMenu').slideUp(200);
 		$('li a').removeClass('active');
 		refreshStuffs();
-		console.log('manually refreshed!');
 		return false;
-	});
-
-	// SECRET PARTY MODE!!1! :D
-	Mousetrap.bind('up up down down left right left right b a enter', function() {
-		$('body').attr('class', function(i, c){
-	    	return c.replace(/(^|\s)bg\S+/g, '');
-		}).addClass('rnbw');
-		console.log('PARTYYYYYYY :D');
 	});
 }
 
@@ -94,8 +84,5 @@ $(function() {
 	});
 	refreshStuffs();
 	bindMousetraps();
-	setInterval(function(){
-		console.log('30s has passed, refreshing...');
-		refreshStuffs();
-	}, 30000);
+	setInterval(function(){ refreshStuffs(); }, 30000);
 });
