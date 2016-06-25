@@ -1,7 +1,7 @@
-# Start [https://pschfr.github.io/Start/](https://pschfr.github.io/Start/)
+# start [https://pschfr.github.io/start/](https://pschfr.github.io/start/)
 Personal new tab page with bookmarks, weather, quote, and gradient background.
 
-![https://pschfr.github.io/Start/](screenshot.png)
+![https://pschfr.github.io/start/](screenshot.png)
 
 The background gradient randomizes on page load, as does the quote.
 
