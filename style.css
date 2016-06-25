@@ -16,7 +16,6 @@ body {
 }
 ul.box {
     background-color: rgba(0, 0, 0, .5);
-	border-radius: 2px;
 	list-style: none;
 	display: block;
 	width: 45%;
@@ -31,32 +30,32 @@ ul.subMenu {
 	margin: 0;
 }
 a {
-	-webkit-transition: all .125s;
-	transition:         all .125s;
+	-webkit-transition: all .15s;
+	transition:         all .15s;
 	text-decoration: none;
 	display: block;
 	outline: none;
-	padding: 10px;
+	padding: 15px;
 	color: #fff;
 }
 a:after {
     -webkit-transform: translateX(-20px);
     transform:         translateX(-20px);
-	-webkit-transition: all .125s;
-	transition:         all .125s;
+	-webkit-transition: all .15s;
+	transition:         all .15s;
 	content: "→";
 	opacity: 0;
 }
 a:hover:after, a.active:after {
     -webkit-transform: translateX(0);
 	transform:         translateX(0);
-	-webkit-transition: all .125s;
-	transition:         all .125s;
+	-webkit-transition: all .15s;
+	transition:         all .15s;
 	padding-left: 6px;
 	opacity: 1;
 }
 p {
-	padding: 10px;
+	padding: 15px;
 	margin: 0;
 }
 span    { color: #aaa; }
