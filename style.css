@@ -2,32 +2,30 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
-	-webkit-animation: fadeIn .5s ease-in 1 both;
-	animation:         fadeIn .5s ease-in 1 both;
 	text-transform: lowercase;
 	justify-content: center;
 	font-family: monospace;
 	align-items: center;
 	overflow: hidden;
-	font-size: 16px;
+	font-size: 18px;
 	display: flex;
 	height: 100vh;
 	color: #aaa;
-	opacity: 0;
     padding: 0;
     margin: 0;
 }
 ul.box {
     background-color: rgba(0, 0, 0, .5);
+	border-radius: 2px;
 	list-style: none;
 	display: block;
-	width: 40%;
+	width: 45%;
 	padding: 0;
 	margin: 0;
 }
 ul.subMenu {
 	list-style: none;
-	display: block;
+	display: none;
 	width: 100%;
 	padding: 0;
 	margin: 0;
@@ -61,14 +59,12 @@ p {
 	padding: 10px;
 	margin: 0;
 }
-
 span    { color: #aaa; }
 .left   { float: left; }
 .clear  { clear: both; }
 .right  { float: right; }
 .center { text-align: center; }
 div.right, div.left { width: 50%; }
-
 body.bg1 { background: linear-gradient(to right bottom, #2F2727, #1a82f7); }
 body.bg2 { background: linear-gradient(to right bottom, #282175, #8ea77b); }
 body.bg3 { background: linear-gradient(to right bottom, #1F1C2C, #928DAB); }
@@ -84,7 +80,6 @@ body.bg12{ background: linear-gradient(to right bottom, #3d72b4, #525252); }
 body.bg13{ background: linear-gradient(to right bottom, #517fa4, #243949); }
 body.bg14{ background: linear-gradient(to right bottom, #FFA17F, #00223E); }
 body.bg15{ background: linear-gradient(to right bottom, #360033, #0b8793); }
-
 ul > li:hover > a#parent1, a.tab1, a.tab1:hover, a#parent1:hover, a#parent1.active { background-color: #336666; }
 ul > li:hover > a#parent2, a.tab2, a.tab2:hover, a#parent2:hover, a#parent2.active { background-color: #663333; }
 ul > li:hover > a#parent3, a.tab3, a.tab3:hover, a#parent3:hover, a#parent3.active { background-color: #336633; }
@@ -94,16 +89,5 @@ ul > li:hover > a#parent6, a.tab6, a.tab6:hover, a#parent6:hover, a#parent6.acti
 a#parent1:after, a#parent2:after, a#parent3:after, a#parent4:after, a#parent5:after, a#parent6:after { content: "↓"; }
 a#parent1.active:after, a#parent2.active:after, a#parent3.active:after, a#parent4.active:after, a#parent5.active:after, a#parent6.active:after { content: "↑"; }
 ul > li:hover > a#parent1, ul > li:hover > a#parent2, ul > li:hover > a#parent3, ul > li:hover > a#parent4, ul > li:hover > a#parent5, ul > li:hover > a#parent6, a:hover, a.active { opacity: 1; }
-
 a#parent5.active .right, a.tab5 span.right { color: #fff !important; }
-
 @media (max-width: 768px) { ul.box { width: 70%; } }
-
-@-webkit-keyframes fadeIn {
-	  0% { opacity: 0; }
-	100% { opacity: 1; }
-}
-@keyframes fadeIn {
-	  0% { opacity: 0; }
-	100% { opacity: 1; }
-}
