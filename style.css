@@ -2,8 +2,8 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
-	-webkit-animation: fadeIn .25s ease-in .75s 1 both;
-	animation:         fadeIn .25s ease-in .75s 1 both;
+	-webkit-animation: fadeIn .5s ease-in 1 both;
+	animation:         fadeIn .5s ease-in 1 both;
 	text-transform: lowercase;
 	justify-content: center;
 	font-family: monospace;
