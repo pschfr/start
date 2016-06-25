@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+
+  "name": "Paul's New Tab",
+  "description": "This extension provides a custom new tab page.",
+  "version": "1.0",
+
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  }
+}
