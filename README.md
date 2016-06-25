@@ -1,7 +1,7 @@
 # Start [https://pschfr.github.io/Start/](https://pschfr.github.io/Start/)
 Personal new tab page with bookmarks, weather, quote, and gradient background.
 
-![http://pschfr.github.io/Start/](screenshot.png)
+![https://pschfr.github.io/Start/](screenshot.png)
 
 The background gradient randomizes on page load, as does the quote.
 
@@ -14,5 +14,9 @@ Press the spacebar to change background, quote, greeting, and refresh weather. E
 I recommend using [Replace New Tab Page for Chrome](https://chrome.google.com/webstore/detail/replace-new-tab-page/cnkhddihkmmiiclaipbaaelfojkmlkja), [New Tab Override for Firefox](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/), or [Custom New Tab Page for Opera](https://addons.opera.com/en/extensions/details/custom-new-tab-page/) to actually set this as your new tab page.
 
 Browse similar style pages on [/r/startpages](https://reddit.com/r/startpages).
+
+BTW, it's super fast. DOMContentLoaded of ~225ms :D
+
+Feel free to fork, and add your own bookmarks and quotes!
 
 [@pschfr](http://twitter.com/pschfr)
