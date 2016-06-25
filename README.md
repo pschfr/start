@@ -13,6 +13,8 @@ Press the spacebar to change background, quote, greeting, and refresh weather. E
 
 I recommend using [Replace New Tab Page for Chrome](https://chrome.google.com/webstore/detail/replace-new-tab-page/cnkhddihkmmiiclaipbaaelfojkmlkja), [New Tab Override for Firefox](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/), or [Custom New Tab Page for Opera](https://addons.opera.com/en/extensions/details/custom-new-tab-page/) to actually set this as your new tab page.
 
+In Chrome, you can go to Extensions->Developer mode->Load unpacked extension and open this folder and it will be your new tab page. Magic!
+
 Browse similar style pages on [/r/startpages](https://reddit.com/r/startpages).
 
 BTW, it's super fast. DOMContentLoaded of ~225ms :D
