@@ -17,7 +17,7 @@ You could also use [New Tab Override for Firefox](https://addons.mozilla.org/en-
 
 Browse similar style pages on [/r/startpages](https://reddit.com/r/startpages).
 
-BTW, it's super fast. DOMContentLoaded of ~225ms :D
+BTW, it's super fast. DOMContentLoaded of ~225ms (~150ms as an extension!!) :D
 
 Feel free to fork, and add your own bookmarks and quotes!
 
