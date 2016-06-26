@@ -1,13 +1,9 @@
 {
     "manifest_version": 2,
 
-    "name": "New Tab",
-    "description": "This extension provides a custom new tab page.",
-    "version": "1.0",
-
-    "background": {
-        "persistant": false
-    },
+    "name": "My New Tab Page",
+    "description": "This extension is my custom new tab page.",
+    "version": "4.2.0",
 
     "permissions": [
         "geolocation"

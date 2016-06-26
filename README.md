@@ -11,9 +11,9 @@ It also has keyboard navigation thanks to [ccampbell/mousetrap](https://github.c
 
 Press the spacebar to change background, quote, greeting, and refresh weather. Each category is openable by keyboard and click, press escape to close all.
 
-I recommend using [Replace New Tab Page for Chrome](https://chrome.google.com/webstore/detail/replace-new-tab-page/cnkhddihkmmiiclaipbaaelfojkmlkja), [New Tab Override for Firefox](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/), or [Custom New Tab Page for Opera](https://addons.opera.com/en/extensions/details/custom-new-tab-page/) to actually set this as your new tab page.
+In Chrome, you can go to Extensions and tick Developer mode, then drag-and-drop Start.crx into that window to have this as your new tab page. Magic!
 
-In Chrome, you can go to Extensions->Developer mode->Load unpacked extension and open this folder and it will be your new tab page. Magic!
+You could also use [New Tab Override for Firefox](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/), or [Custom New Tab Page for Opera](https://addons.opera.com/en/extensions/details/custom-new-tab-page/) to set this as your new tab page in those browsers.
 
 Browse similar style pages on [/r/startpages](https://reddit.com/r/startpages).
 
