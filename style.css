@@ -2,32 +2,43 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
+	background: url('https://source.unsplash.com/collection/292287/') no-repeat center center fixed;
+	background-size: cover;
 	text-transform: lowercase;
-	justify-content: center;
 	font-family: monospace;
-	align-items: center;
-	overflow: hidden;
 	font-size: 18px;
-	display: flex;
-	height: 100vh;
-	color: #aaa;
+	color: white;
     padding: 0;
     margin: 0;
 }
-ul.box {
-    background-color: rgba(0, 0, 0, .5);
+p.top, p.bottom {
+	position: absolute;
+	font-size: 14px;
+	width: 100%;
+}
+p.top { top: 0%; }
+p.bottom { bottom: 0%; }
+div.centerWrapper {
+	-webkit-transform: translateY(-50%);
+	transform:         translateY(-50%);
+	position: absolute;
+	width: 40%;
+	left: 30%;
+	top: 50%;
+}
+div.timeDate {
+	font-size: xx-large;
+	text-align: center;
+	padding: 0.5rem 0;
+}
+ul {
 	list-style: none;
-	display: block;
-	width: 45%;
 	padding: 0;
 	margin: 0;
 }
 ul.subMenu {
-	list-style: none;
 	display: none;
 	width: 100%;
-	padding: 0;
-	margin: 0;
 }
 a {
 	-webkit-transition: all .15s;
@@ -36,57 +47,45 @@ a {
 	display: block;
 	outline: none;
 	padding: 15px;
-	color: #fff;
+	color: #111;
 }
 a:after {
-    -webkit-transform: translateX(-20px);
-    transform:         translateX(-20px);
 	-webkit-transition: all .15s;
 	transition:         all .15s;
 	content: "→";
 	opacity: 0;
 }
 a:hover:after, a.active:after {
-    -webkit-transform: translateX(0);
-	transform:         translateX(0);
-	-webkit-transition: all .15s;
-	transition:         all .15s;
 	padding-left: 6px;
 	opacity: 1;
 }
+a.parent:after { content: "↓"; }
+a.parent.active:after { content: "↑"; }
 p {
 	padding: 15px;
 	margin: 0;
 }
-span    { color: #aaa; }
+p a {
+	display: inline-block;
+	color: inherit;
+	padding: 0;
+}
+p a:after { display: none; }
 .left   { float: left; }
-.clear  { clear: both; }
 .right  { float: right; }
-.center { text-align: center; }
+.clear { clear: both; }
 div.right, div.left { width: 50%; }
-body.bg1 { background: linear-gradient(to right bottom, #2F2727, #1a82f7); }
-body.bg2 { background: linear-gradient(to right bottom, #282175, #8ea77b); }
-body.bg3 { background: linear-gradient(to right bottom, #1F1C2C, #928DAB); }
-body.bg4 { background: linear-gradient(to right bottom, #ec7972, #7879c7); }
-body.bg5 { background: linear-gradient(to right bottom, #c71d37, #1d63e6); }
-body.bg6 { background: linear-gradient(to right bottom, #2bdcfe, #a807b1); }
-body.bg7 { background: linear-gradient(to right bottom, #6111bc, #7c90ad); }
-body.bg8 { background: linear-gradient(to right bottom, #348F50, #56B4D3); }
-body.bg9 { background: linear-gradient(to right bottom, #7db1c2, #315d90); }
-body.bg10{ background: linear-gradient(to right bottom, #cf353b, #29a39a); }
-body.bg11{ background: linear-gradient(to right bottom, #6b64be, #e0c87d); }
-body.bg12{ background: linear-gradient(to right bottom, #3d72b4, #525252); }
-body.bg13{ background: linear-gradient(to right bottom, #517fa4, #243949); }
-body.bg14{ background: linear-gradient(to right bottom, #FFA17F, #00223E); }
-body.bg15{ background: linear-gradient(to right bottom, #360033, #0b8793); }
-ul > li:hover > a#parent1, a.tab1, a.tab1:hover, a#parent1:hover, a#parent1.active { background-color: #336666; }
-ul > li:hover > a#parent2, a.tab2, a.tab2:hover, a#parent2:hover, a#parent2.active { background-color: #663333; }
-ul > li:hover > a#parent3, a.tab3, a.tab3:hover, a#parent3:hover, a#parent3.active { background-color: #336633; }
-ul > li:hover > a#parent4, a.tab4, a.tab4:hover, a#parent4:hover, a#parent4.active { background-color: #663366; }
-ul > li:hover > a#parent5, a.tab5, a.tab5:hover, a#parent5:hover, a#parent5.active { background-color: #84AED0; }
-ul > li:hover > a#parent6, a.tab6, a.tab6:hover, a#parent6:hover, a#parent6.active { background-color: #666633; }
-a#parent1:after, a#parent2:after, a#parent3:after, a#parent4:after, a#parent5:after, a#parent6:after { content: "↓"; }
-a#parent1.active:after, a#parent2.active:after, a#parent3.active:after, a#parent4.active:after, a#parent5.active:after, a#parent6.active:after { content: "↑"; }
-ul > li:hover > a#parent1, ul > li:hover > a#parent2, ul > li:hover > a#parent3, ul > li:hover > a#parent4, ul > li:hover > a#parent5, ul > li:hover > a#parent6, a:hover, a.active { opacity: 1; }
-a#parent5.active .right, a.tab5 span.right { color: #fff !important; }
-@media (max-width: 768px) { ul.box { width: 70%; } }
+ul.box li a { background-color: rgba(255, 255, 255, 0.4); }
+ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, 0.5); }
+@-webkit-keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+.fadeIn {
+	-webkit-animation: fadeIn 1s .5s both ease-in;
+	animation:         fadeIn 1s .5s both ease-in;
+}
