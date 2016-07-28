@@ -42,7 +42,7 @@ function getWeather(location) {
 			$('.weatherlink').html('<a href="' + weather.link + '">More details (w)</a>');
 		},
 		error: function(error)   {
-			$('.weather').html('Sorry, there has been a problem retrieving the weather information.');
+			$('.weatherlink').html('Sorry, there has been a problem retrieving the weather information.');
 		}
 	});
 }
@@ -52,11 +52,18 @@ function loadStuff() {
 	$('.greeting').html(greets[randNum]);
 	$('.quote').html('&ldquo;' + quotes[randNum] + '&rdquo; &mdash; ' + '<cite><small>' + quoted[randNum] + '</small></cite>');
 	// Geolocates the user, otherwise defaulting to Pittsburgh (2473224)
+	console.log('right before geolocation');
 	if('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude + ',' + position.coords.longitude);
-	  	});
-	} else { getWeather(2473224); }
+			console.log('geolocation successful');
+	  	}, geolocationFailure(), {timeout: 5000});
+	} else { geolocationFailure(); }
+
+	function geolocationFailure() {
+		getWeather(2473224);
+		console.log('geolocation not successful');
+	}
 }
 // Initializes main keyboard nav
 function bindMousetraps() {

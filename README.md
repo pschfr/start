@@ -1,15 +1,13 @@
 # start [https://pschfr.github.io/start/](https://pschfr.github.io/start/)
-Personal new tab page with bookmarks, weather, quote, and gradient background.
+Personal new tab page with bookmarks, weather, quote, and image background.
 
 ![https://pschfr.github.io/start/](screenshot.png)
 
-The background gradient randomizes on page load, as does the quote.
+The background image randomizes on page load, as does the quote.
 
-Weather comes from [monkeecreate/jquery.simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather).
+The image is from [Unsplash Source](https://source.unsplash.com/) which pulls from [this collection](https://unsplash.com/collections/292287/), weather is from [monkeecreate/jquery.simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather), and keyboard navigation is thanks to [ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)!
 
-It also has keyboard navigation thanks to [ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)!
-
-Press the spacebar to change background, quote, greeting, and refresh weather. Each category is openable by keyboard and click, press escape to close all.
+Press the spacebar to refresh weather and quote. Each category is openable by keyboard and click, press escape to close all.
 
 In Chrome, you can go to Extensions and tick Developer mode, then drag-and-drop Start.crx into that window to have this as your new tab page. Magic!
 
