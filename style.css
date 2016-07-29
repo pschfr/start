@@ -16,16 +16,8 @@ div#background {
 	height: 100%;
 	width: 100%;
 }
-p.top, p.bottom {
-	position: absolute;
-	font-size: 14px;
-	width: 100%;
-}
-p.top { top: 0%; }
-p.bottom { bottom: 0%; }
 div.centerWrapper {
-	-webkit-transform: translateY(-50%);
-	transform:         translateY(-50%);
+	transform: translateY(-50%);
 	position: absolute;
 	width: 40%;
 	left: 30%;
@@ -33,8 +25,7 @@ div.centerWrapper {
 }
 div.timeDate {
 	font-size: xx-large;
-	text-align: center;
-	padding: 0.5rem 0;
+	padding: 0 15px 2.5rem;
 }
 ul {
 	list-style: none;
@@ -46,8 +37,7 @@ ul.subMenu {
 	width: 100%;
 }
 a {
-	-webkit-transition: all .15s;
-	transition:         all .15s;
+	transition: all 0.15s;
 	text-decoration: none;
 	display: block;
 	outline: none;
@@ -55,8 +45,7 @@ a {
 	color: #111;
 }
 a:after {
-	-webkit-transition: all .15s;
-	transition:         all .15s;
+	transition: all .15s;
 	content: "→";
 	opacity: 0;
 }
@@ -64,33 +53,35 @@ a:hover:after, a.active:after {
 	padding-left: 6px;
 	opacity: 1;
 }
-a.parent:after { content: "↓"; }
+a.parent:after        { content: "↓"; }
 a.parent.active:after { content: "↑"; }
 p {
 	padding: 15px;
 	margin: 0;
 }
+p.top, p.bottom {
+	position: absolute;
+	font-size: smaller;
+	width: 100%;
+}
+p.top    { top:    0%; }
+p.bottom { bottom: 0%; }
 p a {
 	display: inline-block;
 	color: inherit;
 	padding: 0;
 }
 p a:after { display: none; }
-.left   { float: left; }
-.right  { float: right; }
+p a:hover { text-decoration: underline; }
 .clear { clear: both; }
+.left  { float: left; }
+.right { float: right; }
+.text-right { text-align: right; }
 div.right, div.left { width: 50%; }
 ul.box li a { background-color: rgba(255, 255, 255, 0.4); }
-ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, 0.5); }
-@-webkit-keyframes fadeIn {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
+ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, 0.6); }
+.fadeIn { animation: fadeIn 0.75s 0.75s both ease-in; }
 @keyframes fadeIn {
 	from { opacity: 0; }
 	to   { opacity: 1; }
-}
-.fadeIn {
-	-webkit-animation: fadeIn 1s .5s both ease-in;
-	animation:         fadeIn 1s .5s both ease-in;
 }
