@@ -78,6 +78,7 @@ p a:hover { text-decoration: underline; }
 .right { float: right; }
 .text-right { text-align: right; }
 div.right, div.left { width: 50%; }
+.no-transform { text-transform: none; }
 ul.box li a { background-color: rgba(255, 255, 255, 0.4); }
 ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, 0.6); }
 .fadeIn { animation: fadeIn 0.75s 0.75s both ease-in; }
