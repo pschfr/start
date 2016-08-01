@@ -11,29 +11,19 @@ function startTime() {
 	var hour = now.getHours();
 	var mins = now.getMinutes();
 	var secs = now.getSeconds();
+	var ampm = hour >= 12 ? 'PM' : 'AM';
 	var day = now.getDate();
 	var month = monthNames[now.getMonth()];
 	var year = now.getFullYear();
-	hour = getNonMilitary(hour);
-	mins = leadingZero(mins);
-	secs = leadingZero(secs);
-	var timeString = hour + ':' + mins + ':' + secs;
+	hour = hour % 12;
+  	hour = hour ? hour : 12;
+	mins = mins < 10 ? '0' + mins : mins;
+	secs = secs < 10 ? '0' + secs : secs;
+	var timeString = hour + ':' + mins + ':' + secs + ' ' + ampm;
 	var dateString = month + ' ' + day + ', ' + year;
 	document.getElementById('time').innerHTML = timeString;
 	document.getElementById('date').innerHTML = dateString;
 	var t = setTimeout(startTime, 500);
-}
-function leadingZero(i) {
-	if (i < 10)
-		i = '0' + i;
-	return i;
-}
-function getNonMilitary(i) {
-	if (i > 12)
-		i = i - 12;
-	else if (i === 0)
-		i = 12;
-	return i;
 }
 
 
