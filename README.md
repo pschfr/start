@@ -1,17 +1,21 @@
 # start [https://pschfr.github.io/start/](https://pschfr.github.io/start/)
-Personal new tab page with bookmarks, weather, quote, and image background.
-
 ![https://pschfr.github.io/start/](screenshot.png)
+##Personal new tab page with keyboard nav, bookmarks, weather, quote, and image background.
 
-The background image randomizes on page load, as does the quote.
+##Features:
+- Background image randomizes on page load, from [Unsplash Source](https://source.unsplash.com/) which pulls from [this collection](https://unsplash.com/collections/292287/)
+- Weather is from [monkeecreate/jquery.simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather)
+- Keyboard navigation is thanks to [ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)!
+- Random inspirational quote!
 
-The image is from [Unsplash Source](https://source.unsplash.com/) which pulls from [this collection](https://unsplash.com/collections/292287/), weather is from [monkeecreate/jquery.simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather), and keyboard navigation is thanks to [ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)!
+Press the spacebar to refresh weather. Each category is openable by keyboard and click, press escape or click background to close all.
 
-Press the spacebar to refresh weather and quote. Each category is openable by keyboard and click, press escape to close all.
-
-In Chrome, you can go to Extensions and tick Developer mode, then drag-and-drop Start.crx into that window to have this as your new tab page. Magic!
-
-You could also use [New Tab Override for Firefox](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/), or [Custom New Tab Page for Opera](https://addons.opera.com/en/extensions/details/custom-new-tab-page/) to set this as your new tab page in those browsers.
+##You need extensions for most browsers to use this as your new tab page:
+- [New Tab Redirect for Chrome](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna
+	- You can also go to chrome://extensions, tick Developer Mode, and Load as unpacked extension for faster loading.
+- [New Tab Override for Firefox](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
+- [Custom New Tab Page for Opera](https://addons.opera.com/en/extensions/details/custom-new-tab-page/)
+- Safari - just set it as your homepage in settings.
 
 Browse similar style pages on [/r/startpages](https://reddit.com/r/startpages).
 
