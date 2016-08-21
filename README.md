@@ -11,7 +11,7 @@
 Press the spacebar to refresh weather. Each category is openable by keyboard and click, press escape or click background to close all.
 
 ##You need extensions for most browsers to use this as your new tab page:
-- [New Tab Redirect for Chrome](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna
+- [New Tab Redirect for Chrome](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna)
 	- You can also go to chrome://extensions, tick Developer Mode, and Load as unpacked extension for faster loading.
 - [New Tab Override for Firefox](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/)
 - [Custom New Tab Page for Opera](https://addons.opera.com/en/extensions/details/custom-new-tab-page/)
