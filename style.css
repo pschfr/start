@@ -86,3 +86,11 @@ ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-col
 	from { opacity: 0; }
 	to   { opacity: 1; }
 }
+@media (max-width: 700px) {
+	ul.box div.left, ul.box div.right, div.timeDate div#time, div.timeDate div#date {
+		text-align: center;
+		float: none;
+		width: 100%;
+	}
+	div.timeDate div { padding-bottom: 1rem; }
+}
