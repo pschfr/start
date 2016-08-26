@@ -19,8 +19,8 @@ div#background {
 div.centerWrapper {
 	transform: translateY(-50%);
 	position: absolute;
-	width: 40%;
-	left: 30%;
+	width: 50vw;
+	left: 25vw;
 	top: 50%;
 }
 div.timeDate {
