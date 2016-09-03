@@ -2,13 +2,11 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
-	background: url('https://source.unsplash.com/collection/292287/') no-repeat center center fixed;
-	background-size: cover;
+	background: url('https://source.unsplash.com/collection/292287/') no-repeat center/cover fixed;
+	font: 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	animation: fadeIn .75s .75s both ease-in;
 	text-transform: lowercase;
-	font-family: monospace;
-	font-size: 18px;
 	color: white;
-    padding: 0;
     margin: 0;
 }
 div#background {
@@ -23,9 +21,9 @@ div.centerWrapper {
 	left: 25vw;
 	top: 50%;
 }
-div.timeDate {
+div.timeDate div {
 	font-size: xx-large;
-	padding: 0 15px 2.5rem;
+	padding: 0 5px 5px;
 }
 ul {
 	list-style: none;
@@ -37,7 +35,7 @@ ul.subMenu {
 	width: 100%;
 }
 a {
-	transition: all 0.15s;
+	transition: all .15s;
 	text-decoration: none;
 	display: block;
 	outline: none;
@@ -50,7 +48,7 @@ a:after {
 	opacity: 0;
 }
 a:hover:after, a.active:after {
-	padding-left: 6px;
+	padding-left: 5px;
 	opacity: 1;
 }
 a.parent:after        { content: "↓"; }
@@ -77,20 +75,20 @@ p a:hover { text-decoration: underline; }
 .left  { float: left; }
 .right { float: right; }
 .text-right { text-align: right; }
-div.right, div.left { width: 50%; }
 .no-transform { text-transform: none; }
-ul.box li a { background-color: rgba(255, 255, 255, 0.4); }
-ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, 0.6); }
-.fadeIn { animation: fadeIn 0.75s 0.75s both ease-in; }
-@keyframes fadeIn {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
-@media (max-width: 700px) {
-	ul.box div.left, ul.box div.right, div.timeDate div#time, div.timeDate div#date {
+div.right, div.left { width: 50%; }
+ul.box li a { background-color: rgba(255, 255, 255, .4); }
+ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, .6); }
+@media (max-width: 985px) {
+	ul.box div.left, ul.box div.right, div#time, div#date {
 		text-align: center;
 		float: none;
 		width: 100%;
 	}
-	div.timeDate div { padding-bottom: 1rem; }
+	div.timeDate div { padding-bottom: 15px; }
+	a:after { display: none; }
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
 }
