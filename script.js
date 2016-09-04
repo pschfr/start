@@ -47,6 +47,8 @@ function loadStuff() {
 	    	getWeather(position.coords.latitude + ',' + position.coords.longitude);
 	  	}, getWeather(2473224), {timeout: 5000});
 	} else { getWeather(2473224); }
+
+	lastFM_request();
 }
 // Initializes keyboard nav
 function bindMousetraps() {
@@ -82,6 +84,43 @@ function resetMousetraps() {
 	Mousetrap.reset();
 	bindMousetraps();
 }
+
+function lastFM_request() {
+	var method    = 'user.getrecenttracks';
+	var username  = 'paul_r_schaefer';
+	var API_key   = '0f680404e39c821cac34008cc4d803db';
+	var number    = '1'; // Increase this to increase number of tracks
+	var lastFMurl = 'https://ws.audioscrobbler.com/2.0/?method=' + method + '&user=' + username + '&api_key=' + API_key + '&limit=' + number + '&format=json';
+	var element   = document.getElementById('lastFM');
+	var xmlhttp   = new XMLHttpRequest();
+
+	xmlhttp.open('GET', lastFMurl, true); // begins request to Last.FM
+
+	xmlhttp.onreadystatechange = function() {
+	    if (xmlhttp.readyState == 4) {			// When Last.FM is ready,
+	        if(xmlhttp.status == 200) {			// And we have text,
+	            var obj = JSON.parse(xmlhttp.responseText);
+
+				for (i = 0; i < number; i++) {               // Loop through responses
+					var track   = obj.recenttracks.track[i]; // references this specific track
+					var artistName = track.artist['\#text']; // fetches data from track
+					var songName   = track.name;
+					var songURL    = track.url;
+
+					if (track['\@attr'] && track['\@attr'].nowplaying != '') // if currently listening
+						element.innerHTML += 'currently listening to: ';
+					else
+						element.innerHTML += 'last listened to: '
+
+					// prints link to song with artist and song name
+					element.innerHTML += '<a href="' + songURL + '" target="_blank">' + artistName + ' &mdash; ' + songName + '</a> ';
+				}
+	         }
+	    }
+	};
+	xmlhttp.send(null); // Close connection
+}
+
 // Initializes everything on page load
 $(function() {
 	startTime();

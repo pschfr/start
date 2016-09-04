@@ -1,14 +1,15 @@
 # start [https://pschfr.github.io/start/](https://pschfr.github.io/start/)
 ![https://pschfr.github.io/start/](screenshot.png)
-##Personal new tab page with keyboard nav, bookmarks, weather, quote, and image background.
+##Personal new tab page with keyboard nav, bookmarks, weather, quote, most recently listened to song, and image background.
 
 ##Features:
 - Background image randomizes on page load, from [Unsplash Source](https://source.unsplash.com/) which pulls from [this collection](https://unsplash.com/collections/292287/)
 - Weather is from [monkeecreate/jquery.simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather)
 - Keyboard navigation is thanks to [ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)!
 - Random inspirational quote!
+- Most recently listened to song thanks to my Last.FM script [pschfr/LastFM.js](https://github.com/pschfr/LastFM.js)!
 
-Press the spacebar to refresh weather. Each category is openable by keyboard and click, press escape or click background to close all.
+Each category is openable by keyboard and click, press escape or click background to close all.
 
 ##You need extensions for most browsers to use this as your new tab page:
 - [New Tab Redirect for Chrome](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna)
