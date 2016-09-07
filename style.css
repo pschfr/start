@@ -65,9 +65,9 @@ p a {
 	color: inherit;
 	padding: 0;
 }
-ul.box a[data-shortcut]:after {
+ul.box a[data-key]:after {
 	float: right;
-	content: attr(data-shortcut);
+	content: attr(data-key);
 	opacity: .75;
 	font: 75% monospace;
 	text-transform: uppercase;

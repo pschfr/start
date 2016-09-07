@@ -53,14 +53,14 @@ function loadStuff() {
 // Initializes keyboard nav
 function bindMousetraps() {
 	$.each($('.parent'), function(i, val) {
-		Mousetrap.bind($(val).attr('data-shortcut'), function(e) {
+		Mousetrap.bind($(val).attr('data-key'), function(e) {
 			$('a#' + $(val).attr('id')).toggleClass('active').next().slideToggle(150);
 			$.each($(val).parent().find('.tab'), function(i, val) {
-				Mousetrap.bind($(val).attr('data-shortcut'), function(e) {
+				Mousetrap.bind($(val).attr('data-key'), function(e) {
 					window.location.href = $(val).attr('href');
 				});
 			});
-			Mousetrap.bind($(val).attr('data-shortcut'), function(e) {
+			Mousetrap.bind($(val).attr('data-key'), function(e) {
 				resetMousetraps();
 			});
 		});
