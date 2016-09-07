@@ -25,16 +25,12 @@ div.timeDate div {
 	font-size: xx-large;
 	padding: 0 5px 5px;
 }
-div#lastFM {
-	text-align: center;
-}
+div#lastFM { text-align: center; }
 div#lastFM a {
 	color: white;
 	display: inline-block;
 	padding: 15px 0;
 }
-div#lastFM a:hover { text-decoration: underline; }
-div#lastFM a:after { display: none; }
 ul {
 	list-style: none;
 	padding: 0;
@@ -52,17 +48,7 @@ a {
 	padding: 15px;
 	color: #111;
 }
-a:after {
-	transition: all .15s;
-	content: "→";
-	opacity: 0;
-}
-a:hover:after, a.active:after {
-	padding-left: 5px;
-	opacity: 1;
-}
-a.parent:after        { content: "↓"; }
-a.parent.active:after { content: "↑"; }
+a:hover, a:focus { text-decoration: underline; }
 p {
 	padding: 15px;
 	margin: 0;
@@ -79,8 +65,13 @@ p a {
 	color: inherit;
 	padding: 0;
 }
-p a:after { display: none; }
-p a:hover { text-decoration: underline; }
+ul.box a[data-shortcut]:after {
+	float: right;
+	content: attr(data-shortcut);
+	opacity: .75;
+	font: 75% monospace;
+	text-transform: uppercase;
+}
 .clear { clear: both; }
 .left  { float: left; }
 .right { float: right; }
