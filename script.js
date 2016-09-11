@@ -36,18 +36,20 @@ function getWeather(location) {
 		}
 	});
 }
-// Master loading function; appends random greeting, quote, and weather
-function loadStuff() {
-	var randNum = Math.floor((Math.random() * greets.length));
-	$('.greeting').html(greets[randNum]);
-	$('.quote').html('&ldquo;' + quotes[randNum] + '&rdquo; &mdash; ' + '<cite><small>' + quoted[randNum] + '</small></cite>');
-	// Geolocates the user, otherwise defaulting to Pittsburgh (2473224)
+// Geolocates the user, otherwise defaulting to Pittsburgh (2473224)
+function geolocWeather() {
 	if('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude + ',' + position.coords.longitude);
 	  	}, getWeather(2473224), {timeout: 5000});
 	} else { getWeather(2473224); }
-
+}
+// Master loading function; appends random greeting, quote, and weather
+function loadStuff() {
+	var randNum = Math.floor((Math.random() * greets.length));
+	$('.greeting').html(greets[randNum]);
+	$('.quote').html('&ldquo;' + quotes[randNum] + '&rdquo; &mdash; ' + '<cite><small>' + quoted[randNum] + '</small></cite>');
+	geolocWeather();
 	lastFM_request();
 }
 // Initializes keyboard nav
@@ -65,9 +67,18 @@ function bindMousetraps() {
 			});
 		});
 	});
-	// Resets on ESC or spacebar
-	Mousetrap.bind(['esc', 'space'], function(e) {
+	// Resets on ESC
+	Mousetrap.bind('esc', function(e) {
 		resetMousetraps();
+	});
+	// Resets and refreshes with spacebar, TODO: change background image too
+	Mousetrap.bind('space', function(e) {
+		resetMousetraps();
+		lastFM_request();
+		geolocWeather();
+		
+		// This technically works, but the browser caches the response, keeping the same image :(
+		// $('body').css('background', "url('https://source.unsplash.com/collection/292287/') no-repeat center/cover fixed");
 	});
 	// Binds Weather and GitHub links
 	Mousetrap.bind('w', function(e) {
@@ -85,6 +96,7 @@ function resetMousetraps() {
 	bindMousetraps();
 }
 
+// Connects to Last.FM, retrives most recent song
 function lastFM_request() {
 	var method    = 'user.getrecenttracks';
 	var username  = 'paul_r_schaefer';
@@ -97,24 +109,25 @@ function lastFM_request() {
 	xmlhttp.open('GET', lastFMurl, true); // begins request to Last.FM
 
 	xmlhttp.onreadystatechange = function() {
-	    if (xmlhttp.readyState == 4) {			// When Last.FM is ready,
-	        if(xmlhttp.status == 200) {			// And we have text,
-	            var obj = JSON.parse(xmlhttp.responseText);
+	    if (xmlhttp.readyState == 4) {			             // When Last.FM is ready,
+	        if(xmlhttp.status == 200) {			             // And we have text,
+	            var obj = JSON.parse(xmlhttp.responseText);  // we parse the JSON,
+				var track   = obj.recenttracks.track[0];     // reference the first track
+				var artistName = track.artist['\#text'];     // and fetch data from it
+				var albumName  = track.album['\#text'];
+				var songName   = track.name;
+				var songURL    = track.url;
+				var userLink = '<a href="http://www.last.fm/user/' + username + '">';
 
-				for (i = 0; i < number; i++) {               // Loop through responses
-					var track   = obj.recenttracks.track[i]; // references this specific track
-					var artistName = track.artist['\#text']; // fetches data from track
-					var songName   = track.name;
-					var songURL    = track.url;
+				element.innerHTML = ''; // removes any existing text
 
-					if (track['\@attr'] && track['\@attr'].nowplaying != '') // if currently listening
-						element.innerHTML += 'currently listening to: ';
-					else
-						element.innerHTML += 'last listened to: '
+				if (track['\@attr'] && track['\@attr'].nowplaying != '') // if currently listening
+					element.innerHTML += userLink + 'currently listening to:</a> ';
+				else
+					element.innerHTML += userLink + 'last listened to:</a> ';
 
-					// prints link to song with artist and song name
-					element.innerHTML += '<a href="' + songURL + '" target="_blank">' + artistName + ' &mdash; ' + songName + '</a> ';
-				}
+				// prints link to song with artist and song name
+				element.innerHTML += '<a href="' + songURL + '" title="' + albumName + '">' + artistName + ' &mdash; ' + songName + '</a> ';
 	         }
 	    }
 	};

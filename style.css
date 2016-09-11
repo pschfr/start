@@ -81,13 +81,12 @@ div.right, div.left { width: 50%; }
 ul.box li a { background-color: rgba(255, 255, 255, .4); }
 ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, .6); }
 @media (max-width: 985px) {
-	ul.box div.left, ul.box div.right, div#time, div#date {
+	ul.box div.left, ul.box div.right, div.timeDate div {
 		text-align: center;
 		float: none;
 		width: 100%;
 	}
 	div.timeDate div { padding-bottom: 15px; }
-	a:after { display: none; }
 }
 @keyframes fadeIn {
 	from { opacity: 0; }
