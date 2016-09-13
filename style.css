@@ -69,7 +69,7 @@ ul.box a[data-key]:after {
 	float: right;
 	content: attr(data-key);
 	opacity: .75;
-	font: 75% monospace;
+	font: 80%/18px monospace;
 	text-transform: uppercase;
 }
 .clear { clear: both; }
