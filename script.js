@@ -29,7 +29,7 @@ function getWeather(location) {
 		location: location,
 		success: function(weather) {
 			$('.weather').html('In ' + weather.city + ', ' + weather.region + ', the weather is ' + weather.currently + ', the temperature is ' + weather.temp + '&deg;, and the wind is ' + weather.wind.speed + weather.units.speed + ' <span class="no-transform">' + weather.wind.direction + '</span>');
-			$('.weatherlink').html('<a href="' + weather.link + '">More details (w)</a>');
+			$('.weatherlink').html('<a target="_blank" href="' + weather.link + '">More details (w)</a>');
 		},
 		error: function(error) {
 			$('.weather').html('Sorry, ' + error);
@@ -76,7 +76,7 @@ function bindMousetraps() {
 		resetMousetraps();
 		lastFM_request();
 		geolocWeather();
-		
+
 		// This technically works, but the browser caches the response, keeping the same image :(
 		// $('body').css('background', "url('https://source.unsplash.com/collection/292287/') no-repeat center/cover fixed");
 	});
@@ -113,21 +113,27 @@ function lastFM_request() {
 	        if(xmlhttp.status == 200) {			             // And we have text,
 	            var obj = JSON.parse(xmlhttp.responseText);  // we parse the JSON,
 				var track   = obj.recenttracks.track[0];     // reference the first track
+				// console.log(track);
 				var artistName = track.artist['\#text'];     // and fetch data from it
 				var albumName  = track.album['\#text'];
 				var songName   = track.name;
 				var songURL    = track.url;
-				var userLink = '<a href="http://www.last.fm/user/' + username + '">';
+				var imgURL     = track.image.slice(-1)[0]['\#text'];
+				var userLink   = '<a target="_blank" href="http://www.last.fm/user/' + username + '">';
 
 				element.innerHTML = ''; // removes any existing text
 
-				if (track['\@attr'] && track['\@attr'].nowplaying != '') // if currently listening
+				if (track['\@attr'] && track['\@attr'].nowplaying != '') { // if currently listening
 					element.innerHTML += userLink + 'currently listening to:</a> ';
-				else
+
+					// this works too, but the largest image is only 300px, so it's blurry :(
+					// if (imgURL !== '')
+						//$('body').css('background', "url('" + imgURL + "') no-repeat center/cover fixed");
+				} else
 					element.innerHTML += userLink + 'last listened to:</a> ';
 
 				// prints link to song with artist and song name
-				element.innerHTML += '<a href="' + songURL + '" title="' + albumName + '">' + artistName + ' &mdash; ' + songName + '</a> ';
+				element.innerHTML += '<a target="_blank" href="' + songURL + '" title="' + albumName + '">' + artistName + ' &mdash; ' + songName + '</a> ';
 	         }
 	    }
 	};
