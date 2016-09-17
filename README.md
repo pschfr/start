@@ -20,7 +20,7 @@ Each category is openable by keyboard and click, press escape or click backgroun
 
 Browse similar style pages on [/r/startpages](https://reddit.com/r/startpages).
 
-BTW, it's super fast. DOMContentLoaded of ~225ms (~150ms as an extension!!) :D
+BTW, it's super fast. Fully loaded at ~300ms (~150ms as an extension!!) :D
 
 Feel free to fork, and add your own bookmarks and quotes!
 
