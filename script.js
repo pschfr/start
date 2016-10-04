@@ -51,6 +51,8 @@ function bindMousetraps() {
 			Mousetrap.bind($(val).children('span').text(), function(e) {
 				$('.subMenu').slideUp(150);
 				$('li a').removeClass('active');
+				Mousetrap.reset();
+				bindMousetraps();
 			});
 		});
 	});
