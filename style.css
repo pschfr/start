@@ -84,9 +84,13 @@ ul > li:hover > a#parent2, a.tab2, a.tab2:hover, a#parent2:hover, a#parent2.acti
 ul > li:hover > a#parent3, a.tab3, a.tab3:hover, a#parent3:hover, a#parent3.active { background-color: #336633; }
 ul > li:hover > a#parent4, a.tab4, a.tab4:hover, a#parent4:hover, a#parent4.active { background-color: #663366; }
 ul > li:hover > a#parent5, a.tab5, a.tab5:hover, a#parent5:hover, a#parent5.active { background-color: #84AED0; }
+.tab5 img{margin-right:8px;}
 ul > li:hover > a#parent6, a.tab6, a.tab6:hover, a#parent6:hover, a#parent6.active { background-color: #666633; }
 a#parent1:after, a#parent2:after, a#parent3:after, a#parent4:after, a#parent5:after, a#parent6:after { content: "↓"; }
 a#parent1.active:after, a#parent2.active:after, a#parent3.active:after, a#parent4.active:after, a#parent5.active:after, a#parent6.active:after { content: "↑"; }
 ul > li:hover > a#parent1, ul > li:hover > a#parent2, ul > li:hover > a#parent3, ul > li:hover > a#parent4, ul > li:hover > a#parent5, ul > li:hover > a#parent6, a:hover, a.active { opacity: 1; }
 a#parent5.active .right, a.tab5 span.right { color: #fff !important; }
 @media (max-width: 768px) { ul.box { width: 70%; } }
+
+
+
