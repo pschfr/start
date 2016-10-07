@@ -111,27 +111,16 @@ function lastFM_request() {
 	    if (xmlhttp.readyState == 4) {			              // When Last.FM is ready,
 	        if(xmlhttp.status == 200) {			              // And we have text,
 	            var obj = JSON.parse(xmlhttp.responseText);   // we parse the JSON,
-				var track      = obj.recenttracks.track[0];   // reference the first track
-				var artistName = track.artist['\#text'];      // fetch data from the track
+				var track      = obj.recenttracks.track[0];   // and fetch data from the track
+				var artistName = track.artist['\#text'];
 				var albumName  = track.album['\#text'];
 				var songName   = track.name;
 				var songURL    = track.url;
-				var imgURL     = track.image.slice(-1)[0]['\#text'];
-				var userLink   = '<a href="http://www.last.fm/user/' + username + '" title="' + obj.recenttracks['\@attr'].total + ' scrobbles by ' + username + '">';
 
 				element.innerHTML = ''; // removes any existing text
 
-				if (track['\@attr'] && track['\@attr'].nowplaying !== '') { // if currently listening
-					element.innerHTML += userLink + 'currently listening to:</a> ';
-
-					// this works too, but the largest image is only 300px, so it's blurry :(
-					// if (imgURL !== '')
-						//$('body').css('background', "url('" + imgURL + "') no-repeat center/cover fixed");
-				} else
-					element.innerHTML += userLink + 'last listened to:</a> ';
-
-				// prints link to song with artist and song name
-				element.innerHTML += '<a href="' + songURL + '" title="' + albumName + '">' + artistName + ' &mdash; ' + songName + '</a> ';
+				if (track['\@attr'] && track['\@attr'].nowplaying !== '') // if currently listening
+					element.innerHTML += '<a href="' + songURL + '" title="' + albumName + '">' + artistName + ' &mdash; ' + songName + '</a> ';
 	         }
 	    }
 	};
