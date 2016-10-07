@@ -6,6 +6,7 @@ body {
 	font: 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 	animation: fadeIn .75s .75s both ease-in;
 	text-transform: lowercase;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 	color: white;
     margin: 0;
 }
@@ -32,6 +33,7 @@ div#lastFM a {
 	padding: 15px 0;
 }
 ul {
+	text-shadow: none;
 	list-style: none;
 	padding: 0;
 	margin: 0;
