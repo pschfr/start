@@ -74,8 +74,7 @@ function bindMousetraps() {
 	// Resets and refreshes with spacebar, TODO: change background image too
 	Mousetrap.bind('space', function(e) {
 		resetMousetraps();
-		lastFM_request();
-		geolocWeather();
+		loadStuff();
 
 		// This technically works, but the browser caches the response, keeping the same image :(
 		// $('body').css('background', "url('https://source.unsplash.com/collection/292287/') no-repeat center/cover fixed");
@@ -97,41 +96,34 @@ function resetMousetraps() {
 }
 // Connects to Last.FM, retrives most recent song
 function lastFM_request() {
-	var method    = 'user.getrecenttracks';
 	var username  = 'paul_r_schaefer';
 	var API_key   = '0f680404e39c821cac34008cc4d803db';
-	var number    = '1'; // Increase this to increase number of tracks
-	var lastFMurl = 'https://ws.audioscrobbler.com/2.0/?method=' + method + '&user=' + username + '&api_key=' + API_key + '&limit=' + number + '&format=json';
+	var lastFMurl = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + username + '&api_key=' + API_key + '&limit=1&format=json';
 	var element   = document.getElementById('lastFM');
 	var xmlhttp   = new XMLHttpRequest();
-
-	xmlhttp.open('GET', lastFMurl, true); // begins request to Last.FM
-
+	xmlhttp.open('GET', lastFMurl, true);
 	xmlhttp.onreadystatechange = function() {
-	    if (xmlhttp.readyState == 4) {			              // When Last.FM is ready,
-	        if(xmlhttp.status == 200) {			              // And we have text,
-	            var obj = JSON.parse(xmlhttp.responseText);   // we parse the JSON,
-				var track       = obj.recenttracks.track[0];  // and fetch data from the track
+	    if (xmlhttp.readyState == 4) {
+	        if(xmlhttp.status == 200) {
+	            var obj = JSON.parse(xmlhttp.responseText);
+				var track       = obj.recenttracks.track[0];
 				var artistName  = track.artist['\#text'];
 				var albumName   = track.album['\#text'];
 				var songName    = track.name;
 				var songURL     = track.url;
 				var trackString = '<a href="' + songURL + '" title="on: ' + albumName + '">' + artistName + ' &mdash; ' + songName + '</a> ';
 
-				element.innerHTML = ''; // removes any existing text
-
-				if (track['\@attr'] && track['\@attr'].nowplaying !== '') // if currently listening
-					element.innerHTML += 'currently listening to: ';
+				if (track['\@attr'] && track['\@attr'].nowplaying !== '')
+					element.innerHTML = 'currently listening to: ';
 				else
-					element.innerHTML += 'last listened to: ';
+					element.innerHTML = 'last listened to: ';
 
 				element.innerHTML += trackString;
 	         }
 	    }
 	};
-	xmlhttp.send(null); // Close connection
+	xmlhttp.send(null);
 }
-
 // Initializes everything on page load
 $(function() {
 	startTime();
