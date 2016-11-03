@@ -51,10 +51,6 @@ function loadStuff() {
 	var randNumQuotes = Math.floor((Math.random() * quotes.length));
 	$('.quote').html('&ldquo;' + quotes[randNumQuotes] + '&rdquo; &mdash; ' + '<cite><small>' + quoted[randNumQuotes] + '</small></cite>');
 
-	// http://jmd.im/black.html
-	// var randNumImages = Math.floor((Math.random() * images.length));
-	// $('body').css('background-image', 'url("images/' + images[randNumImages] + '.jpg")');
-
 	geolocWeather();
 	lastFM_request();
 }

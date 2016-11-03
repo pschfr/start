@@ -1,5 +1,5 @@
 # start [https://pschfr.github.io/start/](https://pschfr.github.io/start/)
-![https://pschfr.github.io/start/](images/screenshot.png)
+![https://pschfr.github.io/start/](screenshot.png)
 ##Personal new tab page with keyboard nav, bookmarks, weather, quote, most recently listened to song, and image background.
 
 ##Features:
