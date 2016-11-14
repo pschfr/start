@@ -35,8 +35,8 @@ div.centerWrapper {
 div.timeDate div {
 	font-size: xx-large;
 	padding: 0 5px 5px;
+	height: 100px;
 }
-div#lastFM { text-align: center; }
 div#lastFM a {
 	color: white;
 	display: inline-block;
@@ -52,35 +52,33 @@ ul.subMenu {
 	display: none;
 	width: 100%;
 }
+ul.box a {
+	color: #111;
+	padding: 15px;
+}
 a {
 	transition: all .15s;
 	text-decoration: none;
 	display: block;
 	outline: none;
-	padding: 15px;
-	color: #111;
+	color: white;
 }
 p {
 	padding: 15px;
 	margin: 0;
 }
-p.top, p.bottom {
+p.bottom {
 	position: absolute;
 	font-size: smaller;
 	width: 100%;
-}
-p.top    { top:    0%; }
-p.bottom { bottom: 0%; }
-p a {
-	display: inline-block;
-	color: inherit;
-	padding: 0;
+	bottom: 1%;
 }
 .clear { clear: both; }
 .left  { float: left; }
 .right { float: right; }
 .text-right { text-align: right; }
 .right * { text-align: right; }
+.text-center { text-align: center;}
 .no-transform { text-transform: none; }
 div.right, div.left { width: 50%; }
 ul.box li a { background-color: rgba(255, 255, 255, .4); }
@@ -92,7 +90,11 @@ ul li a:hover span,  ul li a.active span, ul li a.active + ul.subMenu li a span 
 		float: none;
 		width: 100%;
 	}
-	div.timeDate div { padding-bottom: 15px; }
+	.right * { text-align: inherit; }
+	div.timeDate div {
+		padding-bottom: 15px;
+		height: auto;
+	}
 }
 @keyframes fadeIn {
 	from { opacity: 0; }
