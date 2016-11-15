@@ -64,6 +64,10 @@ function bindMousetraps() {
 	Mousetrap.bind('w', function(e) {
 		window.location.href = $('.weatherlink').children().attr('href');
 	});
+	// Binds secret GitHub link
+	Mousetrap.bind('g', function(e) {
+		window.location.href = 'https://github.com/pschfr/start';
+	});
 }
 
 // Closes cells, rebinds keyboard shortcuts
