@@ -101,20 +101,14 @@ function lastFM_request() {
 	xmlhttp.onreadystatechange = function() {
 	    if (xmlhttp.readyState == 4) {
 	        if(xmlhttp.status == 200) {
-	            var obj = JSON.parse(xmlhttp.responseText);
-				var track       = obj.recenttracks.track[0];
-				var artistName  = track.artist['\#text'];
-				var albumName   = track.album['\#text'];
-				var songName    = track.name;
-				var songURL     = track.url;
-				var trackString = '<a href="' + songURL + '" title="on album: ' + albumName + '">' + artistName + ' &mdash; ' + songName + '</a> ';
+	            var track = JSON.parse(xmlhttp.responseText).recenttracks.track[0];
 
 				if (track['\@attr'] && track['\@attr'].nowplaying !== '')
 					element.innerHTML = 'currently listening to: ';
 				else
 					element.innerHTML = 'last listened to: ';
 
-				element.innerHTML += trackString;
+				element.innerHTML += '<a href="' + track.url + '" title="on album: ' + track.album['\#text'] + '">' + track.artist['\#text'] + ' &mdash; ' + track.name + '</a> ';
 	         }
 	    }
 	};
