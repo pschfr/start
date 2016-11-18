@@ -11,7 +11,7 @@ body {
 	overflow: hidden;
 }
 body:before { /* This is hacky, but it works */
-	background: #222 url('https://source.unsplash.com/collection/292287/') no-repeat center/cover fixed;
+	background: #222 url('https://source.unsplash.com/category/nature/daily') no-repeat center/cover fixed;
 	content: '';
 	position: absolute;
 	filter: blur(5px);
@@ -42,6 +42,7 @@ div#lastFM a {
 	display: inline-block;
 	padding: 15px 0;
 }
+#quote { cursor: pointer; }
 ul {
 	text-shadow: none;
 	list-style: none;
