@@ -10,7 +10,7 @@ body {
     margin: 0;
 	overflow: hidden;
 }
-body:before { /* This is hacky, but it works */
+body:before {
 	background: #222 url('https://source.unsplash.com/category/nature/daily') no-repeat center/cover fixed;
 	content: '';
 	position: absolute;

@@ -91,17 +91,18 @@ function resetMousetraps() {
 }
 // Gets weather for requested location, appends to page
 function getWeather(location) {
-	var API_key   = '3dc48ab835ed1b4369c089d0e742ff03';
-	var darkSkyURL = 'https://api.darksky.net/forecast/' + API_key + '/' + location + '?exclude=flags';
-	var element   = document.getElementById('weather');
-	var xmlhttp   = new XMLHttpRequest();
+	var API_key    = '3dc48ab835ed1b4369c089d0e742ff03';
+	var exclusions = 'flags,daily,minutely,alerts';
+	var darkSkyURL = 'https://api.darksky.net/forecast/' + API_key + '/' + location + '?exclude=' + exclusions;
+	var element    = document.getElementById('weather');
+	var xmlhttp    = new XMLHttpRequest();
 	xmlhttp.open('GET', darkSkyURL, true);
 	xmlhttp.onreadystatechange = function() {
 	    if (xmlhttp.readyState == 4) {
 	        if(xmlhttp.status == 200) {
 				var weather = JSON.parse(xmlhttp.responseText);
 				// console.log(weather);
-				element.innerHTML = '<a href="https://darksky.net/forecast/' + location + '" title="' + weather.hourly.summary + '">' + weather.currently.summary + ', ' + Math.trunc(weather.currently.temperature) + '&deg;</a>';
+				element.innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '" title="' + weather.hourly.summary + '">' + weather.currently.summary + ', ' + Math.trunc(weather.currently.temperature) + '&deg;</a>';
 	        }
 	    }
 	};
@@ -139,8 +140,6 @@ function lastfmRequest() {
 	    }
 	};
 	xmlhttp.send(null);
-
-	var t = setTimeout(startTime, 15000);
 }
 // Initializes everything on page load
 $(function() {
