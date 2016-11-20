@@ -1,10 +1,10 @@
 // Finds current time and date, formats it properly
 function startTime() {
-	var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	var dayNames   = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	var now  = new Date();
 	var time = [now.getHours(), now.getMinutes(), now.getSeconds()];
-	var date = [now.getDate(), now.getDay(), now.getMonth()];
+	var date = [now.getDate(), now.getDay(), now.getMonth(), now.getFullYear()];
 	var hour = time[0];
 	var mins = time[1];
 	var secs = time[2];
@@ -12,11 +12,12 @@ function startTime() {
 	var day  = date[0];
 	var weekday = dayNames[date[1]];
 	var month = monthNames[date[2]];
+	var year = date[3];
 	hour = hour % 12;
   	hour = hour ? hour : 12;
 	mins = mins < 10 ? '0' + mins : mins;
 	secs = secs < 10 ? '0' + secs : secs;
-	document.getElementById('time').innerHTML = hour + ':' + mins + ':' + secs + ' ' + ampm + '<br/>' + weekday + ', ' + month + '. ' + day;
+	document.getElementById('time').innerHTML = '<span title="' + weekday + ', ' + month + ' ' + day + ', ' + year + '">' + hour + ':' + mins + ':' + secs + ' ' + ampm + '</span>';
 	var t = setTimeout(startTime, 500);
 }
 // Random quote function. Important: Make sure each quote has a corresponding "quoted".
@@ -30,20 +31,50 @@ function randomQuote() {
 }
 // Gets weather for requested location, appends to page
 function getWeather(location) {
-	$.simpleWeather({
-		location: location,
-		success: function(weather) {
-			document.getElementById('weather').innerHTML = '<a href="' + weather.link + '" title="Wind: ' + weather.wind.speed + weather.units.speed + ' ' + weather.wind.direction + '" id="weatherlink">' + weather.temp + '&deg;, ' + weather.currently + '<br/>' + weather.city + ',' + weather.region + '</a>';
-		}
-	});
+	var API_key   = '3dc48ab835ed1b4369c089d0e742ff03';
+	var darkSkyURL = 'https://api.darksky.net/forecast/' + API_key + '/' + location + '?exclude=flags';
+	var element   = document.getElementById('weather');
+	var xmlhttp   = new XMLHttpRequest();
+	xmlhttp.open('GET', darkSkyURL, true);
+	xmlhttp.onreadystatechange = function() {
+	    if (xmlhttp.readyState == 4) {
+	        if(xmlhttp.status == 200) {
+				var weather = JSON.parse(xmlhttp.responseText);
+				console.log(weather);
+					element.innerHTML = '<span title="' + weather.hourly.summary + '">' + Math.trunc(weather.currently.temperature) + '&deg;, ' + weather.currently.summary + '</span>';
+	         }
+	    }
+	};
+	xmlhttp.send(null);
 }
-// Geolocates the user, otherwise defaulting to Pittsburgh (2473224)
+// Geolocates the user, otherwise defaulting to Pittsburgh
 function geolocWeather() {
 	if('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 	    	getWeather(position.coords.latitude + ',' + position.coords.longitude);
-	  	}, getWeather(2473224), {timeout: 5000});
-	} else { getWeather(2473224); }
+	  	});
+	} else { getWeather('Pittsburgh, PA'); }
+}
+// Loop through the user's first 6 bookmark folders
+function fetchBookmarks() {
+	var count = 6;
+	chrome.bookmarks.getTree(function(itemTree){                // gets list of bookmarks
+		itemTree.forEach(function(item){                        // loops through them all
+			item.children[0].children.forEach(function(child) { // filters to only bookmarks in the bookmarks bar
+				if (child.children && count >= 1) {             // filters to folders on bookmarks bar and limits to 6
+					console.log(child.title + ' ' + child.title.charAt(0));
+					child.children.forEach(function(bookmark) {
+						console.log(bookmark.title + ' ' + bookmark.url);
+					});
+					console.log('----------------------------- ' + count);
+					count--;
+				}
+			});
+		});
+	});
+	// var left = document.createElement('div');
+	// left.className = 'left';
+	// document.getElementById('box').appendChild(left);
 }
 // Initializes keyboard nav
 function bindMousetraps() {
@@ -115,6 +146,7 @@ function lastfmRequest() {
 $(function() {
 	startTime();
 	randomQuote();
+	// fetchBookmarks();
 	bindMousetraps();
 	geolocWeather();
 	lastfmRequest();

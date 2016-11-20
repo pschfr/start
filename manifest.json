@@ -1,16 +1,13 @@
 {
     "manifest_version": 2,
-
-    "name": "My New Tab Page",
-    "description": "This extension is my custom new tab page.",
+    "name": "Start",
+    "description": "This extension is my custom new tab page. https://github.com/pschfr/start",
     "version": "4.2.0",
-
     "permissions": [
-        "geolocation"
+        "geolocation",
+        "bookmarks",
+		"<all_urls>"
     ],
-
-    "content_security_policy": "script-src 'self' https://query.yahooapis.com/v1/public/yql; object-src 'self'",
-
     "chrome_url_overrides": {
         "newtab": "index.html"
     }

@@ -4,12 +4,12 @@
 
 ##Features:
 - Background is a random nature photo that changes daily from [Unsplash Source](https://source.unsplash.com/)
-- Weather is from Yahoo Weather via [monkeecreate/jquery.simpleWeather](https://github.com/monkeecreate/jquery.simpleWeather)
+- Weather is [powered by Dark Sky!](https://darksky.net/poweredby/)
 - Keyboard navigation is thanks to [ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)!
 - Random inspirational quote!
 - Most recently listened to song thanks to my Last.FM script [pschfr/LastFM.js](https://github.com/pschfr/LastFM.js)!
 
-Each category is openable by keyboard and click, press escape or click background to close all.
+Each category can open by keyboard and click, press escape or click background to close all.
 
 ###You need extensions for most browsers to use this as your new tab page:
 - [New Tab Redirect for Chrome](https://chrome.google.com/webstore/detail/new-tab-redirect/icpgjfneehieebagbmdbhnlpiopdcmna)

@@ -34,8 +34,7 @@ div.centerWrapper {
 }
 div.timeDate div {
 	font-size: xx-large;
-	padding: 0 5px 5px;
-	height: 100px;
+	padding: 0 5px 10px;
 }
 div#lastFM a {
 	color: white;
