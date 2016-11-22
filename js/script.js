@@ -36,19 +36,24 @@ function fetchBookmarks() {
 		itemTree.forEach(function(item){                        // loops through them all
 			item.children[0].children.forEach(function(child) { // filters to only bookmarks in the bookmarks bar
 				if (child.children && count >= 1) {             // filters to folders on bookmarks bar and limits to 6
-					console.log(child.title + ' ' + child.title.charAt(0));
+					console.log(child.title + ' ' + child.title.charAt(0).toLowerCase()); // get folder title and first letter
 					child.children.forEach(function(bookmark) {
-						console.log(bookmark.title + ' ' + bookmark.url);
+						var matches = bookmark.title.match(/\[(.*?)\]/); // fetch character between [] for keyboard shortcut
+						if (matches)
+							console.log(bookmark.title + ' ' + bookmark.url + ' ' + bookmark.title.match(matches[1]));
 					});
-					console.log('----------------------------- ' + count);
+					console.log('');
 					count--;
 				}
 			});
 		});
 	});
-	// var left = document.createElement('div');
-	// left.className = 'left';
-	// document.getElementById('box').appendChild(left);
+	var left = document.createElement('div');
+	left.className = 'left';
+	document.getElementById('box').appendChild(left);
+	var right = document.createElement('div');
+	right.className = 'right';
+	document.getElementById('box').appendChild(right);
 }
 // Initializes keyboard nav
 function bindMousetraps() {
@@ -141,6 +146,17 @@ function lastfmRequest() {
 	};
 	xmlhttp.send(null);
 }
+function getOptions() {
+	chrome.storage.sync.get({
+		backgroundCategory: 'category/nature',
+		backgroundRefresh:  'daily',
+		lastFMusername:     'paul_r_schaefer'
+	}, function(items) {
+		console.log(items.backgroundCategory);
+		console.log(items.backgroundRefresh);
+		console.log(items.lastFMusername);
+	});
+}
 // Initializes everything on page load
 $(function() {
 	startTime();
@@ -149,6 +165,7 @@ $(function() {
 	bindMousetraps();
 	geolocWeather();
 	lastfmRequest();
+	// getOptions();
 	// Binds click events for opening tabs and background click to close
 	$('li a.parent').click(function() {
 		$(this).parent('li').find('ul').slideToggle(150);

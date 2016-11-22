@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>New Tab Options</title>
+</head>
+<body>
+	<p>
+		<label for="category">Background category:</label>
+		<select id="category" name="category">
+			<option value="category/buildings">Buildings</option>
+			<option value="category/food">Food</option>
+			<option value="category/nature">Nature</option>
+			<option value="category/people">People</option>
+			<option value="category/technology">Technology</option>
+			<option value="category/objects">Objects</option>
+			<option value="?space">Space</option>
+			<option value="?water">Water</option>
+		</select>
+	</p>
+	<p>
+		<label for="refresh">Background refresh rate:</label>
+		<select id="refresh" name="refresh">
+			<option value="daily">Daily</option>
+			<option value="Weekly">Weekly</option>
+			<option value="every">Every time</option>
+		</select>
+	</p>
+	<p>
+		<label for="lastFMusername">Last.FM username:</label>
+		<input type="text" id="lastFMusername" name="lastFMusername" />
+	</p>
+
+	<p><button id="save">Save</button></p>
+	<p id="status"></p>
+
+	<script src="js/options.js"></script>
+</body>
+</html>

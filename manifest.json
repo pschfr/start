@@ -6,9 +6,14 @@
     "permissions": [
         "geolocation",
         "bookmarks",
+		"storage",
 		"<all_urls>"
     ],
     "chrome_url_overrides": {
         "newtab": "index.html"
-    }
+    },
+	"options_ui": {
+    	"page": "options.html",
+    	"chrome_style": true
+	}
 }
