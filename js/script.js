@@ -29,6 +29,16 @@ function randomQuote() {
 	document.getElementById('quote').innerHTML = '&ldquo;' + quotes[randNumQuotes] + '&rdquo; &mdash; ' + '<small>' + quoted[randNumQuotes] + '</small>';
 	document.getElementById('quote').addEventListener('click', randomQuote, false);
 }
+function randomBackground(time) { // daily, weekly, or every time
+	var categories = ['buildings', 'food', 'nature', 'people', 'technology', 'objects'];
+	var randomCategory = Math.floor((Math.random() * categories.length));
+	var photo = new UnsplashPhoto();
+	if (time != '')
+		photo.randomize(time).fromCategory(categories[randomCategory]).fetch();
+	else
+		photo.fromCategory(categories[randomCategory]).fetch();
+	document.getElementById('background').style.backgroundImage = "url(" + photo.url + ")";
+}
 // Loop through the user's first 6 bookmark folders
 function fetchBookmarks() {
 	var count = 6;
@@ -161,6 +171,7 @@ function getOptions() {
 $(function() {
 	startTime();
 	randomQuote();
+	randomBackground();
 	// fetchBookmarks();
 	bindMousetraps();
 	geolocWeather();

@@ -2,6 +2,7 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body {
+	background: #222 no-repeat center/cover fixed;
 	font: 18px 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 	animation: fadeIn .75s both ease-in;
 	text-transform: lowercase;
@@ -10,20 +11,15 @@ body {
     margin: 0;
 	overflow: hidden;
 }
-body:before {  /* category/xxx/daily OR daily?query, could also be weekly */
-	background: #222 url('https://source.unsplash.com/category/nature/daily') no-repeat center/cover fixed;
-	content: '';
+div#background {
+	background: #222 no-repeat center/cover fixed;
+	animation: fadeIn .75s both ease-in;
 	position: absolute;
 	filter: blur(5px);
 	height: 110%;
 	width: 110%;
 	left: -1%;
 	top: -1%;
-}
-div#background {
-	position: absolute;
-	height: 100%;
-	width: 100%;
 }
 div.centerWrapper {
 	transform: translateY(-50%);
