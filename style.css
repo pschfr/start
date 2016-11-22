@@ -11,7 +11,7 @@ body {
 	overflow: hidden;
 }
 body:before {  /* category/xxx/daily OR daily?query, could also be weekly */
-	background: #222 url('https://source.unsplash.com/daily?space') no-repeat center/cover fixed;
+	background: #222 url('https://source.unsplash.com/category/nature/daily') no-repeat center/cover fixed;
 	content: '';
 	position: absolute;
 	filter: blur(5px);
