@@ -22,21 +22,22 @@ function startTime() {
 }
 // Random quote function. Important: Make sure each quote has a corresponding "quoted".
 function randomQuote() {
-	document.getElementById('quote').removeEventListener('click', randomQuote, false);
+	document.getElementById('quote').removeEventListener('click', refreshStuff, false);
 	var quotes = [ "If you are depressed you are living in the past. If you are anxious you are living in the future. If you are at peace you are living in the present.", "Madness, as you know, is a lot like gravity, all it takes is a little push.", "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently.", "Life has many ways of testing a person's will, either by having nothing happen at all or by having everything happen all at once.", "There is no excellent beauty that hath not some strangeness in its proportions.", "Children are fantastic little creatures, because next to drunk people, they are the only truly honest people on earth.", "I begin with an idea, and then it becomes something else.", "Be who you are and say what you feel because those who mind don't matter and those who matter don't mind.", "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get people interested in you.", "An essential aspect of creativity is not being afraid to fail.", "Antisocial behavior is a trait of intelligence in a world of conformists.", "What you do today can improve all your tomorrows.", "A creative man is motivated by the desire to achieve, not by the desire to beat others.", "Don't watch the clock; do what it does. Keep going.", "If you can dream it, you can do it.", "You can't build a reputation on what you're going to do." ];
 	var quoted = [ "Lao Tzu", "Joker", "Friedrich Nietzsche", "Paulo Coelho", "Sir Francis Bacon", "Mads Nipper", "Pablo Picasso", "Dr. Seuss", "Dale Carnegie", "Edwin Land", "Nikola Tesla", "Ralph Marston", "Ayn Rand", "Sam Levenson", "Walt Disney", "Henry Ford" ];
 	var randNumQuotes = Math.floor((Math.random() * quotes.length));
 	document.getElementById('quote').innerHTML = '&ldquo;' + quotes[randNumQuotes] + '&rdquo; &mdash; ' + '<small>' + quoted[randNumQuotes] + '</small>';
-	document.getElementById('quote').addEventListener('click', randomQuote, false);
+	document.getElementById('quote').addEventListener('click', refreshStuff, false);
 }
-function randomBackground(time) { // daily, weekly, or every time
-	var categories = ['buildings', 'food', 'nature', 'people', 'technology', 'objects'];
+function randomBackground(time, categories) { // daily, weekly, or every time
+	// var categories = ['buildings', 'food', 'nature', 'people', 'technology', 'objects'];
+	var categories = ['buildings', 'nature', 'objects'];
 	var randomCategory = Math.floor((Math.random() * categories.length));
 	var photo = new UnsplashPhoto();
-	if (time != '')
-		photo.randomize(time).fromCategory(categories[randomCategory]).fetch();
+	if (time == 'daily' || time == 'weekly')
+		photo.all().randomize(time).fromCategory(categories[randomCategory]).fetch();
 	else
-		photo.fromCategory(categories[randomCategory]).fetch();
+		photo.all().fromCategory(categories[randomCategory]).fetch();
 	document.getElementById('background').style.backgroundImage = "url(" + photo.url + ")";
 }
 // Loop through the user's first 6 bookmark folders
@@ -95,6 +96,10 @@ function bindMousetraps() {
 	// Binds secret GitHub link
 	Mousetrap.bind('g', function(e) {
 		window.location.href = 'https://github.com/pschfr/start';
+	});
+	// Binds refresh function
+	Mousetrap.bind('space', function(e) {
+		refreshStuff();
 	});
 }
 // Closes cells, rebinds keyboard shortcuts
@@ -167,19 +172,26 @@ function getOptions() {
 		console.log(items.lastFMusername);
 	});
 }
+function refreshStuff() {
+	resetMousetraps();
+	randomQuote();
+	randomBackground();
+	geolocWeather();
+	lastfmRequest();
+}
 // Initializes everything on page load
 $(function() {
 	startTime();
 	randomQuote();
 	randomBackground();
-	// fetchBookmarks();
+	fetchBookmarks();
 	bindMousetraps();
 	geolocWeather();
 	lastfmRequest();
-	// getOptions();
+	getOptions();
 
 	// generate snow with canvas
-	var a=document.getElementById("snow"),d=a.getContext("2d"),e=[],f=Math;a.style.pointerEvents="none";a.style.position="fixed";a.style.width="100vw";a.style.height="100vh";a.height=a.offsetHeight;a.width=a.offsetWidth;window.onresize=function(){a.height=a.offsetHeight;a.width=a.offsetWidth}; setInterval(function(){d.clearRect(0,0,a.width,a.height);d.beginPath();if(.3<f.random()){var b=f.random(),g=.05+.95*b,c={};c.x=1.5*a.width*f.random()-.5*a.width;c.y=-9;c.c=2*g*(f.random()/2+.5);c.d=5*g;c.a=5*b;c.b=function(){var t=this;t.x+=t.c;t.y+=t.d;d.beginPath();d.arc(t.x,t.y,t.a,0,2*f.PI,!1);d.fillStyle="#FFF";d.fill()};e.push(c)}for(b=0;b<e.length;b++)e[b].y>a.height?e.splice(b,1):e[b].b()},16);
+	// var a=document.getElementById("snow"),d=a.getContext("2d"),e=[],f=Math;a.style.pointerEvents="none";a.style.position="fixed";a.style.width="100vw";a.style.height="100vh";a.height=a.offsetHeight;a.width=a.offsetWidth;window.onresize=function(){a.height=a.offsetHeight;a.width=a.offsetWidth}; setInterval(function(){d.clearRect(0,0,a.width,a.height);d.beginPath();if(.3<f.random()){var b=f.random(),g=.05+.95*b,c={};c.x=1.5*a.width*f.random()-.5*a.width;c.y=-9;c.c=2*g*(f.random()/2+.5);c.d=5*g;c.a=5*b;c.b=function(){var t=this;t.x+=t.c;t.y+=t.d;d.beginPath();d.arc(t.x,t.y,t.a,0,2*f.PI,!1);d.fillStyle="#FFF";d.fill()};e.push(c)}for(b=0;b<e.length;b++)e[b].y>a.height?e.splice(b,1):e[b].b()},16);
 
 	// Binds click events for opening tabs and background click to close
 	$('li a.parent').click(function() {
