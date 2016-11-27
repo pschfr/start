@@ -1,0 +1,24 @@
+{
+  "name": "start",
+  "version": "4.2.0",
+  "description": "![https://pschfr.github.io/start/](screenshot.png) ##Personal new tab page with keyboard navigation, bookmarks, weather, quote, most recently listened to song, and image background.",
+  "main": "dist/index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pschfr/Start.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pschfr/Start/issues"
+  },
+  "homepage": "https://github.com/pschfr/Start#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "gulp-uglifycss": "^1.0.6"
+  }
+}
