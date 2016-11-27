@@ -12,14 +12,9 @@ body {
 	overflow: hidden;
 }
 div#background {
-	background: #222 no-repeat center/cover fixed;
-	animation: fadeIn .75s both ease-in;
 	position: absolute;
-	filter: blur(5px);
-	height: 110%;
-	width: 110%;
-	left: -1%;
-	top: -1%;
+	height: 100%;
+	width: 100%;
 }
 div.centerWrapper {
 	transform: translateY(-50%);

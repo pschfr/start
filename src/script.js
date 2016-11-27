@@ -36,7 +36,7 @@ function randomBackground(time, categories) { // daily, weekly, or every time
 		photo.all().randomize(time).fromCategory(categories[randomCategory]).fetch();
 	else
 		photo.all().fromCategory(categories[randomCategory]).fetch();
-	document.getElementById('background').style.backgroundImage = "url(" + photo.url + ")";
+	document.body.style.backgroundImage = "url(" + photo.url + ")";
 }
 // Loop through the user's first 6 bookmark folders
 function fetchBookmarks() {

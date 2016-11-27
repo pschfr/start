@@ -10,7 +10,7 @@
 		"<all_urls>"
     ],
     "chrome_url_overrides": {
-        "newtab": "index.html"
+        "newtab": "dist/index.html"
     },
 	"options_ui": {
     	"page": "options.html",
