@@ -12,6 +12,7 @@ body {
 	overflow: hidden;
 }
 div#background {
+	background-color: rgba(0, 0, 0, 0.3);
 	position: absolute;
 	height: 100%;
 	width: 100%;

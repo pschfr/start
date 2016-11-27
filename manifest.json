@@ -13,7 +13,7 @@
         "newtab": "dist/index.html"
     },
 	"options_ui": {
-    	"page": "options.html",
+    	"page": "opt/options.html",
     	"chrome_style": true
 	}
 }
