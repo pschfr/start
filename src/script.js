@@ -17,7 +17,8 @@ function startTime() {
   	hour = hour ? hour : 12;
 	mins = mins < 10 ? '0' + mins : mins;
 	secs = secs < 10 ? '0' + secs : secs;
-	document.getElementById('time').innerHTML = '<span title="' + weekday + ', ' + month + ' ' + day + ', ' + year + '">' + hour + ':' + mins + ':' + secs + ' ' + ampm + '</span>';
+	document.getElementById('time').innerHTML = hour + ':' + mins + ':' + secs + ' ' + ampm;
+	document.getElementById('date').innerHTML = weekday + ', ' + month + ' ' + day + ', ' + year;
 	var t = setTimeout(startTime, 500);
 }
 // Random quote function. Important: Make sure each quote has a corresponding "quoted".
@@ -27,7 +28,7 @@ function randomQuote() {
 	var randNumQuotes = Math.floor((Math.random() * quotes.length));
 	document.getElementById('quote').innerHTML = '&ldquo;' + quotes[randNumQuotes] + '&rdquo; &mdash; ' + '<small>' + quoted[randNumQuotes] + '</small>';
 }
-function randomBackground(time, categories) { // daily, weekly, or every time
+function randomBackground(time) { // daily, weekly, or every time
 	// var categories = ['buildings', 'food', 'nature', 'people', 'technology', 'objects'];
 	var categories = ['buildings', 'nature', 'objects'];
 	var randomCategory = Math.floor((Math.random() * categories.length));
@@ -112,7 +113,6 @@ function getWeather(location) {
 	var API_key    = '3dc48ab835ed1b4369c089d0e742ff03';
 	var exclusions = 'flags,daily,minutely,alerts';
 	var darkSkyURL = 'https://api.darksky.net/forecast/' + API_key + '/' + location + '?exclude=' + exclusions;
-	var element    = document.getElementById('weather');
 	var xmlhttp    = new XMLHttpRequest();
 	xmlhttp.open('GET', darkSkyURL, true);
 	xmlhttp.onreadystatechange = function() {
@@ -120,7 +120,8 @@ function getWeather(location) {
 	        if(xmlhttp.status == 200) {
 				var weather = JSON.parse(xmlhttp.responseText);
 				// console.log(weather);
-				element.innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '" title="' + weather.hourly.summary + '">' + weather.currently.summary + ', ' + Math.trunc(weather.currently.temperature) + '&deg;</a>';
+				document.getElementById('weather').innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '">' + weather.currently.summary + ', ' + Math.trunc(weather.currently.temperature) + '&deg;</a>';
+				document.getElementById('details').innerHTML = weather.hourly.summary;
 	        }
 	    }
 	};

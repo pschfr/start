@@ -24,9 +24,11 @@ div.centerWrapper {
 	left: 25vw;
 	top: 50%;
 }
-div.timeDate div {
-	font-size: xx-large;
+div.top, div.bottom { display: flex; }
+div.top div { font-size: xx-large; }
+div.top div, div.bottom div {
 	padding: 0 5px 10px;
+	flex: 1;
 }
 div#lastFM a {
 	color: white;
@@ -76,13 +78,14 @@ ul.box li a { background-color: rgba(255, 255, 255, .4); }
 ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, .6); }
 ul li a:hover span,  ul li a.active span, ul li a.active + ul.subMenu li a span { text-decoration: underline; }
 @media (max-width: 985px) {
-	ul.box div.left, ul.box div.right, div.timeDate div {
+	ul.box div.left, ul.box div.right, div.top div, div.bottom div {
 		text-align: center;
 		float: none;
 		width: 100%;
 	}
 	.right * { text-align: inherit; }
-	div.timeDate div {
+	div.top, div.bottom { display: block; }
+	div.top div, div.bottom div {
 		padding-bottom: 15px;
 		height: auto;
 	}
