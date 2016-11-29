@@ -1,5 +1,5 @@
-# start [https://pschfr.github.io/start/](https://pschfr.github.io/start/)
-![https://pschfr.github.io/start/](screenshot.png)
+# start [https://pschfr.github.io/start/dist](https://pschfr.github.io/start/dist)
+![https://pschfr.github.io/start/dist](screenshot.png)
 ##Personal new tab page with keyboard navigation, bookmarks, weather, quote, most recently listened to song, and image background.
 
 ##Features:
@@ -18,10 +18,6 @@ Each category can open by keyboard and click, press escape or click background t
 - [Custom New Tab Page for Opera](https://addons.opera.com/en/extensions/details/custom-new-tab-page/)
 - Safari - just set it as your homepage in settings.
 
-Browse similar style pages on [/r/startpages](https://reddit.com/r/startpages).
-
 It's super fast. Fully loaded at ~300ms (~150ms as an extension!!) :D
 
-Feel free to fork, and add your own bookmarks and quotes!
-
-If you have any questions, [tweet me](http://twitter.com/pschfr) or file an issue or pull request.
+Feel free to fork, and add your own bookmarks and quotes. If you have any questions, [tweet me](http://twitter.com/pschfr) or file an issue or pull request.
