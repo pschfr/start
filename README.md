@@ -5,6 +5,7 @@
 ##Features:
 - Background is a random nature photo that changes daily from [Unsplash Source](https://source.unsplash.com/)
 - Weather is [powered by Dark Sky!](https://darksky.net/poweredby/)
+- If it is snowing or raining, it will "snow" thanks to [HermannBjorgvin/SnowJs](https://github.com/HermannBjorgvin/SnowJs)
 - Keyboard navigation is thanks to [ccampbell/mousetrap](https://github.com/ccampbell/mousetrap)!
 - Random inspirational quote!
 - Most recently listened to song thanks to my Last.FM script [pschfr/LastFM.js](https://github.com/pschfr/LastFM.js)!
