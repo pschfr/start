@@ -69,7 +69,7 @@ function bindMousetraps() {
 	// Loops through parent cells, opening those on request
 	$.each($('.parent'), function(i, val) {
 		Mousetrap.bind($(val).attr('data-key'), function(e) {
-			$('a#' + $(val).attr('id')).toggleClass('active').next().slideToggle(150);
+			$('a#' + $(val).attr('id')).toggleClass('active').next().slideToggle(250);
 			// Binds key shortcuts for parent cell children when opened
 			$.each($(val).parent().find('.tab'), function(i, val) {
 				Mousetrap.bind($(val).attr('data-key'), function(e) {
@@ -119,7 +119,7 @@ function getWeather(location) {
 	        if(xmlhttp.status == 200) {
 				var weather = JSON.parse(xmlhttp.responseText);
 				// console.log(weather);
-				document.getElementById('weather').innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '">' + weather.currently.summary + ', ' + Math.trunc(weather.currently.temperature) + '&deg;</a>';
+				document.getElementById('weather').innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '">' + weather.currently.summary + ', ' + Math.round(weather.currently.temperature) + '&deg;</a>';
 				document.getElementById('details').innerHTML = weather.hourly.summary;
 
 				if (weather.currently.icon == 'rain' || weather.currently.icon == 'snow' || weather.currently.icon == 'sleet')
@@ -245,7 +245,7 @@ $(function() {
 
 	// Binds click events for opening tabs and background click to close
 	$('li a.parent').click(function() {
-		$(this).parent('li').find('ul').slideToggle(150);
+		$(this).parent('li').find('ul').slideToggle(250);
 		$(this).toggleClass('active');
 	});
 	document.getElementById('background').addEventListener('click', resetMousetraps, false);

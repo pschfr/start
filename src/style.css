@@ -9,7 +9,6 @@ body {
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 	color: white;
     margin: 0;
-	overflow: hidden;
 }
 div#background {
 	background-color: rgba(0, 0, 0, 0.3);
@@ -24,9 +23,9 @@ div.centerWrapper {
 	left: 25vw;
 	top: 50%;
 }
-div.top, div.bottom { display: flex; }
-div.top div { font-size: xx-large; }
-div.top div, div.bottom div {
+div.large, div.small { display: flex; }
+div.large div { font-size: xx-large; }
+div.large div, div.small div {
 	padding: 0 5px 10px;
 	flex: 1;
 }
@@ -50,7 +49,7 @@ ul.box a {
 	padding: 15px;
 }
 a {
-	transition: all .15s;
+	transition: all 0.25s;
 	text-decoration: none;
 	display: block;
 	outline: none;
@@ -69,23 +68,22 @@ p.bottom {
 .clear { clear: both; }
 .left  { float: left; }
 .right { float: right; }
-.text-right { text-align: right; }
-.right * { text-align: right; }
+.text-right, .right * { text-align: right; }
 .text-center { text-align: center;}
 .no-transform { text-transform: none; }
 div.right, div.left { width: 50%; }
-ul.box li a { background-color: rgba(255, 255, 255, .4); }
-ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, .6); }
+ul.box li a { background-color: rgba(255, 255, 255, 0.5); }
+ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a { background-color: rgba(255, 255, 255, 0.7); }
 ul li a:hover span,  ul li a.active span, ul li a.active + ul.subMenu li a span { text-decoration: underline; }
 @media (max-width: 985px) {
-	ul.box div.left, ul.box div.right, div.top div, div.bottom div {
+	ul.box div.left, ul.box div.right, div.large div, div.small div {
 		text-align: center;
 		float: none;
 		width: 100%;
 	}
 	.right * { text-align: inherit; }
-	div.top, div.bottom { display: block; }
-	div.top div, div.bottom div {
+	div.large, div.small { display: block; }
+	div.large div, div.small div {
 		padding-bottom: 15px;
 		height: auto;
 	}
