@@ -115,8 +115,8 @@ function getWeather(location) {
 	var xmlhttp    = new XMLHttpRequest();
 	xmlhttp.open('GET', darkSkyURL, true);
 	xmlhttp.onreadystatechange = function() {
-	    if (xmlhttp.readyState == 4) {
-	        if(xmlhttp.status == 200) {
+		if (xmlhttp.readyState == 4) {
+			if(xmlhttp.status == 200) {
 				var weather = JSON.parse(xmlhttp.responseText);
 				// console.log(weather);
 				document.getElementById('weather').innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '">' + weather.currently.summary + ', ' + Math.round(weather.currently.temperature) + '&deg;</a>';
@@ -124,8 +124,8 @@ function getWeather(location) {
 
 				if (weather.currently.icon == 'rain' || weather.currently.icon == 'snow' || weather.currently.icon == 'sleet')
 					snow();
-	        }
-	    }
+			}
+		}
 	};
 	xmlhttp.send(null);
 }
@@ -133,7 +133,7 @@ function getWeather(location) {
 function geolocWeather() {
 	if('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
-	    	getWeather(position.coords.latitude + ',' + position.coords.longitude);
+			getWeather(position.coords.latitude + ',' + position.coords.longitude);
 	  	});
 	} else { getWeather('40.4406, -79.9959'); }
 }
@@ -146,10 +146,10 @@ function lastfmRequest() {
 	var xmlhttp   = new XMLHttpRequest();
 	xmlhttp.open('GET', lastFMurl, true);
 	xmlhttp.onreadystatechange = function() {
-	    if (xmlhttp.readyState == 4) {
-	        if(xmlhttp.status == 200) {
+		if (xmlhttp.readyState == 4) {
+			if(xmlhttp.status == 200) {
 				var total = JSON.parse(xmlhttp.responseText).recenttracks['\@attr'].total;
-	            var track = JSON.parse(xmlhttp.responseText).recenttracks.track[0];
+				var track = JSON.parse(xmlhttp.responseText).recenttracks.track[0];
 
 				if (track['\@attr'] && track['\@attr'].nowplaying !== '')
 					element.innerHTML = '<span title="' + total + ' total streamed">currently listening to:</span> ';
@@ -157,8 +157,8 @@ function lastfmRequest() {
 					element.innerHTML = '<span title="' + total + ' total streamed">last listened to:</span> ';
 
 				element.innerHTML += '<a href="' + track.url + '" title="on album: ' + track.album['\#text'] + '">' + track.artist['\#text'] + ' &mdash; ' + track.name + '</a> ';
-	         }
-	    }
+			 }
+		}
 	};
 	xmlhttp.send(null);
 }
@@ -177,57 +177,57 @@ function getOptions() {
 // Generate snow with canvas tag, borrowed from https://github.com/HermannBjorgvin/SnowJs
 function snow() {
 	var canvas = document.getElementById("snow");
-    var ctx = canvas.getContext("2d");
-    var flakeArray = [];
+	var ctx = canvas.getContext("2d");
+	var flakeArray = [];
 
-    canvas.style.pointerEvents = "none";
-    canvas.style.position = "fixed";
-    canvas.style.top = 0;
-    canvas.style.left = 0;
-    canvas.style.width = "100vw";
-    canvas.style.height = "100vh";
+	canvas.style.pointerEvents = "none";
+	canvas.style.position = "fixed";
+	canvas.style.top = 0;
+	canvas.style.left = 0;
+	canvas.style.width = "100vw";
+	canvas.style.height = "100vh";
 
-    function canvasResize(){
-        canvas.height = canvas.offsetHeight;
-        canvas.width = canvas.offsetWidth;
-    }
-    canvasResize();
+	function canvasResize(){
+		canvas.height = canvas.offsetHeight;
+		canvas.width = canvas.offsetWidth;
+	}
+	canvasResize();
 
-    window.onresize = function() {
-        canvasResize();
-    };
+	window.onresize = function() {
+		canvasResize();
+	};
 
-    var MyMath = Math;
+	var MyMath = Math;
 
-    setInterval(function() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.beginPath();
+	setInterval(function() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.beginPath();
 
-        var random = MyMath.random();
-        var distance = .05 + .95 * random;
-        
-        flake = {};
-        flake.x = 1.5 * canvas.width * MyMath.random() - .5 * canvas.width;
-        flake.y = -9;
-        flake.velX = 2 * distance * (MyMath.random() / 2 + .5);
-        flake.velY = (4 + 2 * MyMath.random()) * distance;
-        flake.radius = MyMath.pow(5 * random, 2) / 5;
-        flake.update = function() {
-            var t = this;
-            t.x += t.velX;
-            t.y += t.velY;
-            ctx.beginPath();
-            ctx.arc(t.x, t.y, t.radius, 0, 2 * MyMath.PI, !1);
-            ctx.fillStyle = "#FFF";
-            ctx.fill()
-        };
+		var random = MyMath.random();
+		var distance = .05 + .95 * random;
+		
+		flake = {};
+		flake.x = 1.5 * canvas.width * MyMath.random() - .5 * canvas.width;
+		flake.y = -9;
+		flake.velX = 2 * distance * (MyMath.random() / 2 + .5);
+		flake.velY = (4 + 2 * MyMath.random()) * distance;
+		flake.radius = MyMath.pow(5 * random, 2) / 5;
+		flake.update = function() {
+			var t = this;
+			t.x += t.velX;
+			t.y += t.velY;
+			ctx.beginPath();
+			ctx.arc(t.x, t.y, t.radius, 0, 2 * MyMath.PI, !1);
+			ctx.fillStyle = "#FFF";
+			ctx.fill()
+		};
 
-        flakeArray.push(flake);
+		flakeArray.push(flake);
 
-        for (b = 0; b < flakeArray.length; b++) {
-            flakeArray[b].y > canvas.height ? flakeArray.splice(b, 1) : flakeArray[b].update()
-        }
-    }, 16);
+		for (b = 0; b < flakeArray.length; b++) {
+			flakeArray[b].y > canvas.height ? flakeArray.splice(b, 1) : flakeArray[b].update()
+		}
+	}, 16);
 }
 // Initializes everything on page load
 $(function() {
