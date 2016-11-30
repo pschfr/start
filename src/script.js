@@ -119,11 +119,34 @@ function getWeather(location) {
 			if(xmlhttp.status == 200) {
 				var weather = JSON.parse(xmlhttp.responseText);
 				// console.log(weather);
-				document.getElementById('weather').innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '">' + weather.currently.summary + ', ' + Math.round(weather.currently.temperature) + '&deg;</a>';
-				document.getElementById('details').innerHTML = weather.hourly.summary;
+
+				var weatherIcon = '';
+				if (weather.currently.icon == 'clear-day')
+					weatherIcon = 'sun';
+				else if (weather.currently.icon == 'clear-night')
+					weatherIcon = 'moon';
+				else if (weather.currently.icon == 'rain')
+					weatherIcon = 'rain';
+				else if (weather.currently.icon == 'snow')
+					weatherIcon = 'snow';
+				else if (weather.currently.icon == 'sleet')
+					weatherIcon = 'sleet';
+				else if (weather.currently.icon == 'wind')
+					weatherIcon = 'wind';
+				else if (weather.currently.icon == 'fog')
+					weatherIcon = 'fog';
+				else if (weather.currently.icon == 'cloudy')
+					weatherIcon = 'cloud';
+				else if (weather.currently.icon == 'partly-cloudy-day')
+					weatherIcon = 'cloud sun';
+				else if (weather.currently.icon == 'partly-cloudy-night')
+					weatherIcon = 'cloud moon';
 
 				if (weather.currently.icon == 'rain' || weather.currently.icon == 'snow' || weather.currently.icon == 'sleet')
 					snow();
+
+				document.getElementById('weather').innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '"><span class="climacon ' + weatherIcon + '"></span> ' + weather.currently.summary + ', ' + Math.round(weather.currently.temperature) + '&deg;</a>';
+				document.getElementById('details').innerHTML = weather.hourly.summary;
 			}
 		}
 	};
