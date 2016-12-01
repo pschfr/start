@@ -61,17 +61,33 @@ p {
 	padding: 15px;
 	margin: 0;
 }
-p.bottom {
+#quote {
 	position: absolute;
 	font-size: smaller;
 	width: 100%;
 	bottom: 1%;
+}
+#modal {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+#modal .inner {
+	transform: translateY(-50%);
+	position: absolute;
+	width: 50vw;
+	left: 25vw;
+	top: 50%;
 }
 .clear { clear: both; }
 .left  { float: left; }
 .right { float: right; }
 .text-right, .right * { text-align: right; }
 .text-center { text-align: center;}
+.centered { margin: 0 auto; }
 .no-transform { text-transform: none; }
 div.right, div.left { width: 50%; }
 ul.box li a { background-color: rgba(255, 255, 255, 0.5); }

@@ -95,10 +95,20 @@ function bindMousetraps() {
 	Mousetrap.bind('g', function(e) {
 		window.location.href = 'https://github.com/pschfr/start';
 	});
-	// Binds refresh function
-	Mousetrap.bind('space', function(e) {
-		refreshStuff();
+	// Binds keyboard shortcut helper modal
+	Mousetrap.bind('?', function(e) {
+		openModal();
 	});
+}
+// Keyboard shortcuts modal
+function openModal() {
+	if (document.getElementById('modal').style.display == '')
+		document.getElementById('modal').style.display = 'block';
+	else
+		closeModal();
+}
+function closeModal() {
+	document.getElementById('modal').style.display = '';
 }
 // Closes cells, rebinds keyboard shortcuts
 function resetMousetraps() {
@@ -106,6 +116,7 @@ function resetMousetraps() {
 	$('li a').removeClass('active');
 	Mousetrap.reset();
 	bindMousetraps();
+	document.getElementById('modal').style.display = '';
 }
 // Gets weather for requested location, appends to page
 function getWeather(location) {
@@ -267,4 +278,5 @@ $(function() {
 		$(this).toggleClass('active');
 	});
 	document.getElementById('background').addEventListener('click', resetMousetraps, false);
+	document.getElementById('modal').addEventListener('click', closeModal, false);
 });
