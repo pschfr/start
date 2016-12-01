@@ -72,9 +72,13 @@ function bindMousetraps() {
 			$('a#' + $(val).attr('id')).toggleClass('active').next().slideToggle(250);
 			// Binds key shortcuts for parent cell children when opened
 			$.each($(val).parent().find('.tab'), function(i, val) {
+				// Go to link URL
 				Mousetrap.bind($(val).attr('data-key'), function(e) {
-					// Go to link URL
 					window.location.href = $(val).attr('href');
+				});
+				// Go to link URL in new tab
+				Mousetrap.bind($(val).attr('data-key').toUpperCase(), function(e) {
+					window.open($(val).attr('href'), '_blank');
 				});
 			});
 			// Resets key shortcuts when parent cell key pressed twice
