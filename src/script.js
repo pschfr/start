@@ -142,8 +142,10 @@ function getWeather(location) {
 				else if (weather.currently.icon == 'partly-cloudy-night')
 					weatherIcon = 'cloud moon';
 
-				if (weather.currently.icon == 'rain' || weather.currently.icon == 'snow' || weather.currently.icon == 'sleet')
-					snow();
+				if (weather.currently.icon == 'snow' || weather.currently.icon == 'sleet')
+					participate('snow');
+				else if (weather.currently.icon == 'rain')
+					participate('rain');
 
 				document.getElementById('weather').innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '"><span class="climacon ' + weatherIcon + '"></span> ' + weather.currently.summary + ', ' + Math.round(weather.currently.temperature) + '&deg;</a>';
 				document.getElementById('details').innerHTML = weather.hourly.summary;
@@ -197,38 +199,31 @@ function getOptions() {
 		console.log(items.lastFMusername);
 	});
 }
-// Generate snow with canvas tag, borrowed from https://github.com/HermannBjorgvin/SnowJs
-function snow() {
+// Generate snow/rain with canvas tag, borrowed from https://github.com/HermannBjorgvin/SnowJs
+function participate(type) {
 	var canvas = document.getElementById("snow");
 	var ctx = canvas.getContext("2d");
 	var flakeArray = [];
-
 	canvas.style.pointerEvents = "none";
 	canvas.style.position = "fixed";
 	canvas.style.top = 0;
 	canvas.style.left = 0;
 	canvas.style.width = "100vw";
 	canvas.style.height = "100vh";
-
 	function canvasResize(){
 		canvas.height = canvas.offsetHeight;
 		canvas.width = canvas.offsetWidth;
 	}
 	canvasResize();
-
 	window.onresize = function() {
 		canvasResize();
 	};
-
 	var MyMath = Math;
-
 	setInterval(function() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.beginPath();
-
 		var random = MyMath.random();
 		var distance = .05 + .95 * random;
-		
 		flake = {};
 		flake.x = 1.5 * canvas.width * MyMath.random() - .5 * canvas.width;
 		flake.y = -9;
@@ -241,12 +236,13 @@ function snow() {
 			t.y += t.velY;
 			ctx.beginPath();
 			ctx.arc(t.x, t.y, t.radius, 0, 2 * MyMath.PI, !1);
-			ctx.fillStyle = "#FFF";
+			if (type == 'snow')
+				ctx.fillStyle = "#FFF";
+			else if (type == 'rain')
+				ctx.fillStyle = "#00F";
 			ctx.fill()
 		};
-
 		flakeArray.push(flake);
-
 		for (b = 0; b < flakeArray.length; b++) {
 			flakeArray[b].y > canvas.height ? flakeArray.splice(b, 1) : flakeArray[b].update()
 		}
@@ -264,7 +260,6 @@ $(function() {
 	// In development
 	// fetchBookmarks();
 	// getOptions();
-	// snow();
 
 	// Binds click events for opening tabs and background click to close
 	$('li a.parent').click(function() {
