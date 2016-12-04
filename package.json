@@ -15,6 +15,7 @@
   "homepage": "https://github.com/pschfr/Start#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-uglify": "^2.0.0"
   },
