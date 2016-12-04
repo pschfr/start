@@ -5,7 +5,7 @@ var gulp      = require('gulp'),
 	uglifycss = require('gulp-uglifycss'),
 	htmlmin   = require('gulp-htmlmin');
 gulp.task('default', function() {
-	gulp.src(['src/jquery-3.1.1.js', 'src/mousetrap.js', 'src/unsplash-source.js', 'src/script.js']).pipe(concat('scripts.js')).pipe(gulp.dest('src/'));
+	gulp.src(['src/vendor/jquery-3.1.1.js', 'src/vendor/mousetrap.js', 'src/vendor/unsplash-source.js', 'src/script.js']).pipe(concat('scripts.js')).pipe(gulp.dest('src/'));
 	gulp.src('src/scripts.js').pipe(uglify()).pipe(gulp.dest('dist/'));
 	gulp.src('src/style.sass').pipe(sass().on('error', sass.logError)).pipe(gulp.dest('src/'));
 	gulp.src('src/style.css').pipe(uglifycss()).pipe(gulp.dest('dist/'));
