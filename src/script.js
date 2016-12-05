@@ -21,23 +21,29 @@ function startTime() {
 	document.getElementById('date').innerHTML = weekday + ', ' + month + ' ' + day + ', ' + year;
 	var t = setTimeout(startTime, 500);
 }
+
 // Random quote function. Important: Make sure each quote has a corresponding "quoted".
 function randomQuote() {
 	var quotes = [ "If you are depressed you are living in the past. If you are anxious you are living in the future. If you are at peace you are living in the present.", "Madness, as you know, is a lot like gravity, all it takes is a little push.", "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently.", "Life has many ways of testing a person's will, either by having nothing happen at all or by having everything happen all at once.", "There is no excellent beauty that hath not some strangeness in its proportions.", "Children are fantastic little creatures, because next to drunk people, they are the only truly honest people on earth.", "I begin with an idea, and then it becomes something else.", "Be who you are and say what you feel because those who mind don't matter and those who matter don't mind.", "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get people interested in you.", "An essential aspect of creativity is not being afraid to fail.", "Antisocial behavior is a trait of intelligence in a world of conformists.", "What you do today can improve all your tomorrows.", "A creative man is motivated by the desire to achieve, not by the desire to beat others.", "Don't watch the clock; do what it does. Keep going.", "If you can dream it, you can do it.", "You can't build a reputation on what you're going to do." ];
+
 	var quoted = [ "Lao Tzu", "Joker", "Friedrich Nietzsche", "Paulo Coelho", "Sir Francis Bacon", "Mads Nipper", "Pablo Picasso", "Dr. Seuss", "Dale Carnegie", "Edwin Land", "Nikola Tesla", "Ralph Marston", "Ayn Rand", "Sam Levenson", "Walt Disney", "Henry Ford" ];
 	var randNumQuotes = Math.floor((Math.random() * quotes.length));
 	document.getElementById('quote').innerHTML = '&ldquo;' + quotes[randNumQuotes] + '&rdquo; &mdash; ' + '<small>' + quoted[randNumQuotes] + '</small>';
 }
+
 function randomBackground(time) { // daily, weekly, or every time
 	var categories = ['buildings', /*'food',*/ 'nature', /*'people', 'technology',*/ 'objects'];
 	var randomCategory = Math.floor((Math.random() * categories.length));
 	var photo = new UnsplashPhoto();
+
 	if (time == 'daily' || time == 'weekly')
 		photo.all().randomize(time).fromCategory(categories[randomCategory]).fetch();
 	else
 		photo.all().fromCategory(categories[randomCategory]).fetch();
+
 	document.body.style.backgroundImage = "url(" + photo.url + ")";
 }
+
 // Loop through the user's first 6 bookmark folders
 function fetchBookmarks() {
 	var count = 6;
@@ -57,6 +63,7 @@ function fetchBookmarks() {
 			});
 		});
 	});
+
 	var left = document.createElement('div');
 	left.className = 'left';
 	document.getElementById('box').appendChild(left);
@@ -64,46 +71,55 @@ function fetchBookmarks() {
 	right.className = 'right';
 	document.getElementById('box').appendChild(right);
 }
+
 // Initializes keyboard nav
 function bindMousetraps() {
 	// Loops through parent cells, opening those on request
 	$.each($('.parent'), function(i, val) {
 		Mousetrap.bind($(val).attr('data-key'), function(e) {
-			$('a#' + $(val).attr('id')).toggleClass('active').next().slideToggle(250);
+			$('a#' + $(val).attr('id')).toggleClass('active').next().slideToggle(150);
+			
 			// Binds key shortcuts for parent cell children when opened
 			$.each($(val).parent().find('.tab'), function(i, val) {
 				// Go to link URL
 				Mousetrap.bind($(val).attr('data-key'), function(e) {
 					window.location.href = $(val).attr('href');
 				});
+
 				// Go to link URL in new tab
 				Mousetrap.bind($(val).attr('data-key').toUpperCase(), function(e) {
 					window.open($(val).attr('href'), '_blank');
 				});
 			});
+
 			// Resets key shortcuts when parent cell key pressed twice
 			Mousetrap.bind($(val).attr('data-key'), function(e) {
 				resetMousetraps();
 			});
 		});
 	});
+
 	// Resets on ESC
 	Mousetrap.bind('esc', function(e) {
 		resetMousetraps();
 	});
+	
 	// Binds Weather link
 	Mousetrap.bind('w', function(e) {
 		window.location.href = document.getElementById('weatherlink');
 	});
+	
 	// Binds secret GitHub link
 	Mousetrap.bind('g', function(e) {
 		window.location.href = 'https://github.com/pschfr/start';
 	});
+	
 	// Binds keyboard shortcut helper modal
 	Mousetrap.bind('?', function(e) {
 		openModal();
 	});
 }
+
 // Keyboard shortcuts modal
 function openModal() {
 	if (document.getElementById('modal').style.display == '')
@@ -114,6 +130,7 @@ function openModal() {
 function closeModal() {
 	document.getElementById('modal').style.display = '';
 }
+
 // Closes cells, rebinds keyboard shortcuts
 function resetMousetraps() {
 	$('.subMenu').slideUp(150);
@@ -122,12 +139,14 @@ function resetMousetraps() {
 	bindMousetraps();
 	document.getElementById('modal').style.display = '';
 }
+
 // Gets weather for requested location, appends to page
 function getWeather(location) {
 	var API_key    = '3dc48ab835ed1b4369c089d0e742ff03';
 	var exclusions = 'flags,daily,minutely,alerts';
 	var darkSkyURL = 'https://api.darksky.net/forecast/' + API_key + '/' + location + '?exclude=' + exclusions;
 	var xmlhttp    = new XMLHttpRequest();
+
 	xmlhttp.open('GET', darkSkyURL, true);
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4) {
@@ -169,14 +188,17 @@ function getWeather(location) {
 	};
 	xmlhttp.send(null);
 }
+
 // Geolocates the user, otherwise defaulting to Pittsburgh
 function geolocWeather() {
 	if('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			getWeather(position.coords.latitude + ',' + position.coords.longitude);
 	  	});
+
 	} else { getWeather('40.4406, -79.9959'); }
 }
+
 // Connects to Last.FM, retrives most recent song - based on my https://github.com/pschfr/LastFM.js
 function lastfmRequest() {
 	var username  = 'paul_r_schaefer';
@@ -184,6 +206,7 @@ function lastfmRequest() {
 	var lastFMurl = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + username + '&api_key=' + API_key + '&limit=1&format=json';
 	var element   = document.getElementById('lastFM');
 	var xmlhttp   = new XMLHttpRequest();
+
 	xmlhttp.open('GET', lastFMurl, true);
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4) {
@@ -202,6 +225,7 @@ function lastfmRequest() {
 	};
 	xmlhttp.send(null);
 }
+
 // Loads options from Google Chrome
 function getOptions() {
 	chrome.storage.sync.get({
@@ -214,7 +238,9 @@ function getOptions() {
 		console.log(items.lastFMusername);
 	});
 }
-// Generate snow/rain with canvas tag, borrowed from https://github.com/HermannBjorgvin/SnowJs
+
+// Generate snow/rain with canvas tag
+// https://github.com/HermannBjorgvin/SnowJs
 function participate(type) {
 	var canvas = document.getElementById("snow");
 	var ctx = canvas.getContext("2d");
@@ -263,6 +289,7 @@ function participate(type) {
 		}
 	}, 16);
 }
+
 // Initializes everything on page load
 $(function() {
 	startTime();
@@ -278,9 +305,11 @@ $(function() {
 
 	// Binds click events for opening tabs and background click to close
 	$('li a.parent').click(function() {
-		$(this).parent('li').find('ul').slideToggle(250);
+		$(this).parent('li').find('ul').slideToggle(150);
 		$(this).toggleClass('active');
 	});
+
+	// Binds click events to close cells and keyboard modal
 	document.getElementById('background').addEventListener('click', resetMousetraps, false);
 	document.getElementById('modal').addEventListener('click', closeModal, false);
 });
