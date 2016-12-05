@@ -5,18 +5,13 @@
 	<title>New Tab Options</title>
 </head>
 <body>
-	<p>
-		<label for="category">Background category:</label>
-		<select id="category" name="category">
-			<option value="category/buildings">Buildings</option>
-			<option value="category/food">Food</option>
-			<option value="category/nature">Nature</option>
-			<option value="category/people">People</option>
-			<option value="category/technology">Technology</option>
-			<option value="category/objects">Objects</option>
-			<option value="?space">Space</option>
-			<option value="?water">Water</option>
-		</select>
+	<p>Background category:<br />
+		<label><input type="checkbox" id="categoryBuildings" value="category/Buildings" /> Buildings<br /></label>
+		<label><input type="checkbox" id="categoryFood" value="category/Food" /> Food<br /></label>
+		<label><input type="checkbox" id="categoryNature" value="category/Nature" /> Nature<br /></label>
+		<label><input type="checkbox" id="categoryPeople" value="category/People" /> People<br /></label>
+		<label><input type="checkbox" id="categoryTechnology" value="category/Technology" /> Technology<br /></label>
+		<label><input type="checkbox" id="categoryObjects" value="category/Objects" /> Objects<br /></label>
 	</p>
 	<p>
 		<label for="refresh">Background refresh rate:</label>
@@ -30,10 +25,8 @@
 		<label for="lastFMusername">Last.FM username:</label>
 		<input type="text" id="lastFMusername" name="lastFMusername" />
 	</p>
-
 	<p><button id="save">Save</button></p>
 	<p id="status"></p>
-
 	<script src="options.js"></script>
 </body>
 </html>

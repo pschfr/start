@@ -229,13 +229,16 @@ function lastfmRequest() {
 // Loads options from Google Chrome
 function getOptions() {
 	chrome.storage.sync.get({
-		backgroundCategory: 'category/nature',
+		categoryBuildings:  'category/buildings',
+		categoryFood:       'category/food',
+		categoryNature:     'category/nature',
+		categoryPeople:     'category/people',
+		categoryTechnology: 'category/technology',
+		categoryObjects:    'category/objects',
 		backgroundRefresh:  'daily',
 		lastFMusername:     'paul_r_schaefer'
 	}, function(items) {
-		console.log(items.backgroundCategory);
-		console.log(items.backgroundRefresh);
-		console.log(items.lastFMusername);
+		console.log(items);
 	});
 }
 
