@@ -214,6 +214,8 @@ function lastfmRequest() {
 				var total = JSON.parse(xmlhttp.responseText).recenttracks['\@attr'].total;
 				var track = JSON.parse(xmlhttp.responseText).recenttracks.track[0];
 
+				// console.log(track);
+
 				if (track['\@attr'] && track['\@attr'].nowplaying !== '')
 					element.innerHTML = '<span title="' + total + ' total streamed">currently listening to:</span> ';
 				else
@@ -293,6 +295,40 @@ function participate(type) {
 	}, 16);
 }
 
+// Connects to Gmail and fetches unread message count
+function gmailRequest() {
+	var gmailURL = 'https://mail.google.com/mail/u/0/feed/atom'
+		element  = document.getElementById('gmail'),
+		xmlhttp  = new XMLHttpRequest();
+	xmlhttp.open('GET', gmailURL, true);
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4) {
+			if(xmlhttp.status == 200) {
+				var parser    = new DOMParser(),
+					xmlDoc    = parser.parseFromString(xmlhttp.responseText, 'application/xml'),
+					email     = xmlDoc.getElementsByTagName('title')[0].innerHTML.replace('Gmail - Inbox for ', ''),
+					count     = xmlDoc.getElementsByTagName('fullcount')[0].innerHTML,
+					entries   = xmlDoc.getElementsByTagName('entry')
+					entryList = email + ":\n";
+
+				// console.log(xmlDoc);
+				// console.log(entries);
+
+				for (var i = 0; i < entries.length; i++) {
+					var entryTitle = entries[i].getElementsByTagName('title')[0].innerHTML,
+						authorName = entries[i].getElementsByTagName('author')[0].getElementsByTagName('name')[0].innerHTML; 
+					// console.log(entries[i]);
+					entryList += authorName + ' &mdash; ' + entryTitle + "\n";
+				}
+				// console.log(entryList);
+
+				element.innerHTML = "<p><a href='" + gmailURL.replace('/feed/atom', '') + "' id='emaillink' title='" + entryList + "'>" + count + " unread emails</a></p>\n"; 
+			}
+		}
+	};
+	xmlhttp.send(null);
+}
+
 // Initializes everything on page load
 $(function() {
 	startTime();
@@ -301,6 +337,7 @@ $(function() {
 	bindMousetraps();
 	geolocWeather();
 	lastfmRequest();
+	gmailRequest();
 
 	// In development
 	// fetchBookmarks();
