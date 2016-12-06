@@ -309,20 +309,25 @@ function gmailRequest() {
 					email     = xmlDoc.getElementsByTagName('title')[0].innerHTML.replace('Gmail - Inbox for ', ''),
 					count     = xmlDoc.getElementsByTagName('fullcount')[0].innerHTML,
 					entries   = xmlDoc.getElementsByTagName('entry')
-					entryList = email + ":\n";
+					entryList = email + ":\n",
+					plural    = (count > 1)?('s'):('');
 
 				// console.log(xmlDoc);
 				// console.log(entries);
 
-				for (var i = 0; i < entries.length; i++) {
-					var entryTitle = entries[i].getElementsByTagName('title')[0].innerHTML,
-						authorName = entries[i].getElementsByTagName('author')[0].getElementsByTagName('name')[0].innerHTML; 
-					// console.log(entries[i]);
-					entryList += authorName + ' &mdash; ' + entryTitle + "\n";
-				}
-				// console.log(entryList);
+				if (entries.length == 0)
+					element.innerHTML = "<p><a href='" + gmailURL.replace('/feed/atom', '') + "' id='emaillink'>Inbox zero. Enjoy your day.</a></p>\n";
+				else {
+					for (var i = 0; i < entries.length; i++) {
+						var entryTitle = entries[i].getElementsByTagName('title')[0].innerHTML,
+							authorName = entries[i].getElementsByTagName('author')[0].getElementsByTagName('name')[0].innerHTML; 
+						// console.log(entries[i]);
+						entryList += authorName + ' &mdash; ' + entryTitle + "\n";
+					}
+					// console.log(entryList);
 
-				element.innerHTML = "<p><a href='" + gmailURL.replace('/feed/atom', '') + "' id='emaillink' title='" + entryList + "'>" + count + " unread emails</a></p>\n"; 
+					element.innerHTML = "<p><a href='" + gmailURL.replace('/feed/atom', '') + "' id='emaillink' title='" + entryList + "'>" + count + " unread email" + plural + "</a></p>\n";
+				} 
 			}
 		}
 	};
