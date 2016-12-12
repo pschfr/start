@@ -1,12 +1,12 @@
 @charset "utf-8"
-html 
+html
 	box-sizing: border-box
 *, *:before, *:after
 	box-sizing: inherit
 body
 	background: #222 no-repeat center/cover fixed
 	font: 18px 'Segoe UI', Roboto, Helvetica, Arial, sans-serif
-	animation: fadeIn .75s both ease-in
+	animation: fadeIn 0.75s both ease-in
 	text-transform: lowercase
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5)
 	color: white
@@ -25,10 +25,10 @@ div.centerWrapper
 div.large, div.small
 	display: flex
 	padding: 0 5px
+	div
+		flex: 1
 div.small
 	padding-bottom: 10px
-div.large div, div.small div
-	flex: 1
 div.large div
 	font-size: xx-large
 div#lastFM a
@@ -46,12 +46,15 @@ ul.subMenu
 ul.box a
 	color: #111
 	padding: 15px
+	text-decoration: none
 a
 	transition: all 0.15s
 	text-decoration: none
 	display: block
 	outline: none
 	color: white
+a:hover, a:focus
+	text-decoration: underline
 p
 	padding: 15px
 	margin: 0
@@ -91,9 +94,9 @@ div.right, div.left
 	width: 50%
 ul.box li a
 	background-color: rgba(255, 255, 255, 0.5)
-ul li a:hover, ul li a.active, ul li a.active + ul.subMenu li a
+ul li a:hover, ul li a:focus, ul li a.active, ul li a.active + ul.subMenu li a
 	background-color: rgba(255, 255, 255, 0.7)
-ul li a:hover span,  ul li a.active span, ul li a.active + ul.subMenu li a span
+ul li a:hover span, ul li a:focus span, ul li a.active span, ul li a.active + ul.subMenu li a span
 	text-decoration: underline
 @media (max-width: 985px)
 	ul.box div.left, ul.box div.right, div.large div, div.small div
@@ -101,12 +104,12 @@ ul li a:hover span,  ul li a.active span, ul li a.active + ul.subMenu li a span
 		float: none
 		width: 100%
 	.right *
-		text-align: inherit;
+		text-align: inherit
 	div.large, div.small
 		display: block
-	div.large div, div.small div
-		padding-bottom: 15px
-		height: auto
+		div
+			padding-bottom: 15px
+			height: auto
 @keyframes fadeIn
 	from
 		opacity: 0

@@ -100,22 +100,25 @@ function bindMousetraps() {
 	});
 
 	// Resets on ESC
-	Mousetrap.bind('esc', function(e) {
+	Mousetrap.bind('esc', function() {
 		resetMousetraps();
 	});
 	
 	// Binds Weather link
-	Mousetrap.bind('w', function(e) {
+	Mousetrap.bind('w', function() {
 		window.location.href = document.getElementById('weatherlink');
 	});
 	
-	// Binds secret GitHub link
-	Mousetrap.bind('g', function(e) {
+	// Binds secret GitHub links
+	Mousetrap.bind('g', function() {
 		window.location.href = 'https://github.com/pschfr/start';
+	});
+	Mousetrap.bind('alt+g', function() {
+		window.location.href = 'https://github.com/pschfr/start/projects/2?fullscreen=true';
 	});
 	
 	// Binds keyboard shortcut helper modal
-	Mousetrap.bind('?', function(e) {
+	Mousetrap.bind('?', function() {
 		openModal();
 	});
 }
@@ -182,7 +185,7 @@ function getWeather(location) {
 					participate('rain');
 
 				document.getElementById('weather').innerHTML = '<a id="weatherlink" href="https://darksky.net/forecast/' + location + '"><span class="climacon ' + weatherIcon + '"></span> ' + weather.currently.summary + ', ' + Math.round(weather.currently.temperature) + '&deg;</a>';
-				document.getElementById('details').innerHTML = weather.hourly.summary;
+				document.getElementById('details').innerHTML = weather.hourly.summary.replace(',', ',<br/>');
 			}
 		}
 	};
