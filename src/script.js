@@ -113,6 +113,9 @@ function bindMousetraps() {
 	Mousetrap.bind('g', function() {
 		window.location.href = 'https://github.com/pschfr/start';
 	});
+	Mousetrap.bind('shift+g', function() {
+		window.location.href = 'https://github.com/pschfr';
+	})
 	Mousetrap.bind('alt+g', function() {
 		window.location.href = 'https://github.com/pschfr/start/projects/2?fullscreen=true';
 	});
