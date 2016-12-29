@@ -325,8 +325,8 @@ function gmailRequest() {
 					element.innerHTML = "<p><a href='" + gmailURL.replace('/feed/atom', '') + "' id='emaillink'>Inbox zero. Enjoy your day.</a></p>\n";
 				else {
 					for (var i = 0; i < entries.length; i++) {
-						var entryTitle = entries[i].getElementsByTagName('title')[0].innerHTML,
-							authorName = entries[i].getElementsByTagName('author')[0].getElementsByTagName('name')[0].innerHTML; 
+						var entryTitle = entries[i].getElementsByTagName('title')[0].innerHTML.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'),
+							authorName = entries[i].getElementsByTagName('author')[0].getElementsByTagName('name')[0].innerHTML.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); 
 						// console.log(entries[i]);
 						entryList += authorName + ' &mdash; ' + entryTitle + "\n";
 					}
