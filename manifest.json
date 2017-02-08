@@ -1,19 +1,23 @@
 {
-    "manifest_version": 2,
-    "name": "Start",
-    "description": "This extension is my custom new tab page. https://github.com/pschfr/start",
-    "version": "4.2.0",
-    "permissions": [
-        "geolocation",
-        "bookmarks",
+	"manifest_version": 2,
+	"name": "Start",
+	"description": "This extension is my custom new tab page. https://github.com/pschfr/start",
+	"version": "4.2.0",
+	"permissions": [
+		"geolocation",
+		"bookmarks",
 		"storage",
 		"<all_urls>"
-    ],
-    "chrome_url_overrides": {
-        "newtab": "dist/index.html"
-    },
+	],
+	"chrome_url_overrides": {
+		"newtab": "dist/index.html"
+	},
 	"options_ui": {
-    	"page": "opt/options.html",
-    	"chrome_style": true
+		"page": "opt/options.html",
+		"chrome_style": true
+	},
+	"icons": {
+		"16": "logo.png",
+		"48": "logo.png"
 	}
 }
