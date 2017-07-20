@@ -14,7 +14,7 @@ function startTime() {
 	var month = monthNames[date[2]];
 	var year = date[3];
 	hour = hour % 12;
-  	hour = hour ? hour : 12;
+	hour = hour ? hour : 12;
 	mins = mins < 10 ? '0' + mins : mins;
 	secs = secs < 10 ? '0' + secs : secs;
 	document.getElementById('time').innerHTML = hour + ':' + mins + ':' + secs + ' ' + ampm;
@@ -25,14 +25,14 @@ function startTime() {
 // Random quote function. Important: Make sure each quote has a corresponding "quoted".
 function randomQuote() {
 	var quotes = [ "If you are depressed you are living in the past. If you are anxious you are living in the future. If you are at peace you are living in the present.", "Madness, as you know, is a lot like gravity, all it takes is a little push.", "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently.", "Life has many ways of testing a person's will, either by having nothing happen at all or by having everything happen all at once.", "There is no excellent beauty that hath not some strangeness in its proportions.", "Children are fantastic little creatures, because next to drunk people, they are the only truly honest people on earth.", "I begin with an idea, and then it becomes something else.", "Be who you are and say what you feel because those who mind don't matter and those who matter don't mind.", "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get people interested in you.", "An essential aspect of creativity is not being afraid to fail.", "Antisocial behavior is a trait of intelligence in a world of conformists.", "What you do today can improve all your tomorrows.", "A creative man is motivated by the desire to achieve, not by the desire to beat others.", "Don't watch the clock; do what it does. Keep going.", "If you can dream it, you can do it.", "You can't build a reputation on what you're going to do." ];
-
 	var quoted = [ "Lao Tzu", "Joker", "Friedrich Nietzsche", "Paulo Coelho", "Sir Francis Bacon", "Mads Nipper", "Pablo Picasso", "Dr. Seuss", "Dale Carnegie", "Edwin Land", "Nikola Tesla", "Ralph Marston", "Ayn Rand", "Sam Levenson", "Walt Disney", "Henry Ford" ];
 	var randNumQuotes = Math.floor((Math.random() * quotes.length));
 	document.getElementById('quote').innerHTML = '&ldquo;' + quotes[randNumQuotes] + '&rdquo; &mdash; ' + '<small>' + quoted[randNumQuotes] + '</small>';
 }
 
 function randomBackground(time) { // daily, weekly, or every time
-	var categories = ['buildings', /*'food',*/ 'nature', /*'people', 'technology',*/ 'objects'];
+	// var categories = ['buildings', 'food', 'nature', 'people', 'technology' 'objects'];
+	var categories = ['buildings', 'nature', 'objects'];
 	var randomCategory = Math.floor((Math.random() * categories.length));
 	var photo = new UnsplashPhoto();
 
@@ -158,7 +158,6 @@ function getWeather(location) {
 		if (xmlhttp.readyState == 4) {
 			if(xmlhttp.status == 200) {
 				var weather = JSON.parse(xmlhttp.responseText);
-				// console.log(weather);
 
 				var weatherIcon = '';
 				if (weather.currently.icon == 'clear-day')
@@ -200,9 +199,10 @@ function geolocWeather() {
 	if('geolocation' in navigator) {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			getWeather(position.coords.latitude + ',' + position.coords.longitude);
-	  	});
-
-	} else { getWeather('40.4406, -79.9959'); }
+		});
+	} else {
+		getWeather('40.4406, -79.9959');
+	}
 }
 
 // Connects to Last.FM, retrives most recent song - based on my https://github.com/pschfr/LastFM.js
@@ -220,15 +220,13 @@ function lastfmRequest() {
 				var total = JSON.parse(xmlhttp.responseText).recenttracks['\@attr'].total;
 				var track = JSON.parse(xmlhttp.responseText).recenttracks.track[0];
 
-				// console.log(track);
-
 				if (track['\@attr'] && track['\@attr'].nowplaying !== '')
 					element.innerHTML = '<span title="' + total + ' total streamed">currently listening to:</span> ';
 				else
 					element.innerHTML = '<span title="' + total + ' total streamed">last listened to:</span> ';
 
 				element.innerHTML += '<a href="' + track.url + '" title="on album: ' + track.album['\#text'] + '">' + track.artist['\#text'] + ' &mdash; ' + track.name + '</a> ';
-			 }
+			}
 		}
 	};
 	xmlhttp.send(null);
@@ -318,22 +316,17 @@ function gmailRequest() {
 					entryList = email + ":\n",
 					plural    = (count > 1)?('s'):('');
 
-				// console.log(xmlDoc);
-				// console.log(entries);
-
 				if (entries.length == 0)
 					element.innerHTML = "<p><a href='" + gmailURL.replace('/feed/atom', '') + "' id='emaillink'>Inbox zero. Enjoy your day.</a></p>\n";
 				else {
 					for (var i = 0; i < entries.length; i++) {
 						var entryTitle = entries[i].getElementsByTagName('title')[0].innerHTML.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'),
 							authorName = entries[i].getElementsByTagName('author')[0].getElementsByTagName('name')[0].innerHTML.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); 
-						// console.log(entries[i]);
 						entryList += authorName + ' &mdash; ' + entryTitle + "\n";
 					}
-					// console.log(entryList);
 
 					element.innerHTML = "<p><a href='" + gmailURL.replace('/feed/atom', '') + "' id='emaillink' title='" + entryList + "'>" + count + " unread email" + plural + "</a></p>\n";
-				} 
+				}
 			}
 		}
 	};
