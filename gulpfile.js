@@ -6,7 +6,7 @@ var gulp      = require('gulp'),
 	htmlmin   = require('gulp-htmlmin'),
 	watch     = require('gulp-watch');
 gulp.task('concatJS', function() { // Concatenates third-party and my JS together
-	gulp.src(['src/vendor/jquery-3.1.1.js', 'src/vendor/mousetrap.js', 'src/vendor/unsplash-source.js', 'src/script.js']).pipe(concat('scripts.js')).pipe(gulp.dest('src/'));
+	gulp.src(['src/vendor/jquery-3.3.1.js', 'src/vendor/mousetrap.js', 'src/vendor/unsplash-source.js', 'src/script.js']).pipe(concat('scripts.js')).pipe(gulp.dest('src/'));
 });
 gulp.task('minJS', ['concatJS'], function() { // Minifies JS, moves to dist
 	gulp.src('src/scripts.js').pipe(uglify()).pipe(gulp.dest('dist/'));
