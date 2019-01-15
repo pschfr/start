@@ -1,4 +1,7 @@
 # ![logo](logo.png) Start [https://pschfr.github.io/start/dist](https://pschfr.github.io/start/dist)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pschfr/start.svg)](https://greenkeeper.io/)
+
 ![https://pschfr.github.io/start/dist](screenshot.png)
 ## Personal new tab page with keyboard navigation, bookmarks, weather, quote, most recently listened to song, unread emails, and image background.
 
